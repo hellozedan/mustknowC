@@ -1,0 +1,48 @@
+<ion-view overflow-scroll="true" cache-view="false" class="aaa">
+  <ion-nav-title>
+    <a class="chat-profile-info item item-avatar item-icon-right">
+      <img ng-src="{{chatDetails.fbPhotoUrl}}">
+      <h2>{{chatDetails.userName}}</h2>
+      <p>{{chatDetails.subjectName}}</p>
+      <i ng-controller="OnlineUserCtrl" class="icon ion-record online-offline" ng-class="{'online-circle': isUserOnline == true, 'offline-circle': isUserOnline == false}"></i>
+
+    </a>
+  </ion-nav-title>
+
+
+  <ion-content ng-class="{expanded: isExpanded}" id="menu-dashboard-content" class="padding">
+
+    <section class="chats">
+
+      <span ng-repeat="(key, message) in messages">
+        <span>
+          <div class="chat-date-span" ng-if="message.date_string != messages[$index - 1].date_string">
+            <span ng-if="message.date_string == dateString">today</span>
+            <span ng-if="message.date_string != dateString">{{message.date_string}}</span>
+          </div>
+          <div ng-class='getBubbleClass(message.sender)'>
+            <p>{{message.body}} <span class="chat-time-span">{{message.create_date | amDateFormat:'h:mm a'}}</span></p>
+
+          </div>
+          <div class="clear"></div>
+        </span>
+      </span>
+
+    </section>
+
+  </ion-content>
+
+  <form name="sendMessageForm" ng-submit="sendMessage(data.message)" novalidate>
+    <ion-footer-bar class="bar-stable item-input-inset message-footer" keyboard-attach>
+      <label class="item-input-wrapper">
+        <input id="msg-input" ng-change="updateTyping()" ng-model="data.message" class="input-message" type="text" placeholder="{{sendInputPlaceHolder}}">
+      </label>
+      <div class="footer-btn-wrap">
+        <button class="button button-icon icon ion-ios-paperplane footer-btn" type="submit"
+                ng-disabled="!data.message || data.message === '' || disableSend">
+        </button>
+      </div>
+    </ion-footer-bar>
+  </form>
+
+</ion-view>

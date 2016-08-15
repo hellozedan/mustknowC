@@ -1,0 +1,27 @@
+
+<ion-view title="Blocked Users">
+  <ion-nav-buttons side="left" >
+    <a class="button button-icon button-clear ion-navicon" menu-toggle="left" ng-click="toggleLeft()"></a>
+  </ion-nav-buttons>
+
+  <ion-content ng-class="{expanded: isExpanded}" id="menu-dashboard-content" >
+    <div class="menu-dashboard-footer">
+      <md-whiteframe class="md-whiteframe-z1 subject-element" layout  ng-repeat="user in blockedUsers"  >
+        <div class="row sub-row" ng-click="showConfirm(user)">
+          <md-list-item  class="col-90 sub-list">
+            <img ng-src="{{user.fbPhotoUrl}}" class="md-avatar user-photo"/>
+
+            <div  class="md-list-item-text subject-md-list-item-text">
+              <h3 class="sub-title subject-title">{{user.userName}}</h3>
+              <div class="card-footer text-right">
+              </div>
+            </div>
+          </md-list-item>
+          <div class="col-10" style="margin-top: 25px" ng-click="goToChat(subject)">
+            <i class="fa fa-angle-right"></i>
+          </div>
+        </div>
+      </md-whiteframe>
+    </div>
+  </ion-content>
+</ion-view>

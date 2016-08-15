@@ -1,0 +1,22 @@
+
+<ion-view title="Facebook Connect">
+  <!--login content section-->
+  <ion-content scroll="false" id="social-login" >
+    <form>
+      <div>
+        <i class="fa fa-facebook facebook-color"></i>
+      </div>
+      <div class="sub-header loudly">Loudly</div>
+      <div class="ng-hide" ng-show="!isLogin">
+        <a class="md-raised social-button md-button md-default-theme facebook-background" ng-click="fbLogin()">
+          LOG IN WITH FACEBOOK
+        </a>
+        <br/>
+        <div class="footer" style="font-size: 16px;">
+          Thinking Out Loudly
+        </div>
+      </div>
+    </form>
+
+  </ion-content><!--end login content section-->
+</ion-view>

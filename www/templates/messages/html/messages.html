@@ -1,0 +1,25 @@
+<ion-view ng-controller="NewMessagesCtrl" cache-view="false" view-title="Messages">
+  <ion-nav-buttons side="left" >
+    <a class="button button-icon button-clear ion-navicon" menu-toggle="left" ng-click="toggleLeft()"></a>
+    <i  ng-if="checkUndreadMessage()" class="icon ion-record menu-circle-new-message" aria-hidden="true"></i>
+  </ion-nav-buttons>
+  <ion-content >
+    <div class="content has-header">
+      <div class="list">
+        <a class="item item-avatar item-icon-right" ng-repeat="message in messages">
+
+          <img ng-click="goToUserProfile(message)" ng-src="{{message.fbPhotoUrl}}">
+          <div ng-click="goToChat(message)">
+            <h2>{{message.subjectName}}</h2>
+            <p>{{message.userName}}: {{message.lastMessage}}</p>
+            <i ng-class="message.readMessage ? 'message-unread' : (!message.readMessage ? 'message-read' : 'message-unread')" ng-click="goToChat(message)" class="icon ion-chatbubble"></i>
+          </div>
+          <i class="icon ion-record online-offline" ng-class="{'online-circle': message.online, 'offline-circle': !message.online}"></i>
+
+
+        </a>
+
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

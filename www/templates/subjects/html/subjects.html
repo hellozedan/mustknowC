@@ -1,0 +1,60 @@
+
+<ion-view title="Subjects">
+  <ion-nav-buttons side="left" >
+    <a class="button button-icon button-clear ion-navicon" menu-toggle="left" ng-click="toggleLeft()"></a>
+    <i  ng-if="checkUndreadMessage()" class="icon ion-record menu-circle-new-message" aria-hidden="true"></i>
+  </ion-nav-buttons>
+
+  <!--menu dashboard section-->
+  <!--heaer fab bar-->
+  <div class="header-fab-bar sub-filter-icon">
+    <a class="md-button md-accent md-fab sub-icon-filter fab-header" ng-click="goToFilter()" aria-label="Add">
+      <i class="fa fa-filter" ng-click="goToFilter()" aria-hidden="true"></i>
+    </a>
+    <a ng-click="goToMessages()" class="msgs-button md-button md-accent md-fab sub-icon-filter fab-header" aria-label="Add">
+      <i  class="fa ion-chatbubbles message-icon" aria-hidden="true"></i>
+      <i  ng-if="checkUndreadMessage()" class="icon ion-record circle-new-message" aria-hidden="true"></i>
+      <!--<i ng-click="goToMessages()" ng-if="checkUndreadMessage()" class="icon ion-record circle-new-message" aria-hidden="true"></i>-->
+      <!--<i ng-click="goToMessages()" class="fa ion-chatbubbles message-icon" aria-hidden="true"></i>-->
+
+    </a>
+
+  </div>
+  <ion-content ng-class="{expanded: isExpanded}" id="menu-dashboard-content" >
+    <ion-refresher
+      pulling-text="Pull to refresh..."
+      on-refresh="doRefresh()">
+    </ion-refresher>
+    <div class="menu-dashboard-footer">
+      <md-whiteframe class="md-whiteframe-z1 subject-element" layout  ng-repeat="subject in subjects" >
+        <div class="row sub-row">
+          <md-list-item  class="col-90 sub-list">
+            <img ng-src="{{subject.user.fbPhotoUrl}}" class="md-avatar user-photo" ng-click="goToUserProfile(subject)"/>
+
+            <div ng-click="goToChat(subject)" class="md-list-item-text subject-md-list-item-text">
+              <h3 class="sub-title subject-title">{{subject.user.first_name}}, {{subject.title}}</h3>
+
+              <p class="subject-desc">{{(subject.interested.length>0)? subject.description+' , interested '+subject.interested.length:subject.description}}
+                <!--<p  ng-show="subject.interested.length>0">interested {{subject.interested.length}}</p>-->
+              </p>
+
+              <div class="card-footer text-right">
+                <div class="pull-left">
+                  <i class="icon ion-clock"></i> <span am-time-ago="subject.create_date"></span>
+                </div>
+              </div>
+            </div>
+          </md-list-item>
+          <div class="col-10" style="margin-top: 25px" ng-click="goToChat(subject)">
+            <i class="fa fa-angle-right"></i>
+          </div>
+        </div>
+      </md-whiteframe>
+    </div>
+  </ion-content>
+  <div class="footer-fab-bar">
+    <a class="md-button md-accent md-fab fab-footer" ng-click="goToAddSubject()" aria-label="Add">
+      <i class="ion-android-create" ng-click="goToAddSubject()"></i>
+    </a>
+  </div>
+</ion-view>
