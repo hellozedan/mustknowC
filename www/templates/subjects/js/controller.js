@@ -31,7 +31,7 @@ appControllers.controller('subjectsCtrl', function ($scope, $ionicPlatform, $roo
       }, function (err) {
       });
   }
-  var stopTime = $interval($scope.doRefresh, 10000);
+  //var stopTime = $interval($scope.doRefresh, 10000);
   $scope.$on("$destroy", function() {
     if (stopTime) {
       $interval.cancel(stopTime);

@@ -1,10 +1,7 @@
-<ion-view ng-controller="NewMessagesCtrl" cache-view="false" view-title="Messages">
-  <ion-nav-buttons side="left" >
-    <a class="button button-icon button-clear ion-navicon" menu-toggle="left" ng-click="toggleLeft()"></a>
-    <i  ng-if="checkUndreadMessage()" class="icon ion-record menu-circle-new-message" aria-hidden="true"></i>
-  </ion-nav-buttons>
+<ion-view ng-controller="NewMessagesCtrl" cache-view="false">
+
   <ion-content >
-    <div class="content has-header">
+    <div class="content">
       <div class="list">
         <a class="item item-avatar item-icon-right" ng-repeat="message in messages">
 

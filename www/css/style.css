@@ -1,3 +1,11 @@
+@font-face {
+  font-family: 'loudly';
+  src: url('../fonts/loudly.ttf');
+}
+@font-face {
+  font-family: 'thinkout';
+  src: url('../fonts/thinkout.ttf');
+}
 .sub-filter-icon {
   position: absolute;
   background-color: #3f51b5 !important;
@@ -216,7 +224,8 @@ p.notification {
   font-size: 3em !important;
   font-weight: 700 !important;
   margin-bottom: 10px !important;
-  font-style: normal !important; }
+  font-style: normal !important;
+}
 
 .msgs-button {
   position: absolute !important;
@@ -259,3 +268,103 @@ p.notification {
   text-align: center;
   width: 133px;
   font-size: 12px; }
+
+.tabs-top > .tabs, .tabs.tabs-top{
+  top: 0 !important;
+}
+.has-tabs-top{
+  top: 48px !important;
+}
+
+.login-footer{
+  position: absolute;
+  bottom: 15px;
+  padding: 15px;
+  width: 100%;
+}
+.login-footer p{
+  text-align: center;
+  padding: 20px;
+  color: white;
+}
+.fb-page{
+  background-image: url('../img/login-bg.png');
+  background-size: 100% 100%;
+  background-repeat: repeat-x;
+  height: 100%;
+  width: 100%;
+}
+.login-top{
+  top: 65px;
+  position: relative;
+  left: 14%;
+}
+.login-top .list .item img{
+  max-width: 86px !important;
+}
+.login-top .list .item{
+  background-color: transparent !important;
+  border: 0px !important;
+}
+.login-footer .fb-button{
+  background-color: #3e60aa;
+}
+.think-out{
+  color: white !important;
+  font-size: 30px !important;
+  font-family: 'thinkout';
+
+}
+.login-loudly{
+  color: white !important;
+  font-size: 60px !important;
+  font-family: 'loudly';
+  position: relative;
+  top: 12px;
+  font-weight: bold;
+
+}
+
+.item-thumbnail-left, .item-thumbnail-left .item-content{
+  padding-left: 95px !important;
+}
+.fb-container{
+  position: relative;
+}
+.fb-container .f1{
+  width: 10%;
+  position: absolute;
+}
+.fb-container .f2{
+  left:15%;
+  width: 90%;
+  position: absolute;
+}
+
+.filter-fotter{
+  width: 15% !important;
+
+  bottom: 16px;
+  left: 10px;
+  background: transparent;
+}
+.filter-fotter i{
+  width: 100%;
+  font-size: 40px;
+}
+.subject-list .list .item{
+  height: 115px;
+}
+.subject-list .subject-container{
+  right: 2px;
+  position: absolute;
+  top: 10px;
+}
+
+.tabs .tab-item .icon.mcfly {
+  background-repeat: no-repeat;
+  background-position: 50%;
+  height: 100%;
+  background-image: url('../img/logo.png');
+  background-size:contain;
+}

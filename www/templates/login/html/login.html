@@ -1,22 +1,36 @@
 
 <ion-view title="Facebook Connect">
-  <!--login content section-->
-  <ion-content scroll="false" id="social-login" >
-    <form>
-      <div>
-        <i class="fa fa-facebook facebook-color"></i>
+  <ion-content scroll="false" >
+    <div class="fb-page">
+      <div class="login-top">
+        <ion-list>
+          <ion-item class="item-thumbnail-left">
+            <img src="img/logo.png">
+            <div>
+              <span class="think-out">Think Out</span>
+            </div>
+            <div class="login-loudly">
+              <span >loudly</span>
+            </div>
+            <!--<p class="think-out">Think Out</p>-->
+            <!--<p class="login-loudly">loudly</p>-->
+          </ion-item>
+        </ion-list>
       </div>
-      <div class="sub-header loudly">Loudly</div>
-      <div class="ng-hide" ng-show="!isLogin">
-        <a class="md-raised social-button md-button md-default-theme facebook-background" ng-click="fbLogin()">
-          LOG IN WITH FACEBOOK
-        </a>
-        <br/>
-        <div class="footer" style="font-size: 16px;">
-          Thinking Out Loudly
-        </div>
+      <div class="login-footer">
+        <button ng-click="fbLogin()" class="button button-block button-positive icon-left ion-social-facebook fb-button">
+          <span>Login With Facebook</span>
+        </button>
+        <p>
+          By singing up, I agree to Loudly's Terms of service and Privacy Policy.
+        </p>
       </div>
-    </form>
+    </div>
 
-  </ion-content><!--end login content section-->
+
+
+
+
+  </ion-content>
+
 </ion-view>
