@@ -480,7 +480,63 @@ p.notification {
   font-size: 18px;
   font-weight: bold;
   font-family: 'loudly';
+  height: 64px;
 }
 .ion-arrow-left-c{
   font-size: 30px !important;
+}
+
+a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, body, canvas, caption, center, cite, code, dd, del, details, dfn, div, dl, dt, em, embed, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, i, iframe, img, ins, kbd, label, legend, li, mark, menu, nav, object, ol, output, p, pre, q, ruby, s, samp, section, small, span, strike, strong, sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr, tt, u, ul, var, video{
+  vertical-align: text-bottom !important;
+}
+.add-subject-header-span{
+  padding: 10px;
+}
+.add-subject{
+
+
+}
+.add-subject textarea{
+  width: 100%;
+  height: 150px;
+  font-size: 20px;
+  font-family: 'loudly';
+  padding: 10px;
+}
+.add-subject input{
+  padding: 10px;
+  width: 100%;
+  font-size: 20px;
+  height: 50px;
+  font-family: 'loudly';
+  border-color: #dcdcdc;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  border-width: 1px;
+}
+textarea, input::-webkit-input-placeholder {
+  padding: 10px;
+}
+.add-subject-step{
+  position: absolute;
+  right: 10px;
+}
+.create-subject-btn-grey{
+  background-image: url('../img/create-subject-grey.png');
+}
+.create-subject-btn-blue{
+  background-image: url('../img/create-subject-blue.png');
+}
+.create-subject-btn{
+
+  padding: 15px;
+
+  height: 60px;
+  width: 60px;
+  background-size: 100% 100%;
+  background-repeat: repeat-x;
+  position: absolute;
+  right: 0px;
+  margin: 14px;
 }

@@ -4,15 +4,21 @@
     <div class="content">
       <ion-list>
         <ion-item class="add-subject-header">
-          <i ng-click="goToChat(message)" class="icon ion-arrow-left-c"></i>
-          <span>You are talking about... e</span>
+          <i ui-sref="tab.addSubject-s1" class="icon ion-arrow-left-c"></i>
+          <span class="add-subject-header-span">You are talking about...</span>
+          <span class="add-subject-step">1/2</span>
         </ion-item>
-        <ion-item class="item-avatar item-icon-right" ng-repeat="category in categories">
-          <img ng-src="{{category.image_url}}">
-          <h2>{{category.name}}</h2>
-          <i ng-click="goToChat(message)" class="icon ion-chevron-right"></i>
-        </ion-item>
+      <div class="add-subject">
+        <input required name="noteTitle" placeholder="Subject Title *" ng-model="subject.title">
+        <textarea required rows="3" ng-model="subject.description" maxlength="250"
+                  placeholder="Describe your subject here ...."></textarea>
+
+      </div>
       </ion-list>
+
+      <div ng-class="{'create-subject-btn-grey': subject.description.length<=0 || subject.title.length<=0, 'create-subject-btn-blue': subject.description.length>0 && subject.title.length>0}" class="create-subject-btn">
+
+      </div>
     </div>
   </ion-content>
 </ion-view>
