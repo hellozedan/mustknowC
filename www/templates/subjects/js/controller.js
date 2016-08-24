@@ -75,7 +75,7 @@ appControllers.controller('subjectsCtrl', function ($scope, $ionicPlatform, $roo
   }
 
 })
-appControllers.controller('addSubjectCtrl', function ($scope, $state, SubjectService, $stateParams, $filter, $mdBottomSheet, $mdDialog, $mdToast, $ionicHistory,ConfigurationService) {
+appControllers.controller('addSubjectCtrl', function ($scope, $state, SubjectService, $stateParams, $filter, $ionicHistory,ConfigurationService) {
   $scope.isExpanded=true;
   $scope.failed = false;
   // initialForm is the first activity in the controller.
@@ -126,7 +126,7 @@ appControllers.controller('addSubjectCtrl', function ($scope, $state, SubjectSer
 
   $scope.initialForm();
 });// End of Notes Detail Page  Controller.
-appControllers.controller('filterCtrl', function ($scope,$state, $stateParams, $filter, $mdBottomSheet, $mdDialog, $mdToast, $ionicHistory,SubjectService,ConfigurationService) {
+appControllers.controller('filterCtrl', function ($scope,$state, $stateParams, $filter, $mdBottomSheet, $ionicHistory,SubjectService,ConfigurationService) {
 
   $scope.saveFilter = function () {
     $scope.myFilter.categories=[];

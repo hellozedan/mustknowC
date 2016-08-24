@@ -9,3 +9,10 @@ appControllers.controller('NewMessagesCtrl', function ($scope, MessagesService) 
   }
 });
 
+appControllers.controller('tabsCtrl', function ($scope, $state) {
+
+  $scope.addSubject = function(){
+    $state.go('addSubject');
+
+  }
+});

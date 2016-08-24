@@ -1,0 +1,19 @@
+<ion-view title="s">
+
+  <ion-content >
+    <div class="content">
+      <ion-list>
+        <ion-item class="add-subject-header">
+          <span>You are talking about...</span>
+        </ion-item>
+        <ion-item class="item-avatar item-icon-right" ng-repeat="category in categories">
+          <img ng-src="{{category.image_url}}">
+          <h2>{{category.name}}</h2>
+          <i ng-click="goToChat(message)" class="icon ion-chevron-right"></i>
+
+        </ion-item>
+
+      </ion-list>
+    </div>
+  </ion-content>
+</ion-view>

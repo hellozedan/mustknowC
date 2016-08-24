@@ -72,7 +72,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     .state('tab', {
     url: '/tab',
     abstract: true,
-    templateUrl: 'templates/tabs.html'
+    templateUrl: 'templates/tabs/html/tabs.html'
   })
     .state('login', {
       url: "/login",
@@ -96,17 +96,27 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
       templateUrl: "templates/blockedUsers/html/blockedUsers.html",
       controller: "blockedUsersCtrl"
     })
+
   // Each tab has its own nav history stack:
 
-  .state('tab.subjects', {
-    url: '/subjects',
-    views: {
-      'tab-subjects': {
-        templateUrl: 'templates/subjects/html/subjects.html',
-        controller: 'subjectsCtrl'
+    .state('tab.subjects', {
+      url: '/subjects',
+      views: {
+        'tab-subjects': {
+          templateUrl: 'templates/subjects/html/subjects.html',
+          controller: 'subjectsCtrl'
+        }
       }
-    }
-  })
+    })
+    .state('tab.addSubject', {
+      url: "/addSubject",
+      views: {
+        'tab-addSubject': {
+          templateUrl: "templates/subjects/html/addSubject.html",
+          controller: 'addSubjectCtrl'
+        }
+      }
+    })
 
   .state('tab.messages', {
       url: '/messages',
@@ -117,15 +127,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
         }
       }
     })
-    .state('tab.chat-detail', {
-      url: '/chats/:chatId',
-      views: {
-        'tab-chats': {
-          templateUrl: 'templates/chat-detail.html',
-          controller: 'ChatDetailCtrl'
-        }
-      }
-    })
+
 
   .state('tab.myProfile', {
     url: '/myProfile',
