@@ -108,16 +108,24 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
         }
       }
     })
-    .state('tab.addSubject', {
-      url: "/addSubject",
+    .state('tab.addSubject-s1', {
+      url: "/addSubject-s1",
       views: {
         'tab-addSubject': {
-          templateUrl: "templates/subjects/html/addSubject.html",
+          templateUrl: "templates/subjects/html/addSubject-s1.html",
           controller: 'addSubjectCtrl'
         }
       }
     })
-
+    .state('tab.addSubject-s2', {
+      url: "/addSubject-s2",
+      views: {
+        'tab-addSubject': {
+          templateUrl: "templates/subjects/html/addSubject-s2.html",
+          controller: 'addSubjectCtrl'
+        }
+      }
+    })
   .state('tab.messages', {
       url: '/messages',
       views: {

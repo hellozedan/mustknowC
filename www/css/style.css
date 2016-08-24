@@ -445,12 +445,16 @@ p.notification {
   border: none;
 }
 .item-icon-left .icon, .item-icon-right .icon{
-  font-size: 20px;
+
   color: #8e8989;
+}
+.ion-chevron-right{
+  font-size: 20px !important;
 }
 .add-subject-header{
   background-color: #7f7f7f;
   color: white;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: bold;
+  font-family: 'loudly';
 }
