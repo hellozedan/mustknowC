@@ -99,7 +99,7 @@ appServices.factory('UserService', function ($http, $log, $q, $cordovaFacebook, 
       var createrId = message.conversationId.split("-")[0];
       userProfile.userId = createrId;
       userProfile.first_name = message.userName;
-     
+
       userProfile.fbPhotoUrl = message.fbPhotoUrl;
     },
     GetUserProfile: function(){

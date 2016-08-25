@@ -1,22 +1,23 @@
-<ion-view cache-view="false" title="My Profile" id="expense-dashboard">
 
-  <md-toolbar class="bar-subheader md-tall md-primary toolbar-expense">
-    <div>
-      <img src="{{userProfile.fbPhotoUrl}}" class="user-img"/>
-
-      <h1>{{userProfile.first_name}} {{userProfile.last_name}}</h1>
-
-      <h2>Think Out Loudly</h2>
+<ion-view title="My Profile">
+  <div class="bar bar-header profile-header">
+    <div class="profile-details">
+      <img ng-src="{{userProfile.fbPhotoUrl}}">
+      <h2>{{userProfile.first_name}} {{userProfile.last_name}}</h2>
+      <button class="button button-positive">
+        Update Profile
+      </button>
     </div>
-    <a class="md-button md-accent md-fab fab-toolbar-medium sub-icon-add" aria-label="Add" ng-click="goToAddSubject()">
-      <!--<i class="icon ion-plus" ng-click="goToAddSubject()"></i>-->
-      <i class="icon ion-plus"></i>
-    </a>
-  </md-toolbar><!--end expense toolbar section-->
+  </div>
 
-  <!--expense content section-->
-  <ion-content id="expense-dashboard-content">
-    <!--Below code it will disable animation to better performance-->
+
+  <ion-content class="profile-page">
+    <ion-list>
+      <ion-item ui-sref="tab.addSubject-s2" class="item-avatar item-icon-right" ng-repeat="subject in subjects">
+        <img ng-src="{{category.image_url}}">
+        <h2>{{subject.title}}</h2>
+      </ion-item>
+    </ion-list>
     <div ng-if="false" class="list-expense-menu">
       <div class="list-expense-menu-item" ng-repeat="subject in subjects"  ng-click="doSomeThing()">
         <div class="row">
