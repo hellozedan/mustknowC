@@ -64,4 +64,5 @@
     };
 
   });
-})()// End of facebook login controller.
+})();
+// End of facebook login controller.

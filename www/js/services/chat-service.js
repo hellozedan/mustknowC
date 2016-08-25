@@ -233,4 +233,4 @@ appServices.factory('ChatService', function($q, $timeout,SubjectService, $rootSc
     scrollBottom: scrollBottom
   }
 })
-})()
+})();

@@ -26,5 +26,5 @@ appControllers.controller('messagesCtrl', function ($scope, $rootScope, $state, 
 
   }
 });
-})()
+})();
 

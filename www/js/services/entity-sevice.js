@@ -33,4 +33,4 @@
       getMessageDetails: getMessageDetails
     };
   });
-})()
+})();

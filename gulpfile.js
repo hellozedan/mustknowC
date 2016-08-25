@@ -40,9 +40,8 @@ gulp.task('jsF', function (done) {
   var mainJs = gulp
     .src(paths.js)
     .pipe(print())
-    .pipe(ngAnnotate())
     .pipe($.concat('app.min.js'))
-    .pipe(uglify())
+
     .pipe(gulp.dest('www/jsBuild'));
   var templatesJs = gulp
     .src(paths.js)

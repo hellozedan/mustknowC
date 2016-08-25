@@ -20,4 +20,4 @@ appServices.factory('NotificationService', function ($http, $log, $q, Configurat
     }
   }
 })
-})()
+})();

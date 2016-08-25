@@ -4,6 +4,7 @@
       TimeToUpdateFromServer:1000*60*15,
       GetCategories: function () {
         var deferred = $q.defer();
+        debugger
         $http.get(ConfigurationService.ServerUrl() + '/api/subjects/categories', {
           headers: {
             "access-token": ConfigurationService.UserDetails().token
