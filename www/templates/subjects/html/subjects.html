@@ -6,7 +6,7 @@
     </ion-refresher>
     <ion-list class="subject-list">
 
-      <ion-item class="item-avatar item-icon-right" ng-repeat="subject in subjects">
+      <ion-item ng-click="goToChat(subject)" class="item-avatar item-icon-right" ng-repeat="subject in subjects">
         <img ng-click="goToUserProfile(subject)" ng-src="{{subject.user.fbPhotoUrl}}">
         <h2>{{subject.user.first_name}}, {{subject.title}}</h2>
         <p>{{(subject.interested.length>0)? subject.description+' , interested '+subject.interested.length:subject.description}}</p>
@@ -15,7 +15,7 @@
             <img src="/img/favorite.png">
           </div>
 
-          <div>
+          <div ng-click="goToChat(subject)" >
             <img src="/img/chat.png">
           </div>
         </div>

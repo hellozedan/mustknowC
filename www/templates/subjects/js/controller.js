@@ -78,8 +78,7 @@ appControllers.controller('subjectsCtrl', function ($scope, $ionicPlatform, $roo
 appControllers.controller('addSubjectCtrl', function ($scope, $state, SubjectService, $stateParams, $filter, $ionicHistory,ConfigurationService) {
   $scope.isExpanded=true;
   $scope.failed = false;
-  // initialForm is the first activity in the controller.
-  // It will initial all variable data and let the function works when page load.
+
   $scope.subject = {};
   $scope.categories = [];
 

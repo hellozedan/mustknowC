@@ -1,19 +1,20 @@
 <ion-view overflow-scroll="true" cache-view="false" class="aaa">
-  <ion-nav-title>
-    <a class="chat-profile-info item item-avatar item-icon-right">
+  <div class="bar bar-header bar-light">
+    <a ng-controller="AppCtrl" class="button button-icon button-clear ion-arrow-left-c chat-back" ng-click="goBack()"></a>
+    <a class="title chat-profile-info item item-avatar item-icon-right">
+
       <img ng-src="{{chatDetails.fbPhotoUrl}}">
       <h2>{{chatDetails.userName}}</h2>
       <p>{{chatDetails.subjectName}}</p>
       <i ng-controller="OnlineUserCtrl" class="icon ion-record online-offline" ng-class="{'online-circle': isUserOnline == true, 'offline-circle': isUserOnline == false}"></i>
 
     </a>
-  </ion-nav-title>
 
+    <a class="button button-icon button-clear ion-android-more-vertical chat-menu" ng-click="toggleLeft()"></a>
+  </div>
 
   <ion-content ng-class="{expanded: isExpanded}" id="menu-dashboard-content" class="padding">
-
     <section class="chats">
-
       <span ng-repeat="(key, message) in messages">
         <span>
           <div class="chat-date-span" ng-if="message.date_string != messages[$index - 1].date_string">

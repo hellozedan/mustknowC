@@ -9878,66 +9878,22 @@ p.notification {
   clear: both; }
 
 .from-me {
+  font-size: 15px;
   position: relative;
   padding: 10px 20px;
   color: white;
-  background: #0B93F6;
+  background: #5fa1d2;
   border-radius: 25px;
   float: right; }
 
-.from-me:before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  bottom: -2px;
-  right: -7px;
-  height: 20px;
-  border-right: 20px solid #0B93F6;
-  border-bottom-left-radius: 16px 14px;
-  -webkit-transform: translate(0, -2px); }
-
-.from-me:after {
-  content: "";
-  position: absolute;
-  z-index: 1;
-  bottom: -2px;
-  right: -56px;
-  width: 26px;
-  height: 20px;
-  background: #f6f6f6;
-  border-bottom-left-radius: 10px;
-  -webkit-transform: translate(-30px, -2px); }
-
 .from-them {
+  font-size: 15px;
   position: relative;
   padding: 10px 20px;
   background: #E5E5EA;
   border-radius: 25px;
   color: black;
   float: left; }
-
-.from-them:before {
-  content: "";
-  position: absolute;
-  z-index: 2;
-  bottom: -2px;
-  left: -7px;
-  height: 20px;
-  border-left: 20px solid #E5E5EA;
-  border-bottom-right-radius: 16px 14px;
-  -webkit-transform: translate(0, -2px); }
-
-.from-them:after {
-  content: "";
-  position: absolute;
-  z-index: 3;
-  bottom: -2px;
-  left: 4px;
-  width: 26px;
-  height: 20px;
-  background: white;
-  border-bottom-right-radius: 10px;
-  -webkit-transform: translate(-30px, -2px); }
 
 .username-list {
   line-height: 38px; }
@@ -9998,18 +9954,34 @@ p.notification {
 .bar .title {
   height: 100% !important; }
 
+.chat-menu {
+  top: 15px !important;
+  color: #7f7f7f !important; }
+
+.chat-back {
+  top: 12px;
+  color: #7f7f7f !important; }
+
 .chat-profile-info {
+  padding-left: 80px !important;
+  left: 20px !important;
   background-color: transparent !important;
   border-color: transparent !important; }
 
+.chat-profile-info img {
+  max-width: 50px !important;
+  max-height: 50px !important;
+  top: 10px !important; }
+
 .chat-profile-info p, .chat-profile-info h2 {
-  color: white !important; }
+  text-align: left;
+  color: black !important; }
 
 .chat-profile-info h2 {
   font-weight: bold !important; }
 
 .chat-profile-info p {
-  color: white !important;
+  color: black !important;
   margin-top: -10px; }
 
 .subject-element {
@@ -10315,3 +10287,23 @@ textarea, input::-webkit-input-placeholder {
   position: absolute;
   right: 0px;
   margin: 14px; }
+
+.messages .item {
+  height: 100px;
+  padding-left: 92px !important; }
+
+.messages .item img {
+  max-width: 70px;
+  max-height: 70px; }
+
+.bar.bar-light {
+  background-color: white;
+  height: 70px;
+  box-shadow: 0px 3px 5px #888888;
+  border-bottom: 1px solid #c5c0c0; }
+
+.message-footer {
+  height: 54px !important; }
+
+.message-footer input {
+  height: 40px !important; }
