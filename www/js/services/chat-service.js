@@ -1,3 +1,5 @@
+(function () {
+
 appServices.factory('ChatService', function($q, $timeout,SubjectService, $rootScope, $ionicScrollDelegate, $firebaseObject, $firebaseArray, ConfigurationService, NotificationService,$http){
   var allmessages = [];
   var userDetails = ConfigurationService.UserDetails();
@@ -231,3 +233,4 @@ appServices.factory('ChatService', function($q, $timeout,SubjectService, $rootSc
     scrollBottom: scrollBottom
   }
 })
+})()

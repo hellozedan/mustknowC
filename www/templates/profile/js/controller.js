@@ -1,3 +1,5 @@
+
+(function () {
 // Controller of expense dashboard page.
 appControllers.controller('myProfileCtrl', function ($rootScope, $scope,$state,$stateParams,EntityService,SubjectService,ConfigurationService) {
   SubjectService.GetCategories()
@@ -81,3 +83,4 @@ appControllers.controller('profileSettingCtrl', function ($scope, $state,$ionicH
     }
   }; // End of navigateTo.
 }); // End of controller expense dashboard setting.
+})()

@@ -1,3 +1,4 @@
+(function () {
 appControllers.controller('messagesCtrl', function ($scope, $rootScope, $state, $stateParams, $timeout, $firebaseArray, ConfigurationService, MessagesService, UserService, EntityService) {
 
   $rootScope.isHeaderExpanded = true;
@@ -25,4 +26,5 @@ appControllers.controller('messagesCtrl', function ($scope, $rootScope, $state, 
 
   }
 });
+})()
 

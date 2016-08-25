@@ -1,3 +1,4 @@
+(function () {
 appServices.factory('NotificationService', function ($http, $log, $q, ConfigurationService) {
   return {
 
@@ -19,3 +20,4 @@ appServices.factory('NotificationService', function ($http, $log, $q, Configurat
     }
   }
 })
+})()
