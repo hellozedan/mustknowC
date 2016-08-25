@@ -158,4 +158,4 @@ appControllers.controller('OnlineUserCtrl', function ($scope,$firebaseObject, Co
   })
 
 })
-})()
+})();

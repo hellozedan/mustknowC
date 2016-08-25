@@ -66,4 +66,4 @@ appControllers.controller('profileSettingCtrl', function ($scope, $state,$ionicH
     }
   }; // End of navigateTo.
 }); // End of controller expense dashboard setting.
-})()
+})();
