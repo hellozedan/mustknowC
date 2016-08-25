@@ -2,26 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bb8ab7e0-9cdf-4d91-a267-840c8d61eb6f" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Loudly_node_modules.xml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/Loudly.iml" afterPath="$PROJECT_DIR$/.idea/Loudly.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gulpfile.js" afterPath="$PROJECT_DIR$/gulpfile.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/index.html" afterPath="$PROJECT_DIR$/www/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/app.js" afterPath="$PROJECT_DIR$/www/js/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/services/chat-service.js" afterPath="$PROJECT_DIR$/www/js/services/chat-service.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/services/configuration-service.js" afterPath="$PROJECT_DIR$/www/js/services/configuration-service.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/services/entity-sevice.js" afterPath="$PROJECT_DIR$/www/js/services/entity-sevice.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/services/firebase-service.js" afterPath="$PROJECT_DIR$/www/js/services/firebase-service.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/services/messages-service.js" afterPath="$PROJECT_DIR$/www/js/services/messages-service.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/services/notification-service.js" afterPath="$PROJECT_DIR$/www/js/services/notification-service.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/services/subject-service.js" afterPath="$PROJECT_DIR$/www/js/services/subject-service.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/services/user-service.js" afterPath="$PROJECT_DIR$/www/js/services/user-service.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/templates/chat/js/controller.js" afterPath="$PROJECT_DIR$/www/templates/chat/js/controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/templates/login/js/controller.js" afterPath="$PROJECT_DIR$/www/templates/login/js/controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/templates/messages/js/controller.js" afterPath="$PROJECT_DIR$/www/templates/messages/js/controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/templates/profile/js/controller.js" afterPath="$PROJECT_DIR$/www/templates/profile/js/controller.js" />
     </list>
     <ignored path="Loudly.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -44,21 +26,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="common.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/js/common.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="3" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="controllers.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/js/controllers.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
-              <caret line="0" column="20" selection-start-line="0" selection-start-column="20" selection-end-line="0" selection-end-column="62" />
+              <caret line="7" column="20" selection-start-line="0" selection-start-column="20" selection-end-line="0" selection-end-column="62" />
               <folding />
             </state>
           </provider>
@@ -74,11 +46,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="controller.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="controller.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/templates/chat/js/controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="41" selection-start-line="12" selection-start-column="41" selection-end-line="12" selection-end-column="41" />
+            <state relative-caret-position="289">
+              <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="subject-service.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/www/js/services/subject-service.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -87,8 +69,8 @@
       <file leaf-file-name="app.min.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/jsBuild/app.min.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="12" selection-start-line="0" selection-start-column="12" selection-end-line="0" selection-end-column="12" />
+            <state relative-caret-position="-119">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -175,7 +157,6 @@
         <option value="$PROJECT_DIR$/www/templates/blockedUsers/js/controller.js" />
         <option value="$PROJECT_DIR$/www/index.html" />
         <option value="$PROJECT_DIR$/www/js/app.js" />
-        <option value="$PROJECT_DIR$/www/js/services/subject-service.js" />
         <option value="$PROJECT_DIR$/gulpfile.js" />
         <option value="$PROJECT_DIR$/www/js/services/firebase-service.js" />
         <option value="$PROJECT_DIR$/www/js/services/messages-service.js" />
@@ -191,6 +172,7 @@
         <option value="$PROJECT_DIR$/www/jsBuild/app.min.js" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/www/templates/chat/js/controller.js" />
+        <option value="$PROJECT_DIR$/www/js/services/subject-service.js" />
       </list>
     </option>
   </component>
@@ -957,7 +939,7 @@
       <workItem from="1471284343888" duration="20557000" />
       <workItem from="1471464672746" duration="1040000" />
       <workItem from="1472067292966" duration="3058000" />
-      <workItem from="1472154060283" duration="8719000" />
+      <workItem from="1472154060283" duration="8855000" />
     </task>
     <task id="LOCAL-00001" summary="gulp uglify">
       <created>1472158443513</created>
@@ -966,11 +948,18 @@
       <option name="project" value="LOCAL" />
       <updated>1472158443513</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="gulp jsF">
+      <created>1472164278163</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1472164278163</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33374000" />
+    <option name="totallyTimeSpent" value="33510000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -983,16 +972,16 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30877978" sideWeight="0.36125654" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30877978" sideWeight="0.63874346" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30877978" sideWeight="0.35903084" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30877978" sideWeight="0.64096916" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991454" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991454" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32820514" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22393163" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34700856" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22393163" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34700856" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34188035" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -1056,7 +1045,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="gulp uglify" />
-    <option name="LAST_COMMIT_MESSAGE" value="gulp uglify" />
+    <MESSAGE value="gulp jsF" />
+    <option name="LAST_COMMIT_MESSAGE" value="gulp jsF" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1343,14 +1333,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/js/services/subject-service.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2658">
-          <caret line="11" column="9" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/www/js/services/user-service.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="331">
@@ -1378,7 +1360,7 @@
     <entry file="file://$PROJECT_DIR$/www/js/controllers.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="20" selection-start-line="0" selection-start-column="20" selection-end-line="0" selection-end-column="62" />
+          <caret line="7" column="20" selection-start-line="0" selection-start-column="20" selection-end-line="0" selection-end-column="62" />
           <folding />
         </state>
       </provider>
@@ -1425,8 +1407,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/www/jsBuild/app.min.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="12" selection-start-line="0" selection-start-column="12" selection-end-line="0" selection-end-column="12" />
+        <state relative-caret-position="-119">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1441,8 +1423,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/www/templates/chat/js/controller.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="41" selection-start-line="12" selection-start-column="41" selection-end-line="12" selection-end-column="41" />
+        <state relative-caret-position="289">
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/js/services/subject-service.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
           <folding />
         </state>
       </provider>
