@@ -10318,6 +10318,7 @@ textarea, input::-webkit-input-placeholder {
 
 .profile-details img {
   height: 100px;
+  width: 100px;
   border-radius: 50px;
   top: 26%; }
 
@@ -10328,6 +10329,7 @@ textarea, input::-webkit-input-placeholder {
   position: relative; }
 
 .profile-details h2 {
+  margin-top: 10px !important;
   font-size: 18px;
   color: white;
   font-weight: bold; }

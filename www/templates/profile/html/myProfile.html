@@ -35,7 +35,7 @@
 
     <ion-list>
       <ion-item ui-sref="tab.addSubject-s2" class="item-avatar item-icon-right" ng-repeat="subject in subjects">
-        <img ng-src="{{category.image_url}}">
+        <img ng-src="{{subject.category.image_url}}">
         <h2>{{subject.title}}</h2>
         <p>{{subject.description}}</p>
       </ion-item>

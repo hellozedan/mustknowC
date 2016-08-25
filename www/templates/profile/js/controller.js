@@ -2,12 +2,7 @@
 (function () {
 // Controller of expense dashboard page.
 appControllers.controller('myProfileCtrl', function ($rootScope, $scope,$state,$stateParams,EntityService,SubjectService,ConfigurationService) {
-  SubjectService.GetCategories()
-    .then(function (categories) {}, function (err) {
-    });
-  $scope.isExpanded = true;
-  $rootScope.isHeaderExpanded = false;
-  $scope.isAnimated =  $stateParams.isAnimated;
+
   $scope.userProfile = ConfigurationService.UserDetails();// angular.fromJson(window.localStorage['user']);
   $scope.subjects = [];
   $scope.deleteSubject = function (subject) {
@@ -18,24 +13,12 @@ appControllers.controller('myProfileCtrl', function ($rootScope, $scope,$state,$
       }, function (err) {
       });
   }
-  $scope.goToAddSubject=function(){
-    $state.go('app.addSubject');
-  }
-  $scope.displayDelete = true;
+
   SubjectService.GetMySubjects($scope.userProfile._id)
     .then(function (subjects) {
       $scope.subjects = subjects;
     }, function (err) {
     });
-  // doSomeThing is for do something when user click on a button
-  $scope.doSomeThing = function () {
-    // You can put any function here.
-  } // End doSomeThing.
-
-
-  $scope.goToSetting = function () {
-    $state.go("app.expenseSetting");
-  };
 
 });
 

@@ -537,12 +537,13 @@ textarea, input::-webkit-input-placeholder {
   height: 40%;
   padding: 0px;
   background-image: url("../img/profilebg.png") !important;
-  background-size: 100% 100%;   
+  background-size: 100% 100%;
   background-repeat: repeat-x;
   background-position: 0px 6px;
 }
 .profile-details img{
   height: 100px;
+  width: 100px;;
   border-radius: 50px;
   top: 26%;
 }
@@ -553,6 +554,7 @@ textarea, input::-webkit-input-placeholder {
   position: relative;
 }
 .profile-details h2{
+  margin-top: 10px !important;
   font-size: 18px;
   color: white;
   font-weight: bold;
