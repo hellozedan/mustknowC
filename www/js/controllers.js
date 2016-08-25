@@ -16,3 +16,10 @@ appControllers.controller('tabsCtrl', function ($scope) {
 
   }
 });
+appControllers.controller('AppCtrl', function ($scope, $ionicHistory) {
+
+  $scope.goBack = function(){
+    $ionicHistory.goBack();
+  }
+});
+
