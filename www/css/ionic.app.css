@@ -10347,3 +10347,11 @@ textarea, input::-webkit-input-placeholder {
 
 .profile-page .button-border a .count {
   height: 16px; }
+
+.modal-open .modal, .modal-open .modal-backdrop {
+  height: 80% !important; }
+
+.custome-modal {
+  width: 90% !important;
+  left: 5% !important;
+  top: 16% !important; }

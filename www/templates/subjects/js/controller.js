@@ -1,5 +1,5 @@
 (function () {
-  appControllers.controller('subjectsCtrl', function ($scope, $ionicPlatform, $rootScope, $state, $interval, $stateParams, $timeout, SubjectService, EntityService, UserService, MessagesService, ConfigurationService) {
+  appControllers.controller('subjectsCtrl', function ($scope, $ionicModal, $ionicPlatform, $rootScope, $state, $interval, $stateParams, $timeout, SubjectService, EntityService, UserService, MessagesService, ConfigurationService) {
     $scope.isExpanded = true;
     $rootScope.isHeaderExpanded = false;
     $scope.subjects = [];
@@ -67,7 +67,7 @@
       $state.go('userProfile', {userId: subject.user._id, first_name: subject.user.first_name})
     }
     $scope.goToFilter = function () {
-      $state.go('filter');
+      $scope.modal.show();
     }
     $scope.goToMessages = function () {
       $state.go('tab.messages');
@@ -75,6 +75,13 @@
     $scope.goToAddSubject = function () {
       $state.go('addSubject');
     }
+
+    $ionicModal.fromTemplateUrl('templates/subjects/html/filter.html', {
+      scope: $scope,
+      animation: 'slide-in-up'
+    }).then(function(modal) {
+      $scope.modal = modal;
+    });
 
   })
   appControllers.controller('addSubjectCtrl', function ($scope, $state, SubjectService, $stateParams, $filter, $ionicHistory, ConfigurationService) {
