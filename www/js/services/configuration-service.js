@@ -1,8 +1,8 @@
 appServices.factory('ConfigurationService', function ($ionicPopup) {
   return {
     ServerUrl: function () {
-        return "https://chatad.herokuapp.com";
-      //return "http://192.168.1.14:3000";
+        //return "https://chatad.herokuapp.com";
+      return "http://localhost:3000";
       //return "http://192.168.1.21:3000";
     },
     UserDetails: function () {

@@ -12,48 +12,34 @@
 
 
   <ion-content class="profile-page">
+    <div class="button-bar button-border">
+      <a class="button">
+        <div class="count">
+          <span>12</span>
+        </div>
+        <span>Open</span>
+      </a>
+      <a class="button">
+        <div class="count">
+          <span>12</span>
+        </div>
+        <span>Closed</span>
+      </a>
+      <a class="button">
+        <div class="count">
+          <span>12</span>
+        </div>
+        <span>Blocked</span>
+      </a>
+    </div>
+
     <ion-list>
       <ion-item ui-sref="tab.addSubject-s2" class="item-avatar item-icon-right" ng-repeat="subject in subjects">
         <img ng-src="{{category.image_url}}">
         <h2>{{subject.title}}</h2>
+        <p>{{subject.description}}</p>
       </ion-item>
     </ion-list>
-    <div ng-if="false" class="list-expense-menu">
-      <div class="list-expense-menu-item" ng-repeat="subject in subjects"  ng-click="doSomeThing()">
-        <div class="row">
-          <div class="col-10">
-            <i class="fa fa-money"></i>
-          </div>
-          <div class="col-70 menu">
-            <p class="header">{{subject.title}}</p>
 
-            <p class="detail">{{subject.description}}</p>
-          </div>
-          <div class="col-20">
-            <i  ng-click="deleteSubject(subject)" class="icon ion-android-cancel muted"></i>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-    <!--Below code it will show animation when selecting row.-->
-    <md-list ng-if="true">
-      <div ng-repeat="subject in subjects">
-        <md-list-item class="row" ng-click="doSomeThing()">
-          <div class="col-20 icon">
-            <i class="fa fa-inbox"></i>
-          </div>
-          <div class="col80 menu">
-            <p class="header">{{subject.title}}</p>
-
-            <p class="detail">{{subject.description}}</p>
-            <i  ng-click="deleteSubject(subject) " class="icon ion-android-cancel muted deleteMyProfile"></i>
-          </div>
-        </md-list-item>
-        <md-divider></md-divider>
-      </div>
-
-    </md-list>
-  </ion-content><!--end expense content section-->
+  </ion-content>
 </ion-view>

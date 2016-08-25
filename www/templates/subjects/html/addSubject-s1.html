@@ -1,13 +1,12 @@
 <ion-view>
-
-  <ion-content >
+  <ion-content>
     <div class="content">
       <ion-list>
         <ion-item class="add-subject-header">
           <span>You are talking about...</span>
           <span class="add-subject-step">1/2</span>
         </ion-item>
-        <ion-item ui-sref="tab.addSubject-s2" class="item-avatar item-icon-right" ng-repeat="category in categories">
+        <ion-item ng-click="createSubjectSetp(category)" class="item-avatar item-icon-right" ng-repeat="category in categories">
           <img ng-src="{{category.image_url}}">
           <h2>{{category.name}}</h2>
           <i ng-click="goToChat(message)" class="icon ion-chevron-right"></i>

@@ -75,11 +75,10 @@ appControllers.controller('subjectsCtrl', function ($scope, $ionicPlatform, $roo
   }
 
 })
-appControllers.controller('addSubjectCtrl', function ($scope, $state, SubjectService, $stateParams, $filter, $mdBottomSheet, $mdDialog, $mdToast, $ionicHistory,ConfigurationService) {
+appControllers.controller('addSubjectCtrl', function ($scope, $state, SubjectService, $stateParams, $filter, $ionicHistory,ConfigurationService) {
   $scope.isExpanded=true;
   $scope.failed = false;
-  // initialForm is the first activity in the controller.
-  // It will initial all variable data and let the function works when page load.
+
   $scope.subject = {};
   $scope.categories = [];
 
@@ -88,33 +87,25 @@ appControllers.controller('addSubjectCtrl', function ($scope, $state, SubjectSer
     $scope.subject = {
       title: '',
       user: ConfigurationService.UserDetails()._id,
-      description: '',
-      categories:[]
+      description: ''
     }
-    SubjectService.GetAddSubjectCategories()
+    SubjectService.GetCategories()
       .then(function (categories) {
         $scope.categories = categories;
       }, function (err) {
       });
 
-    $scope.actionDelete = $stateParams.actionDelete;
-
-
-  };// End initialForm.
-
+  };
+  $scope.createSubjectSetp = function(category){
+    $state.go('tab.addSubject-s2',{categoryId: category._id})
+  }
   $scope.createSubject = function () {
     if($scope.subject.title.length <= 0 || $scope.subject.description.length <= 0){
       $scope.failed = true;
       return;
     }
+    $scope.subject.category = $state.params.categoryId;
 
-
-    $scope.subject.categories=[];
-    for (var i = 0; i < $scope.categories.length; i++) {
-      if ($scope.categories[i].is_selected) {
-        $scope.subject.categories.push($scope.categories[i]._id);
-      }
-    }
     SubjectService.CreateSubject($scope.subject)
       .then(function () {
         $state.go("app.subjects");
@@ -125,8 +116,8 @@ appControllers.controller('addSubjectCtrl', function ($scope, $state, SubjectSer
 
 
   $scope.initialForm();
-});// End of Notes Detail Page  Controller.
-appControllers.controller('filterCtrl', function ($scope,$state, $stateParams, $filter, $mdBottomSheet, $mdDialog, $mdToast, $ionicHistory,SubjectService,ConfigurationService) {
+});
+appControllers.controller('filterCtrl', function ($scope,$state, $stateParams, $filter, $mdBottomSheet, $ionicHistory,SubjectService,ConfigurationService) {
 
   $scope.saveFilter = function () {
     $scope.myFilter.categories=[];

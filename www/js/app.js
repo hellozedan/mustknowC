@@ -118,7 +118,7 @@
           }
         })
         .state('tab.addSubject-s2', {
-          url: "/addSubject-s2",
+          url: "/addSubject-s2/:categoryId",
           views: {
             'tab-addSubject': {
               templateUrl: "templates/subjects/html/addSubject-s2.html",
