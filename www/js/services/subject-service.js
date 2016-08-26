@@ -4,22 +4,27 @@
       TimeToUpdateFromServer:1000*60*15,
       GetCategories: function () {
         var deferred = $q.defer();
-        debugger
-        $http.get(ConfigurationService.ServerUrl() + '/api/subjects/categories', {
-          headers: {
-            "access-token": ConfigurationService.UserDetails().token
-          }
-        }).success(function (data) {
-          ConfigurationService.categories = {
-            data: data,
-            datetime: new Date()
-          }
-          deferred.resolve(data);
-        }).error(function (msg, code) {
-          deferred.reject(msg);
-        });
+        if((!ConfigurationService.categories)||(ConfigurationService.categories.datetime&&((new Date()).getTime()-ConfigurationService.categories.datetime.getTime())>this.TimeToUpdateFromServer)) {
+          $http.get(ConfigurationService.ServerUrl() + '/api/subjects/categories', {
+            headers: {
+              "access-token": ConfigurationService.UserDetails().token
+            }
+          }).success(function (data) {
+            ConfigurationService.categories = {
+              data: data,
+              datetime: new Date()
+            }
+            deferred.resolve(data);
+          }).error(function (msg, code) {
+            deferred.reject(msg);
+            //   $log.error(msg, code);
+          });
+        }
+        else
+        {
+          deferred.resolve(ConfigurationService.categories.data);
 
-
+        }
         return deferred.promise;
       },
       GetAddSubjectCategories: function () {

@@ -3,7 +3,7 @@
     $scope.isExpanded = true;
     $rootScope.isHeaderExpanded = false;
     $scope.subjects = [];
-    SubjectService.GetCategories()
+    SubjectService.GetAddSubjectCategories()
       .then(function (categories) {
       }, function (err) {
       });
@@ -27,7 +27,7 @@
     }
     $scope.doRefresh = function () {
       $scope.$broadcast('scroll.refreshComplete');
-      SubjectService.GetSubjects(false)
+      SubjectService.GetAddSubjectCategories(false)
         .then(function (subjects) {
           $scope.subjects = subjects;
         }, function (err) {
@@ -90,7 +90,7 @@
 
     $scope.subject = {};
     $scope.categories = [];
-
+    $scope.categoriesUrl = ConfigurationService.CategoriesUrl();
     $scope.initialForm = function () {
 
       $scope.subject = {
@@ -98,7 +98,7 @@
         user: ConfigurationService.UserDetails()._id,
         description: ''
       }
-      SubjectService.GetCategories()
+      SubjectService.GetAddSubjectCategories()
         .then(function (categories) {
           $scope.categories = categories;
         }, function (err) {
@@ -125,8 +125,8 @@
 
     $scope.initialForm();
   });
-  appControllers.controller('filterCtrl', function ($scope, $state, $stateParams, $filter, $mdBottomSheet, $ionicHistory, SubjectService, ConfigurationService) {
-
+  appControllers.controller('filterCtrl', function ($scope, $state, $stateParams, $ionicHistory, SubjectService, ConfigurationService) {
+    $scope.categoriesUrl = ConfigurationService.CategoriesUrl();
     $scope.saveFilter = function () {
       $scope.myFilter.categories = [];
       angular.forEach($scope.categories, function (value, key) {

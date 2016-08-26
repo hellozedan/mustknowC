@@ -6,8 +6,11 @@
         return "http://localhost:3000";
         //return "http://192.168.1.21:3000";
       },
-      UserDetails: function () {
 
+      CategoriesUrl: function (){
+        return "http://localhost:3000/categories/";
+      },
+      UserDetails: function () {
         if (!this.userDetails) {
           if (window.localStorage['user']) {
             this.userDetails = angular.fromJson(window.localStorage['user']);
@@ -50,7 +53,6 @@
           title: 'info',
           template: 'wiat for the other user to answer you'
         });
-
         alertPopup.then(function(res) {
           console.log('Thank you for not eating my delicious ice cream cone');
         });

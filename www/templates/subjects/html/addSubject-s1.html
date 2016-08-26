@@ -6,8 +6,8 @@
           <span>You are talking about...</span>
           <span class="add-subject-step">1/2</span>
         </ion-item>
-        <ion-item ng-click="createSubjectSetp(category)" class="item-avatar item-icon-right" ng-repeat="category in categories">
-          <img ng-src="{{category.image_url}}">
+        <ion-item ng-click="createSubjectSetp(category)" class="item-thumbnail-left item-icon-right categories-list" ng-repeat="category in categories">
+          <img ng-src="{{categoriesUrl}}{{category._id}}.png">
           <h2>{{category.name}}</h2>
           <i ng-click="goToChat(message)" class="icon ion-chevron-right"></i>
         </ion-item>

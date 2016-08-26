@@ -1,9 +1,16 @@
 <ion-modal-view class="custome-modal">
   <ion-header-bar>
-    <h1 class="title">My Modal title</h1>
+    <span class="title filter-title">Filter</span>
   </ion-header-bar>
-  <ion-content>
+  <ion-content ng-controller="filterCtrl">
     Hello!
+    <div class="container">
+      <ul>
+        <li ng-repeat="category in categories">
+          <img ng-src="{{categoriesUrl}}{{category._id}}.png">
+        </li>
 
+      </ul>
+    </div>
   </ion-content>
 </ion-modal-view>
