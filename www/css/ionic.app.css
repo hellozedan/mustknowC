@@ -10425,3 +10425,6 @@ textarea, input::-webkit-input-placeholder {
 
 .filter-unclicked-button {
   background-color: #e3e4e3; }
+
+button:active {
+  background: #787878; }

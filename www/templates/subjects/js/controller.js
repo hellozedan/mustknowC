@@ -3,7 +3,7 @@
     $scope.isExpanded = true;
     $rootScope.isHeaderExpanded = false;
     $scope.subjects = [];
-    SubjectService.GetAddSubjectCategories()
+    SubjectService.GetCategories()
       .then(function (categories) {
       }, function (err) {
       });
@@ -27,13 +27,13 @@
     }
     $scope.doRefresh = function () {
       $scope.$broadcast('scroll.refreshComplete');
-      SubjectService.GetAddSubjectCategories(false)
+      SubjectService.GetSubjects(false)
         .then(function (subjects) {
           $scope.subjects = subjects;
         }, function (err) {
         });
     }
-    //var stopTime = $interval($scope.doRefresh, 10000);
+    var stopTime = $interval($scope.doRefresh, 10000);
     $scope.$on("$destroy", function () {
       if (stopTime) {
         $interval.cancel(stopTime);
@@ -139,6 +139,9 @@
       //$state.go('app.subjects', {}, {reload: true});
       //$state.go('app.subjects');
 
+    }
+    $scope.setGender =function(gender){
+      $scope.myFilter.gender = gender;
     }
     // initialForm is the first activity in the controller.
     // It will initial all variable data and let the function works when page load.

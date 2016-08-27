@@ -15,13 +15,13 @@
       </ion-item>
       <ion-item>
         <div class="button-bar">
-          <button class="button gender-button">
+          <button class="button gender-button" ng-click="setGender('female')" ng-class="{'filter-clicked-button': myFilter.gender=='female', 'filter-unclicked-button': myFilter.gender!='female'}">
             Female
           </button>
-          <button class="button gender-button center" ng-class="{'filter-clicked-button': myFilter.gender=='both', 'filter-unclicked-button': myFilter.gender!='both'}">
+          <button class="button gender-button center" ng-click="setGender('both')" ng-class="{'filter-clicked-button': myFilter.gender=='both', 'filter-unclicked-button': myFilter.gender!='both'}">
             Both
           </button>
-          <button class="button gender-button">
+          <button class="button gender-button" ng-click="setGender('male')" ng-class="{'filter-clicked-button': myFilter.gender=='male', 'filter-unclicked-button': myFilter.gender!='male'}">
             Male
           </button>
         </div>
