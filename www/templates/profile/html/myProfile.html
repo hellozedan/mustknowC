@@ -34,11 +34,12 @@
     </div>
 
     <ion-list>
-      <ion-item ui-sref="tab.addSubject-s2" class="item-avatar item-icon-right" ng-repeat="subject in subjects">
-        <img ng-src="{{subject.category.image_url}}">
-        <h2>{{subject.title}}</h2>
-        <p>{{subject.description}}</p>
+      <ion-item ng-click="createSubjectSetp(category)" class="item-thumbnail-left item-icon-right categories-list" ng-repeat="subject in subjects">
+        <img ng-src="{{categoriesUrl}}{{subject.category._id}}.png">
+        <h2>{{subject.title}}</h2><h2>{{category.name}}</h2>
+        <i ng-click="goToChat(message)" class="icon ion-chevron-right"></i>
       </ion-item>
+
     </ion-list>
 
   </ion-content>

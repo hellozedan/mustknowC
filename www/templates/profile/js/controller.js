@@ -4,6 +4,7 @@
 appControllers.controller('myProfileCtrl', function ($rootScope, $scope,$state,$stateParams,EntityService,SubjectService,ConfigurationService) {
 
   $scope.userProfile = ConfigurationService.UserDetails();// angular.fromJson(window.localStorage['user']);
+  $scope.categoriesUrl = ConfigurationService.CategoriesUrl();
   $scope.subjects = [];
   $scope.deleteSubject = function (subject) {
     EntityService.deleteFromArray($scope.subjects, subject)
