@@ -27,31 +27,6 @@
         }
         return deferred.promise;
       },
-      GetAddSubjectCategories: function () {
-        var deferred = $q.defer();
-        if((!ConfigurationService.scategories)||(ConfigurationService.scategories.datetime&&((new Date()).getTime()-ConfigurationService.scategories.datetime.getTime())>this.TimeToUpdateFromServer)) {
-          $http.get(ConfigurationService.ServerUrl() + '/api/subjects/categories', {
-            headers: {
-              "access-token": ConfigurationService.UserDetails().token
-            }
-          }).success(function (data) {
-            ConfigurationService.scategories = {
-              data: data,
-              datetime: new Date()
-            }
-            deferred.resolve(data);
-          }).error(function (msg, code) {
-            deferred.reject(msg);
-            //   $log.error(msg, code);
-          });
-        }
-        else
-        {
-          deferred.resolve(ConfigurationService.scategories.data);
-
-        }
-        return deferred.promise;
-      },
       GetSubjects: function (userSubjects, userId) {
         var deferred = $q.defer();
         if (userId == undefined) {

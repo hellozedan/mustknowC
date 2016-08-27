@@ -10374,9 +10374,12 @@ textarea, input::-webkit-input-placeholder {
   max-width: 70px !important;
   max-height: 70px !important; }
 
+.container {
+  height: 100%; }
+
 .container ul li {
   width: 33%;
-  height: 20%;
+  height: 100px;
   float: left;
   padding: 10px; }
 
@@ -10421,10 +10424,35 @@ textarea, input::-webkit-input-placeholder {
   border-color: #787878; }
 
 .filter-clicked-button {
+  color: white !important;
   background-color: #787878; }
 
 .filter-unclicked-button {
+  color: black !important;
   background-color: #e3e4e3; }
 
 button:active {
   background: #787878; }
+
+.category-details {
+  position: relative;
+  bottom: 66px;
+  left: 0px;
+  color: white;
+  text-align: center;
+  padding: 5px; }
+
+.category-details i {
+  font-size: 34px; }
+
+.category-details p {
+  font-size: 10px;
+  font-weight: bolder;
+  background-color: #2f2c2c;
+  opacity: 0.7; }
+
+.category-not-selected {
+  color: transparent; }
+
+.category-selected {
+  color: white; }

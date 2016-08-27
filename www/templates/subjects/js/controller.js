@@ -83,6 +83,32 @@
       $scope.modal = modal;
     });
 
+    $scope.$on('$destroy', function() {
+      $scope.modal.remove();
+      console.log("$destroy")
+    });
+    // Execute action on hide modal
+    $scope.$on('modal.hidden', function() {
+      console.log("modal hiden");
+      $rootScope.myFilter.categories = [];
+      SubjectService.GetCategories()
+        .then(function (categories) {
+          $scope.categories = categories;
+          angular.forEach($scope.categories, function (value, key) {
+            if (value.is_selected) {
+              $rootScope.myFilter.categories.push(value._id)
+            }
+          });
+          ConfigurationService.SetMyFilter($rootScope.myFilter);
+          $scope.doRefresh();
+        }, function (err) {
+        });
+
+    });
+    // Execute action on remove modal
+    $scope.$on('modal.removed', function() {
+      console.log("removed");
+    });
   })
   appControllers.controller('addSubjectCtrl', function ($scope, $state, SubjectService, $stateParams, $filter, $ionicHistory, ConfigurationService) {
     $scope.isExpanded = true;
@@ -98,7 +124,7 @@
         user: ConfigurationService.UserDetails()._id,
         description: ''
       }
-      SubjectService.GetAddSubjectCategories()
+      SubjectService.GetCategories()
         .then(function (categories) {
           $scope.categories = categories;
         }, function (err) {
@@ -125,46 +151,39 @@
 
     $scope.initialForm();
   });
-  appControllers.controller('filterCtrl', function ($scope, $state, $stateParams, $ionicHistory, SubjectService, ConfigurationService) {
+  appControllers.controller('filterCtrl', function ($scope, $rootScope, $state, $stateParams, $ionicHistory, SubjectService, ConfigurationService) {
     $scope.categoriesUrl = ConfigurationService.CategoriesUrl();
-    $scope.saveFilter = function () {
-      $scope.myFilter.categories = [];
-      angular.forEach($scope.categories, function (value, key) {
-        if (value.is_selected) {
-          $scope.myFilter.categories.push(value._id)
-        }
-      });
-      ConfigurationService.SetMyFilter($scope.myFilter);
-      $state.go('app.subjects');
-      //$state.go('app.subjects', {}, {reload: true});
-      //$state.go('app.subjects');
 
-    }
     $scope.setGender =function(gender){
-      $scope.myFilter.gender = gender;
+      $rootScope.myFilter.gender = gender;
     }
-    // initialForm is the first activity in the controller.
-    // It will initial all variable data and let the function works when page load.
+
+    $scope.selectCategory = function (categoryIndex) {
+      if($scope.categories[categoryIndex].is_selected)
+        $scope.categories[categoryIndex].is_selected = false;
+      else
+        $scope.categories[categoryIndex].is_selected = true;
+    }
     $scope.initialForm = function () {
       SubjectService.GetCategories()
         .then(function (categories) {
           $scope.categories = categories;
           for (var i = 0; i < $scope.categories.length; i++) {
-            if ($scope.myFilter.categories.indexOf($scope.categories[i]._id) !== -1) {
+            if ($rootScope.myFilter.categories.indexOf($scope.categories[i]._id) !== -1) {
               $scope.categories[i].is_selected = true;
             }
           }
         }, function (err) {
         });
 
-      $scope.myFilter = ConfigurationService.MyFilter();
-      if (!$scope.myFilter.gender) {
-        $scope.myFilter = {
+      $rootScope.myFilter = ConfigurationService.MyFilter();
+      if (!$rootScope.myFilter.gender) {
+        $rootScope.myFilter = {
           nearMe: false,
           gender: 'both',
           categories: []
         }
-        ConfigurationService.SetMyFilter($scope.myFilter);
+        ConfigurationService.SetMyFilter($rootScope.myFilter);
       }
 
     };// End initialForm.

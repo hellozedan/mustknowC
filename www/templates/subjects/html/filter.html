@@ -7,7 +7,7 @@
       <ion-item class="item-toggle">
         Near Me
         <label class="toggle toggle-assertive">
-          <input type="checkbox">
+          <input type="checkbox" ng-model="myFilter.nearMe">
           <div class="track">
             <div class="handle"></div>
           </div>
@@ -29,8 +29,12 @@
 
       <div class="container">
         <ul>
-          <li ng-repeat="category in categories">
+          <li ng-click="selectCategory($index)" ng-repeat="category in categories">
             <img ng-src="{{categoriesUrl}}{{category._id}}.png">
+           <div class="category-details">
+             <i ng-class="{'category-not-selected': !category.is_selected, 'category-selected': category.is_selected}"  class="icon ion-checkmark-round"></i>
+             <p>{{category.name}}</p>
+           </div>
           </li>
 
         </ul>
