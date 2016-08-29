@@ -2,7 +2,7 @@
   <ion-content class="padding gray-bg">
     <ion-refresher
       pulling-text="Pull to refresh..."
-      on-refresh="doRefresh()">
+      on-refresh="loadNewrSubjects()">
     </ion-refresher>
     <ion-list class="subject-list">
 
@@ -23,6 +23,10 @@
       </ion-item>
     </ion-list>
 
+    <ion-infinite-scroll
+      on-infinite="loadOlderSubjects()"
+      distance="1%">
+    </ion-infinite-scroll>
 
   </ion-content>
   <div style="height: 55px;" class="bar bar-footer filter-fotter">

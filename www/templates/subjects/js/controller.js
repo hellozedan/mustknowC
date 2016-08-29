@@ -1,7 +1,49 @@
 (function () {
   appControllers.controller('subjectsCtrl', function ($scope, $ionicModal, $ionicPlatform, $rootScope, $state, $interval, $stateParams, $timeout, SubjectService, EntityService, UserService, MessagesService, ConfigurationService) {
-    $scope.isExpanded = true;
-    $rootScope.isHeaderExpanded = false;
+    $scope.show = function(){
+      var a = document.getElementById('dropdown-content');
+      a.style.display = 'block';
+
+    }
+    $scope.scrollOptions = {
+      skip: 0,
+      limit: 20
+    }
+    function loadSubjects(callback){
+      SubjectService.GetSubjects(false, $scope.scrollOptions)
+        .then(function (subjects) {
+          var s = [];
+          angular.forEach(subjects.subjects, function(subject){
+           s.push(subject);
+          })
+          $scope.subjectsCount = subjects.count;
+          callback(s);
+
+
+        }, function (err) {
+        });
+    }
+    $scope.loadOlderSubjects = function(){
+      if($scope.subjects.length>0){
+        $scope.scrollOptions.skip = $scope.subjects.length;
+        $scope.scrollOptions.limit = 20;
+      }
+      loadSubjects(function(subjects){
+        $scope.subjects = $scope.subjects.concat(subjects);
+        $scope.$broadcast('scroll.infiniteScrollComplete');
+      })
+    }
+    $scope.loadNewrSubjects = function(){
+      $scope.scrollOptions = {
+        skip: 0,
+        limit: 20
+      }
+      $scope.subjects= [];
+      loadSubjects(function(subjects){
+        $scope.subjects = $scope.subjects.concat(subjects);
+        $scope.$broadcast('scroll.refreshComplete');
+      })
+    }
     $scope.subjects = [];
     SubjectService.GetCategories()
       .then(function (categories) {
@@ -27,19 +69,23 @@
     }
     $scope.doRefresh = function () {
       $scope.$broadcast('scroll.refreshComplete');
-      SubjectService.GetSubjects(false)
+      SubjectService.GetSubjects(false, $scope.scrollOptions)
         .then(function (subjects) {
-          $scope.subjects = subjects;
+          angular.forEach(subjects.subjects, function(subject){
+            $scope.subjects.push(subject);
+          })
+          $scope.$broadcast('scroll.infiniteScrollComplete');
+          $scope.subjectsCount = subjects.count;
         }, function (err) {
         });
     }
-    var stopTime = $interval($scope.doRefresh, 10000);
+    //var stopTime = $interval($scope.doRefresh, 10000);
     $scope.$on("$destroy", function () {
       if (stopTime) {
         $interval.cancel(stopTime);
       }
     });
-    $scope.doRefresh();
+    //$scope.doRefresh();
 
 
     $scope.goToChat = function (subject) {

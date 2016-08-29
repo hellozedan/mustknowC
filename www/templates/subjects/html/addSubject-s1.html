@@ -1,11 +1,16 @@
 <ion-view>
-  <ion-content>
+  <div class="bar bar-header bar-calm">
+
+    <ion-item class="add-subject-header">
+      <i style="opacity: 0" ui-sref="tab.addSubject-s1" class="icon ion-arrow-left-c"></i>
+      <span class="add-subject-header-span">You are talking about...</span>
+      <span class="add-subject-step">1/2</span>
+    </ion-item>
+  </div>
+  <ion-content class="add-subject-s1-page">
     <div class="content">
       <ion-list>
-        <ion-item class="add-subject-header">
-          <span>You are talking about...</span>
-          <span class="add-subject-step">1/2</span>
-        </ion-item>
+
         <ion-item ng-click="createSubjectSetp(category)" class="item-thumbnail-left item-icon-right categories-list" ng-repeat="category in categories">
           <img ng-src="{{categoriesUrl}}{{category._id}}.png">
           <h2>{{category.name}}</h2>

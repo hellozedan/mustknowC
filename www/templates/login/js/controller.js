@@ -4,7 +4,7 @@
       console.log("fblogin")
       if (window.cordova) {
         UserService.FBlogin().then(function success(s) {
-
+          alert("1");
           window.localStorage['fbData'] = angular.toJson(s.authResponse);
           var fbData = s.authResponse;
 
@@ -13,6 +13,7 @@
           }
           UserService.CreateUser(user)
             .then(function (user) {
+              alert("1");
               console.log("create")
               window.localStorage['user'] = angular.toJson(user);
               var ref = new Firebase("https://chatoi.firebaseio.com");
@@ -24,7 +25,7 @@
                 } else {
                   console.log("subjects")
 
-                  $state.go("app.subjects");
+                  $state.go("tab.subjects");
                 }
               });
               $state.go("tab.subjects");

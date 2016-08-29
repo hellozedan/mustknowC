@@ -27,13 +27,14 @@
         }
         return deferred.promise;
       },
-      GetSubjects: function (userSubjects, userId) {
+      GetSubjects: function (userSubjects,scrollOptions, userId) {
         var deferred = $q.defer();
         if (userId == undefined) {
           userId = null;
         }
         var myFilter = ConfigurationService.MyFilter();
-
+        myFilter.limit = scrollOptions.limit;
+        myFilter.skip = scrollOptions.skip;
         if (!myFilter.gender) {
           myFilter = {
             nearMe: false,

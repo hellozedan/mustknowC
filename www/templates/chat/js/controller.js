@@ -1,6 +1,6 @@
 
 (function () {
-  appControllers.controller('chatCtrl', function ($scope, $timeout,$ionicScrollDelegate, $rootScope, $state,$ionicPopup, ConfigurationService, ChatService, UserService, EntityService) {
+  appControllers.controller('chatCtrl', function ($scope, $ionicPopover, $timeout,$ionicScrollDelegate, $rootScope, $state,$ionicPopup, ConfigurationService, ChatService, UserService, EntityService) {
   var date = new Date();
   $scope.dateString = date.toLocaleDateString();
   $scope.isExpanded = true;
@@ -131,6 +131,13 @@
 
     $scope.data.message = "";
   }
+    $ionicPopover.fromTemplateUrl('templates/shared/drop-down-menu.html', {
+      scope: $scope,
+    }).then(function(popover) {
+      $scope.popover = popover;
+    });
+
+
 })
 appControllers.controller('OnlineUserCtrl', function ($scope,$firebaseObject, ConfigurationService, EntityService) {
   var userDetails = ConfigurationService.UserDetails();

@@ -464,6 +464,9 @@ a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, bo
 }
 .add-subject-header-span{
   padding: 10px;
+  line-height: 6px;
+  position: absolute;
+  left: 45px;
 }
 .add-subject{
 
@@ -493,7 +496,8 @@ textarea, input::-webkit-input-placeholder {
 }
 .add-subject-step{
   position: absolute;
-  right: 10px;
+  right: 20px;
+  top: 20px;
 }
 .create-subject-btn-grey{
   background-image: url('../img/create-subject-grey.png');
@@ -688,4 +692,25 @@ button:active{
 }
 .category-selected{
   color: white;
+}
+.bar.bar-calm{
+  top: 55px !important;
+  height: 64px !important;
+  background-color: #7f7f7f !important;
+  border-color: #7f7f7f !important;
+}
+.bar.bar-calm .item{
+  margin: 0;
+  width: 100%;
+  height: 59px;
+  border: none;
+}
+.add-subject-s1-page{
+  top: 120px !important;
+}
+.popover{
+  height: 172px !important;
+}
+.popover .scroll-content{
+
 }
