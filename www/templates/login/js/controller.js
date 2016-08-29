@@ -11,9 +11,11 @@
           var user = {
             fbToken: fbData['accessToken']
           }
+          alert("2");
+          console.log(fbData['accessToken']);
           UserService.CreateUser(user)
             .then(function (user) {
-              alert("1");
+              alert("3");
               console.log("create")
               window.localStorage['user'] = angular.toJson(user);
               var ref = new Firebase("https://chatoi.firebaseio.com");
@@ -30,6 +32,8 @@
               });
               $state.go("tab.subjects");
             }, function (err) {
+              console.log("Error ", err);
+              alert("error")
             });
           //alert($scope.FbName)
 

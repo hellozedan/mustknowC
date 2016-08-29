@@ -1,7 +1,7 @@
 
 (function () {
 // Controller of expense dashboard page.
-appControllers.controller('myProfileCtrl', function ($rootScope, $scope,$state,$stateParams,EntityService,SubjectService,ConfigurationService) {
+appControllers.controller('myProfileCtrl', function ($rootScope, $ionicPopup, $firebaseArray, $ionicLoading, $scope,$state,$stateParams,EntityService,SubjectService,ConfigurationService) {
 
   $scope.userProfile = ConfigurationService.UserDetails();// angular.fromJson(window.localStorage['user']);
   $scope.categoriesUrl = ConfigurationService.CategoriesUrl();
@@ -14,12 +14,60 @@ appControllers.controller('myProfileCtrl', function ($rootScope, $scope,$state,$
       }, function (err) {
       });
   }
+  $scope.tab = 'open';
+  $scope.getSubjects = function(title){
+    $scope.tab = title;
+    $scope.subjects = [];
+    $ionicLoading.show();
 
-  SubjectService.GetMySubjects($scope.userProfile._id)
-    .then(function (subjects) {
-      $scope.subjects = subjects;
-    }, function (err) {
+    if(title == 'open'){
+      SubjectService.GetMySubjects($scope.userProfile._id, true)
+        .then(function (subjects) {
+          $scope.subjects = subjects.subjects;
+          $ionicLoading.hide();
+        }, function (err) {
+          $ionicLoading.hide();
+        });
+    }else if(title == 'closed'){
+      SubjectService.GetMySubjects($scope.userProfile._id, false)
+        .then(function (subjects) {
+          $scope.subjects = subjects.subjects;
+          $ionicLoading.hide();
+        }, function (err) {
+          $ionicLoading.hide();
+        });
+    }else if(title == 'blocked'){
+      var blockedUsersRef = new Firebase("https://chatoi.firebaseio.com/chats/" + $scope.userDetails._id+"/blocked/");
+      $scope.blockedUsers = $firebaseArray(blockedUsersRef);
+      $ionicLoading.hide();
+    }
+  }
+  $scope.changeStatus = function(subject, index, status){
+    $scope.subjects.splice(index,1);
+    SubjectService.ChangeStatus(subject,status)
+      .then(function (subjects) {
+
+      }, function (err) {
+      });
+  }
+  $scope.getSubjects('open');
+
+  $scope.showConfirm = function(blockedUser) {
+    var confirmPopup = $ionicPopup.confirm({
+      title: 'Unblock User',
+      template: 'Are you sure you want to remove'+ blockedUser.userName+' from your blocked users?'
     });
+    confirmPopup.then(function(res) {
+      if(res) {
+        var blockedUserRef=new Firebase("https://chatoi.firebaseio.com/chats/" + $scope.userDetails._id+"/blocked/"+blockedUser.userId);
+        blockedUserRef.remove();
+        console.log('You are sure');
+      } else {
+        console.log('You are not sure');
+      }
+    });
+  };
+  $scope.userDetails = ConfigurationService.UserDetails();
 
 });
 

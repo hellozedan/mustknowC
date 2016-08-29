@@ -321,9 +321,7 @@ p.notification {
 
 }
 
-.item-thumbnail-left, .item-thumbnail-left .item-content{
-  padding-left: 95px !important;
-}
+
 .fb-container{
   position: relative;
 }
@@ -538,7 +536,7 @@ textarea, input::-webkit-input-placeholder {
   height: 40px !important;
 }
 .profile-header{
-  height: 40%;
+  height: 45%;
   padding: 0px;
   background-image: url("../img/profilebg.png") !important;
   background-size: 100% 100%;
@@ -550,12 +548,14 @@ textarea, input::-webkit-input-placeholder {
   width: 100px;;
   border-radius: 50px;
   top: 26%;
+
 }
 .profile-details{
   top: 24%;
   width: 100%;
   text-align: center;
   position: relative;
+  height: 76%;
 }
 .profile-details h2{
   margin-top: 10px !important;
@@ -567,7 +567,7 @@ textarea, input::-webkit-input-placeholder {
   background-color: #0e50a3 !important;
 }
 .profile-page{
-  top: 40% !important;
+  top: 45% !important;
 }
 .profile-page .button-border a{
   height: 60px !important;
@@ -713,4 +713,16 @@ button:active{
 }
 .popover .scroll-content{
 
+}
+.profile-tabs{
+  margin: 0px !important;
+  position: absolute;
+  bottom: 0;
+}
+.profile-tabs .button{
+  border-radius: 0px !important;
+  height: 43px;
+}
+.profile-tabs a span{
+  line-height: 4px !important;
 }

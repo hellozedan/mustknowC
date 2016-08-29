@@ -1,4 +1,4 @@
-<ion-view>
+<ion-view cache-view="false">
   <ion-content class="padding gray-bg">
     <ion-refresher
       pulling-text="Pull to refresh..."
@@ -12,11 +12,11 @@
         <p>{{(subject.interested.length>0)? subject.description+' , interested '+subject.interested.length:subject.description}}</p>
         <div class="subject-container">
           <div>
-            <img src="/img/favorite.png">
+            <img src="img/favorite.png">
           </div>
 
           <div ng-click="goToChat(subject)" >
-            <img src="/img/chat.png">
+            <img src="img/chat.png">
           </div>
         </div>
 
@@ -30,6 +30,6 @@
 
   </ion-content>
   <div style="height: 55px;" class="bar bar-footer filter-fotter">
-    <img ng-click="goToFilter()" style="width: 50px; height: 50px" src="/img/filter.png">
+    <img ng-click="goToFilter()" style="width: 50px; height: 50px" src="img/filter.png">
   </div>
 </ion-view>

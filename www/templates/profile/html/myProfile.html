@@ -1,5 +1,5 @@
 
-<ion-view title="My Profile">
+<ion-view cache-view="false" title="My Profile">
   <div class="bar bar-header profile-header">
     <div class="profile-details">
       <img ng-src="{{userProfile.fbPhotoUrl}}">
@@ -7,40 +7,40 @@
       <button class="button button-positive">
         Update Profile
       </button>
+      <div class="button-bar  profile-tabs">
+        <a ng-click="getSubjects('open')" class="button" ng-class="{'filter-clicked-button': tab=='open', 'filter-unclicked-button': tab!='open'}">
+          <span>Open</span>
+        </a>
+        <a ng-click="getSubjects('closed')" class="button" ng-class="{'filter-clicked-button': tab=='closed', 'filter-unclicked-button': tab!='closed'}">
+          <span>Closed</span>
+        </a>
+        <a ng-click="getSubjects('blocked')" class="button" ng-class="{'filter-clicked-button': tab=='blocked', 'filter-unclicked-button': tab!='blocked'}">
+          <span>Blocked</span>
+        </a>
+      </div>
     </div>
+
   </div>
 
 
   <ion-content class="profile-page">
-    <div class="button-bar button-border">
-      <a class="button">
-        <div class="count">
-          <span>12</span>
-        </div>
-        <span>Open</span>
-      </a>
-      <a class="button">
-        <div class="count">
-          <span>12</span>
-        </div>
-        <span>Closed</span>
-      </a>
-      <a class="button">
-        <div class="count">
-          <span>12</span>
-        </div>
-        <span>Blocked</span>
-      </a>
-    </div>
 
-    <ion-list>
-      <ion-item ng-click="createSubjectSetp(category)" class="item-thumbnail-left item-icon-right categories-list" ng-repeat="subject in subjects">
+
+    <ion-list ng-show="tab=='closed' || tab=='open'">
+      <ion-item class="item-thumbnail-left item-icon-right categories-list" ng-repeat="subject in subjects">
         <img ng-src="{{categoriesUrl}}{{subject.category._id}}.png">
         <h2>{{subject.title}}</h2><h2>{{category.name}}</h2>
-        <i ng-click="goToChat(message)" class="icon ion-chevron-right"></i>
+        <ion-option-button ng-show="tab=='open'" ng-click="changeStatus(subject, $index, false)" class="button-positive">Close</ion-option-button>
+        <ion-option-button ng-show="tab=='closed'" ng-click="changeStatus(subject, $index, true)" class="button-positive">Open</ion-option-button>
+        <ion-option-button class="button-assertive">Delete</ion-option-button>
       </ion-item>
-
     </ion-list>
-
+    <ion-list ng-show="tab=='blocked'">
+      <ion-item class="item-thumbnail-left item-icon-right categories-list" ng-repeat="user in blockedUsers">
+        <img ng-src="{{user.fbPhotoUrl}}"/>
+        <h2>{{user.userName}}</h2>
+        <ion-option-button ng-click="showConfirm(user)" class="button-assertive">Delete</ion-option-button>
+      </ion-item>
+    </ion-list>
   </ion-content>
 </ion-view>

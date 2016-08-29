@@ -78,14 +78,14 @@
 
         return deferred.promise;
       },
-      GetMySubjects: function (userId) {
+      GetMySubjects: function (userId, status) {
         var deferred = $q.defer();
         if (userId == undefined) {
           userId = null;
         }
         tryPost();
         function tryPost() {
-          $http.post(ConfigurationService.ServerUrl() + '/api/subjects/filter?userSubjects=true&userId=' + userId, {}, {
+          $http.post(ConfigurationService.ServerUrl() + '/api/subjects/filter?userSubjects=true&status='+status + '&userId=' + userId, {}, {
             headers: {
               "access-token": ConfigurationService.UserDetails().token
             }
@@ -102,6 +102,25 @@
       Interested: function (subjectId) {
         var deferred = $q.defer();
         $http.post(ConfigurationService.ServerUrl() + '/api/subjects/interested', {subjectId:subjectId}, {
+          headers: {
+            "access-token": ConfigurationService.UserDetails().token
+          }
+        }).success(function (data) {
+          deferred.resolve(data);
+        }).error(function (msg, code) {
+          deferred.reject(msg);
+          //   $log.error(msg, code);
+        });
+
+
+        return deferred.promise;
+      },
+      ChangeStatus: function (subject,status) {
+        var deferred = $q.defer();
+        $http.post(ConfigurationService.ServerUrl() + '/api/subjects/status', {
+          _id: subject._id,
+          status: status
+        }, {
           headers: {
             "access-token": ConfigurationService.UserDetails().token
           }

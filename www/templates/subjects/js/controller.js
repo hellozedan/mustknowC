@@ -23,15 +23,23 @@
         }, function (err) {
         });
     }
+    var loadedSubjects = false
     $scope.loadOlderSubjects = function(){
-      if($scope.subjects.length>0){
+      if($scope.subjects.length>0 || loadedSubjects){
         $scope.scrollOptions.skip = $scope.subjects.length;
         $scope.scrollOptions.limit = 20;
       }
-      loadSubjects(function(subjects){
-        $scope.subjects = $scope.subjects.concat(subjects);
+      if(!loadedSubjects){
+        loadSubjects(function(subjects){
+          $scope.subjects = $scope.subjects.concat(subjects);
+          loadedSubjects = true;
+          $scope.$broadcast('scroll.infiniteScrollComplete');
+        })
+      }else{
         $scope.$broadcast('scroll.infiniteScrollComplete');
-      })
+        return;
+      }
+
     }
     $scope.loadNewrSubjects = function(){
       $scope.scrollOptions = {
@@ -79,13 +87,7 @@
         }, function (err) {
         });
     }
-    //var stopTime = $interval($scope.doRefresh, 10000);
-    $scope.$on("$destroy", function () {
-      if (stopTime) {
-        $interval.cancel(stopTime);
-      }
-    });
-    //$scope.doRefresh();
+
 
 
     $scope.goToChat = function (subject) {
@@ -156,7 +158,7 @@
       console.log("removed");
     });
   })
-  appControllers.controller('addSubjectCtrl', function ($scope, $state, SubjectService, $stateParams, $filter, $ionicHistory, ConfigurationService) {
+  appControllers.controller('addSubjectCtrl', function ($scope, $ionicLoading, $state, SubjectService, $stateParams, $filter, $ionicHistory, ConfigurationService) {
     $scope.isExpanded = true;
     $scope.failed = false;
 
@@ -186,11 +188,13 @@
         return;
       }
       $scope.subject.category = $state.params.categoryId;
-
+      $ionicLoading.show();
       SubjectService.CreateSubject($scope.subject)
         .then(function () {
-          $state.go("app.subjects");
+          $ionicLoading.hide();
+          $state.go("tab.addSubject-s1");
         }, function (err) {
+          $ionicLoading.hide();
         });
     }
 

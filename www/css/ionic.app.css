@@ -10109,9 +10109,6 @@ p.notification {
   top: 12px;
   font-weight: bold; }
 
-.item-thumbnail-left, .item-thumbnail-left .item-content {
-  padding-left: 95px !important; }
-
 .fb-container {
   position: relative; }
 
@@ -10313,7 +10310,7 @@ textarea, input::-webkit-input-placeholder {
   height: 40px !important; }
 
 .profile-header {
-  height: 40%;
+  height: 45%;
   padding: 0px;
   background-image: url("../img/profilebg.png") !important;
   background-size: 100% 100%;
@@ -10330,7 +10327,8 @@ textarea, input::-webkit-input-placeholder {
   top: 24%;
   width: 100%;
   text-align: center;
-  position: relative; }
+  position: relative;
+  height: 76%; }
 
 .profile-details h2 {
   margin-top: 10px !important;
@@ -10342,7 +10340,7 @@ textarea, input::-webkit-input-placeholder {
   background-color: #0e50a3 !important; }
 
 .profile-page {
-  top: 40% !important; }
+  top: 45% !important; }
 
 .profile-page .button-border a {
   height: 60px !important;
@@ -10478,3 +10476,15 @@ button:active {
 
 .popover {
   height: 172px !important; }
+
+.profile-tabs {
+  margin: 0px !important;
+  position: absolute;
+  bottom: 0; }
+
+.profile-tabs .button {
+  border-radius: 0px !important;
+  height: 43px; }
+
+.profile-tabs a span {
+  line-height: 4px !important; }
