@@ -6,8 +6,8 @@ appControllers.controller('myProfileCtrl', function ($rootScope, $ionicPopup, $f
   $scope.userProfile = ConfigurationService.UserDetails();// angular.fromJson(window.localStorage['user']);
   $scope.categoriesUrl = ConfigurationService.CategoriesUrl();
   $scope.subjects = [];
-  $scope.deleteSubject = function (subject) {
-    EntityService.deleteFromArray($scope.subjects, subject)
+  $scope.deleteSubject = function (index, subject) {
+    $scope.subjects.splice(index, 1);
     SubjectService.DeleteSubjects(subject)
       .then(function () {
 
