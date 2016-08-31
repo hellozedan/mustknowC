@@ -10,7 +10,6 @@
   $scope.messages = [];
   var createrId =  $scope.conversationId.split("-")[0];
 
-  $scope.sendInputPlaceHolder = "Message"
 
   $scope.userDetails = ConfigurationService.UserDetails();
   ChatService.setMessages($scope.conversationId);
@@ -35,13 +34,32 @@
       $scope.$apply();
     }
   });
-  $rootScope.$on('otherUserBlock', function(event, mass) {
-    if(mass){
-      $scope.sendInputPlaceHolder = "this user is blocked"
-    }
-    $scope.disableSend = mass;
 
-  });
+    var myblockedUrl = "https://chatoi.firebaseio.com/chats/" + $scope.userDetails._id  + "/blocked/" + createrId;
+    var myblockedRef = new Firebase(myblockedUrl);
+    myblockedRef.on("value", function (userSnapshot) {
+      if (userSnapshot.val()) {
+        $scope.disableSend = true;
+        $scope.sendInputPlaceHolder = "this user is blocked";
+      }
+      else{
+        $scope.disableSend = false;
+        $scope.sendInputPlaceHolder = "Message";
+      }
+    });
+  // $rootScope.$on('otherUserBlock', function(event, mass) {
+  //   $timeout(function(){
+  //     if(mass){
+  //       $scope.sendInputPlaceHolder = "this user is blocked"
+  //     }
+  //     $scope.disableSend = mass;
+  //     $scope.$apply(function(){
+  //       console.log("ss")
+  //     });
+  //   },3000)
+  //
+  //
+  // });
   $scope.blockUser = function () {
     var confirmPopup = $ionicPopup.confirm({
       title: 'Block User',

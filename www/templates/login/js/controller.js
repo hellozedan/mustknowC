@@ -40,7 +40,7 @@
         })
       } else {
         var user = {
-          fbToken: 'EAAZAMbMtmoBIBALj5DyX7bu71nOEseTibvVBgQ2ppXJUdyHL2SZAsGNkuTQbWfD6zGCfvFruIGaZCNUJ2fnlZClNfStiDzKeUIRPtzW3SOcdluFh0BB4bqYaZAc1yIivznqC9jvaBuKMTZAu4JsAOmxXdfIs5CGsDZBx0ExkT5vwBfvHWOzGAZAXQqioNX9Pagx1FLeQYVUSiXtiR74UDBlT',
+          fbToken: 'EAAZAMbMtmoBIBAHHzKvk8AewEB55ZAVYLLIr0ofhi6Eyhrnd6aHdOB1gQO3Im86QmqooFAZAHyj0uXAtwWOTXCnFRU6IvvhS4z7JZCZB12h8fTMsxr9JAZAHH40f2aqIodDXlbdIEMHHd6ZA3YHzrLm97jQh6VTha199Qst6u4ukO2mYvO4II5X8ZBTrVmT1yeIZD',
           notification_token: 'b95a00b4-96e0-41c6-9331-fa787a54291b'
 
         }
