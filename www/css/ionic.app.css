@@ -10521,3 +10521,6 @@ button:active {
 
 .tab-title {
   display: none; }
+
+.filter-pop {
+  border-radius: 8px !important; }
