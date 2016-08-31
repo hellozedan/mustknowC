@@ -10330,7 +10330,7 @@ textarea, input::-webkit-input-placeholder {
   background-repeat: repeat-x;
   background-position: 0px 6px; }
 
-.profile-details img {
+.profile-details .profile {
   height: 100px;
   width: 100px;
   border-radius: 50px;
@@ -10503,12 +10503,15 @@ button:active {
 .profile-tabs a span {
   line-height: 4px !important; }
 
-.circle-new-message {
-  top: -11px !important;
-  right: 34%; }
+.profile-details .logout {
+  height: 36px;
+  width: 36px;
+  position: absolute;
+  left: 10px;
+  top: -6px; }
 
 @media only screen and (max-device-width: 360px) {
-  .profile-details img {
+  .profile-details .profile {
     height: 80px;
     width: 80px; }
   .profile-details h2 {
