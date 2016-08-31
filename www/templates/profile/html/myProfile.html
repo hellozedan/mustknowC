@@ -4,7 +4,7 @@
     <div class="profile-details">
       <img ng-src="{{userProfile.fbPhotoUrl}}">
       <h2>{{userProfile.first_name}} {{userProfile.last_name}}</h2>
-      <button class="button button-positive">
+      <button class="button button-positive" ng-click="updateProfile()">
         Update Profile
       </button>
       <div class="button-bar  profile-tabs">

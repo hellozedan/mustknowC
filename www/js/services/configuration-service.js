@@ -19,6 +19,13 @@
         }
         return this.userDetails;
       },
+      RefreshUserDetails: function () {
+          if (window.localStorage['user']) {
+            this.userDetails = angular.fromJson(window.localStorage['user']);
+          }
+        return this.userDetails;
+      },
+
       Notification_token: function () {
         if (!this.notification_token) {
           if (window.localStorage['notification_token']) {

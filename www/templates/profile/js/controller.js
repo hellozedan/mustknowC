@@ -1,7 +1,7 @@
 
 (function () {
 // Controller of expense dashboard page.
-appControllers.controller('myProfileCtrl', function ($rootScope, $ionicPopup, $firebaseArray, $ionicLoading, $scope,$state,$stateParams,EntityService,SubjectService,ConfigurationService) {
+appControllers.controller('myProfileCtrl', function ($rootScope, $ionicPopup,UserService, $firebaseArray, $ionicLoading, $scope,$state,$stateParams,EntityService,SubjectService,ConfigurationService) {
 
   $scope.userProfile = ConfigurationService.UserDetails();// angular.fromJson(window.localStorage['user']);
   $scope.categoriesUrl = ConfigurationService.CategoriesUrl();
@@ -15,6 +15,18 @@ appControllers.controller('myProfileCtrl', function ($rootScope, $ionicPopup, $f
       });
   }
   $scope.tab = 'open';
+  $scope.updateProfile=function () {
+    var user = {
+      fbToken:$scope.userProfile.fbToken
+    }
+    UserService.CreateUser(user)
+      .then(function (user) {
+        window.localStorage['user'] = angular.toJson(user);
+        $scope.userProfile=ConfigurationService.RefreshUserDetails();
+      }, function (err) {
+        console.log("Error ", err);
+      });
+  }
   $scope.getSubjects = function(title){
     $scope.tab = title;
     $scope.subjects = [];
