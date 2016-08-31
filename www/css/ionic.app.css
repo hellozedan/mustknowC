@@ -9884,6 +9884,7 @@ p.notification {
   color: white;
   background: #5fa1d2;
   border-radius: 25px;
+  height: 56px;
   float: right; }
 
 .from-them {
@@ -9893,6 +9894,7 @@ p.notification {
   background: #E5E5EA;
   border-radius: 25px;
   color: black;
+  height: 56px;
   float: left; }
 
 .username-list {
@@ -10041,8 +10043,8 @@ p.notification {
   color: red; }
 
 .chat-time-span {
-  position: relative;
-  top: 10px;
+  position: absolute;
+  top: 30px;
   font-size: 10px; }
 
 .chat-date-span {

@@ -1,7 +1,7 @@
 (function(){
   angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'angularMoment', 'ngCordova', 'firebase'])
 
-    .run(function($ionicPlatform, $state, ConfigurationService, UserService) {
+    .run(function($ionicPlatform, $state, ConfigurationService, UserService, EntityService) {
       $ionicPlatform.on('pause', function() {
         Firebase.goOffline();
 
@@ -34,7 +34,7 @@
             }
             isNotificationClicked = true;
             EntityService.setMessageDetails(messageDetails);
-
+            $state.go("chat");
 
 
           };
@@ -57,9 +57,7 @@
                   if (error) {
                     console.log("Login Failed!", error);
                   } else {
-                    if(isNotificationClicked)
-                      $state.go("tab.chat");
-                    else
+                    if(!isNotificationClicked)
                       $state.go("tab.subjects");
                   }
                 });

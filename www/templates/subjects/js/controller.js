@@ -1,5 +1,5 @@
 (function () {
-  appControllers.controller('subjectsCtrl', function ($scope, $ionicModal, $ionicPlatform, $rootScope, $state, $interval, $stateParams, $timeout, SubjectService, EntityService, UserService, MessagesService, ConfigurationService) {
+  appControllers.controller('subjectsCtrl', function ($scope,$ionicScrollDelegate, $ionicModal, $ionicPlatform, $rootScope, $state, $interval, $stateParams, $timeout, SubjectService, EntityService, UserService, MessagesService, ConfigurationService) {
     $scope.show = function(){
       var a = document.getElementById('dropdown-content');
       a.style.display = 'block';
@@ -23,22 +23,19 @@
         }, function (err) {
         });
     }
-    var loadedSubjects = false
+
     $scope.loadOlderSubjects = function(){
-      if($scope.subjects.length>0 || loadedSubjects){
+      if($scope.subjects.length>0 ){
         $scope.scrollOptions.skip = $scope.subjects.length;
         $scope.scrollOptions.limit = 20;
       }
-      if(!loadedSubjects){
-        loadSubjects(function(subjects){
-          $scope.subjects = $scope.subjects.concat(subjects);
-          loadedSubjects = true;
-          $scope.$broadcast('scroll.infiniteScrollComplete');
-        })
-      }else{
+
+      loadSubjects(function(subjects){
+        $scope.subjects = $scope.subjects.concat(subjects);
         $scope.$broadcast('scroll.infiniteScrollComplete');
-        return;
-      }
+        $ionicScrollDelegate.scrollBottom();
+      })
+
 
     }
     $scope.loadNewrSubjects = function(){
@@ -46,8 +43,8 @@
         skip: 0,
         limit: 20
       }
-      $scope.subjects= [];
       loadSubjects(function(subjects){
+        $scope.subjects = [];
         $scope.subjects = $scope.subjects.concat(subjects);
         $scope.$broadcast('scroll.refreshComplete');
       })
@@ -58,6 +55,7 @@
       }, function (err) {
       });
     $ionicPlatform.ready(function () {
+      doRefresh();
       if (window.cordova && typeof window.plugins.OneSignal != 'undefined' && !ConfigurationService.Notification_token()) {
         $timeout(function () {
           window.plugins.OneSignal.getIds(function (ids) {
@@ -88,14 +86,13 @@
     $scope.checkUndreadMessage = function () {
       return MessagesService.checkUndreadMessage();
     }
-    $scope.doRefresh = function () {
-      $scope.$broadcast('scroll.refreshComplete');
+    function doRefresh() {
       SubjectService.GetSubjects(false, $scope.scrollOptions)
         .then(function (subjects) {
+          $scope.subjects = [];
           angular.forEach(subjects.subjects, function(subject){
             $scope.subjects.push(subject);
           })
-          $scope.$broadcast('scroll.infiniteScrollComplete');
           $scope.subjectsCount = subjects.count;
         }, function (err) {
         });
@@ -165,7 +162,7 @@
             }
           });
           ConfigurationService.SetMyFilter($rootScope.myFilter);
-          $scope.doRefresh();
+          doRefresh();
         }, function (err) {
         });
 
