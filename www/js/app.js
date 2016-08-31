@@ -2,8 +2,19 @@
   angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'angularMoment', 'ngCordova', 'firebase'])
 
     .run(function($ionicPlatform, $state, ConfigurationService, UserService) {
+      $ionicPlatform.on('pause', function() {
+        Firebase.goOffline();
+
+      });
+      $ionicPlatform.on('resume', function() {
+        Firebase.goOnline();
+
+      });
       $ionicPlatform.ready(function() {
         if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {
+          setTimeout(function() {
+            navigator.splashscreen.hide();
+          }, 50);
           cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
           cordova.plugins.Keyboard.disableScroll(true);
 

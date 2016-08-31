@@ -70,6 +70,19 @@
           });
         }, 5000)
       }
+      $scope.userDetails = ConfigurationService.UserDetails();
+      if($scope.userDetails){
+        var amOnline = new Firebase('https://chatoi.firebaseio.com/.info/connected');
+        var userRef = new Firebase('https://chatoi.firebaseio.com/presence/' + $scope.userDetails._id);
+        var conversationUserRef = new Firebase('https://chatoi.firebaseio.com/conversationOnline/' + $scope.userDetails._id);
+        amOnline.on('value', function(snapshot) {
+          if (snapshot.val()) {
+            userRef.onDisconnect().set('offline');
+            conversationUserRef.onDisconnect().remove();
+            userRef.set('online');
+          }
+        });
+      }
     });
 
     $scope.checkUndreadMessage = function () {
@@ -139,6 +152,10 @@
     $scope.$on('modal.hidden', function() {
       console.log("modal hiden");
       $rootScope.myFilter.categories = [];
+      $scope.scrollOptions = {
+        skip: 0,
+        limit: 20
+      }
       SubjectService.GetCategories()
         .then(function (categories) {
           $scope.categories = categories;
@@ -192,7 +209,7 @@
       SubjectService.CreateSubject($scope.subject)
         .then(function () {
           $ionicLoading.hide();
-          $state.go("tab.addSubject-s1");
+          $state.go("tab.subjects");
         }, function (err) {
           $ionicLoading.hide();
         });

@@ -2,10 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bb8ab7e0-9cdf-4d91-a267-840c8d61eb6f" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/android/icon/drawable-hdpi-icon.png" afterPath="$PROJECT_DIR$/resources/android/icon/drawable-hdpi-icon.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/android/icon/drawable-ldpi-icon.png" afterPath="$PROJECT_DIR$/resources/android/icon/drawable-ldpi-icon.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/android/icon/drawable-mdpi-icon.png" afterPath="$PROJECT_DIR$/resources/android/icon/drawable-mdpi-icon.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/android/icon/drawable-xhdpi-icon.png" afterPath="$PROJECT_DIR$/resources/android/icon/drawable-xhdpi-icon.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/android/icon/drawable-xxhdpi-icon.png" afterPath="$PROJECT_DIR$/resources/android/icon/drawable-xxhdpi-icon.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/android/icon/drawable-xxxhdpi-icon.png" afterPath="$PROJECT_DIR$/resources/android/icon/drawable-xxxhdpi-icon.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/android/splash/drawable-port-hdpi-screen.png" afterPath="$PROJECT_DIR$/resources/android/splash/drawable-port-hdpi-screen.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/android/splash/drawable-port-ldpi-screen.png" afterPath="$PROJECT_DIR$/resources/android/splash/drawable-port-ldpi-screen.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/android/splash/drawable-port-mdpi-screen.png" afterPath="$PROJECT_DIR$/resources/android/splash/drawable-port-mdpi-screen.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/android/splash/drawable-port-xhdpi-screen.png" afterPath="$PROJECT_DIR$/resources/android/splash/drawable-port-xhdpi-screen.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/android/splash/drawable-port-xxhdpi-screen.png" afterPath="$PROJECT_DIR$/resources/android/splash/drawable-port-xxhdpi-screen.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/android/splash/drawable-port-xxxhdpi-screen.png" afterPath="$PROJECT_DIR$/resources/android/splash/drawable-port-xxxhdpi-screen.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/img/logo.png" afterPath="$PROJECT_DIR$/www/img/logo.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/img/logo_grey.png" afterPath="$PROJECT_DIR$/www/img/logo_grey.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scss/ionic.app.scss" afterPath="$PROJECT_DIR$/scss/ionic.app.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/css/ionic.app.css" afterPath="$PROJECT_DIR$/www/css/ionic.app.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/css/ionic.app.min.css" afterPath="$PROJECT_DIR$/www/css/ionic.app.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/app.js" afterPath="$PROJECT_DIR$/www/js/app.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/services/configuration-service.js" afterPath="$PROJECT_DIR$/www/js/services/configuration-service.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/templates/profile/html/myProfile.html" afterPath="$PROJECT_DIR$/www/templates/profile/html/myProfile.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/templates/profile/js/controller.js" afterPath="$PROJECT_DIR$/www/templates/profile/js/controller.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/templates/login/js/controller.js" afterPath="$PROJECT_DIR$/www/templates/login/js/controller.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/templates/subjects/js/controller.js" afterPath="$PROJECT_DIR$/www/templates/subjects/js/controller.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/templates/tabs/html/tabs.html" afterPath="$PROJECT_DIR$/www/templates/tabs/html/tabs.html" />
     </list>
     <ignored path="Loudly.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -31,8 +50,28 @@
       <file leaf-file-name="ionic.app.scss" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scss/ionic.app.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="93">
-              <caret line="323" column="0" selection-start-line="323" selection-start-column="0" selection-end-line="323" selection-end-column="0" />
+            <state relative-caret-position="108">
+              <caret line="726" column="39" selection-start-line="726" selection-start-column="39" selection-end-line="726" selection-end-column="39" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="controller.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www/templates/login/js/controller.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="14" column="35" selection-start-line="14" selection-start-column="35" selection-end-line="14" selection-end-column="35" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www/js/app.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -51,30 +90,57 @@
       <file leaf-file-name="myProfile.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/templates/profile/html/myProfile.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="141">
-              <caret line="35" column="17" selection-start-line="35" selection-start-column="17" selection-end-line="35" selection-end-column="17" />
+            <state relative-caret-position="120">
+              <caret line="9" column="42" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="42" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="controller.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/templates/profile/js/controller.js">
+        <entry file="file://$PROJECT_DIR$/www/templates/subjects/js/controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="37" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="37" />
+            <state relative-caret-position="39">
+              <caret line="72" column="18" selection-start-line="72" selection-start-column="18" selection-end-line="72" selection-end-column="18" />
               <folding>
-                <element signature="e#2615#3232#0" expanded="false" />
+                <element signature="e#476#822#0" expanded="false" />
+                <element signature="e#895#1399#0" expanded="false" />
+                <element signature="e#1440#1709#0" expanded="false" />
+                <element signature="e#3174#3601#0" expanded="false" />
+                <element signature="e#3646#4017#0" expanded="false" />
+                <element signature="e#4066#4533#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="configuration-service.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="tabs.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/www/templates/tabs/html/tabs.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+              <folding>
+                <element signature="n#style#0;n#i#0;n#ion-tabs#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="controller.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www/templates/messages/js/controller.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="configuration-service.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/js/services/configuration-service.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="8" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
+            <state relative-caret-position="90">
+              <caret line="6" column="44" selection-start-line="6" selection-start-column="44" selection-end-line="6" selection-end-column="44" />
               <folding />
             </state>
           </provider>
@@ -85,26 +151,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="161">
               <caret line="121" column="24" selection-start-line="121" selection-start-column="24" selection-end-line="121" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="addSubject-s2.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/templates/subjects/html/addSubject-s2.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="27" selection-start-line="0" selection-start-column="27" selection-end-line="0" selection-end-column="27" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="chat.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/templates/chat/html/chat.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="114" selection-start-line="12" selection-start-column="114" selection-end-line="12" selection-end-column="114" />
               <folding />
             </state>
           </provider>
@@ -131,7 +177,6 @@
         <option value="$PROJECT_DIR$/www/templates/login/html/login.html" />
         <option value="$PROJECT_DIR$/www/templates/tabs.html" />
         <option value="$PROJECT_DIR$/www/templates/subjects/html/addSubject.html" />
-        <option value="$PROJECT_DIR$/www/templates/tabs/html/tabs.html" />
         <option value="$PROJECT_DIR$/www/css/style.css" />
         <option value="$PROJECT_DIR$/www/templates/messages/html/messages.html" />
         <option value="$PROJECT_DIR$/www/js/services/chat-service.js" />
@@ -143,7 +188,6 @@
         <option value="$PROJECT_DIR$/www/js/common.js" />
         <option value="$PROJECT_DIR$/www/templates/blockedUsers/js/controller.js" />
         <option value="$PROJECT_DIR$/www/templates/messages/js/controller.js" />
-        <option value="$PROJECT_DIR$/www/js/app.js" />
         <option value="$PROJECT_DIR$/www/js/controllers.js" />
         <option value="$PROJECT_DIR$/www/index.html" />
         <option value="$PROJECT_DIR$/www/templates/subjects/html/filter.html" />
@@ -152,15 +196,17 @@
         <option value="$PROJECT_DIR$/www/templates/chat/js/controller.js" />
         <option value="$PROJECT_DIR$/www/templates/shared/drop-down-menu.html" />
         <option value="$PROJECT_DIR$/config.xml" />
-        <option value="$PROJECT_DIR$/www/templates/login/js/controller.js" />
         <option value="$PROJECT_DIR$/www/templates/subjects/html/addSubject-s2.html" />
         <option value="$PROJECT_DIR$/www/templates/subjects/html/subjects.html" />
-        <option value="$PROJECT_DIR$/www/templates/subjects/js/controller.js" />
-        <option value="$PROJECT_DIR$/scss/ionic.app.scss" />
         <option value="$PROJECT_DIR$/www/js/services/subject-service.js" />
         <option value="$PROJECT_DIR$/www/templates/profile/html/myProfile.html" />
         <option value="$PROJECT_DIR$/www/templates/profile/js/controller.js" />
+        <option value="$PROJECT_DIR$/scss/ionic.app.scss" />
         <option value="$PROJECT_DIR$/www/js/services/configuration-service.js" />
+        <option value="$PROJECT_DIR$/www/templates/login/js/controller.js" />
+        <option value="$PROJECT_DIR$/www/js/app.js" />
+        <option value="$PROJECT_DIR$/www/templates/subjects/js/controller.js" />
+        <option value="$PROJECT_DIR$/www/templates/tabs/html/tabs.html" />
       </list>
     </option>
   </component>
@@ -280,6 +326,14 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tabs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="html" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -785,7 +839,7 @@
       <workItem from="1471464672746" duration="7811000" />
       <workItem from="1471603646425" duration="37219000" />
       <workItem from="1472292324252" duration="27095000" />
-      <workItem from="1472495890746" duration="10108000" />
+      <workItem from="1472495890746" duration="15477000" />
     </task>
     <task id="LOCAL-00001" summary="remove style">
       <created>1472071080904</created>
@@ -892,11 +946,18 @@
       <option name="project" value="LOCAL" />
       <updated>1472506416514</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="profile&#10;">
+      <created>1472506704441</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1472506704441</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="102790000" />
+    <option name="totallyTimeSpent" value="108159000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="42" y="23" width="1260" height="669" extended-state="0" />
@@ -943,7 +1004,8 @@
     <MESSAGE value="filter" />
     <MESSAGE value="fix do refresh subjects" />
     <MESSAGE value="." />
-    <option name="LAST_COMMIT_MESSAGE" value="." />
+    <MESSAGE value="profile&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="profile&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1052,13 +1114,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/www/css/style.css" />
     <entry file="file://$PROJECT_DIR$/www/js/services.js" />
-    <entry file="file://$PROJECT_DIR$/www/templates/tabs/html/tabs.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="12" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/www/css/ionic.app.min.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1116,13 +1171,6 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/templates/messages/js/controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1217,22 +1265,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/templates/login/js/controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="11" column="40" selection-start-line="11" selection-start-column="40" selection-end-line="11" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/js/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="71">
-          <caret line="110" column="33" selection-start-line="110" selection-start-column="20" selection-end-line="110" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/www/templates/subjects/html/addSubject-s2.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1265,27 +1297,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/templates/subjects/js/controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="101">
-          <caret line="89" column="0" selection-start-line="89" selection-start-column="0" selection-end-line="89" selection-end-column="0" />
-          <folding>
-            <element signature="e#1880#2364#0" expanded="false" />
-            <element signature="e#2508#2935#0" expanded="false" />
-            <element signature="e#2980#3351#0" expanded="false" />
-            <element signature="e#3400#3867#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scss/ionic.app.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="93">
-          <caret line="323" column="0" selection-start-line="323" selection-start-column="0" selection-end-line="323" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/www/js/services/subject-service.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="161">
@@ -1306,17 +1317,74 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/www/templates/profile/html/myProfile.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
-          <caret line="35" column="17" selection-start-line="35" selection-start-column="17" selection-end-line="35" selection-end-column="17" />
+        <state relative-caret-position="120">
+          <caret line="9" column="42" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scss/ionic.app.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="726" column="39" selection-start-line="726" selection-start-column="39" selection-end-line="726" selection-end-column="39" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/www/js/services/configuration-service.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="8" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
+        <state relative-caret-position="90">
+          <caret line="6" column="44" selection-start-line="6" selection-start-column="44" selection-end-line="6" selection-end-column="44" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/templates/login/js/controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="14" column="35" selection-start-line="14" selection-start-column="35" selection-end-line="14" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/templates/messages/js/controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/templates/subjects/js/controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="39">
+          <caret line="72" column="18" selection-start-line="72" selection-start-column="18" selection-end-line="72" selection-end-column="18" />
+          <folding>
+            <element signature="e#476#822#0" expanded="false" />
+            <element signature="e#895#1399#0" expanded="false" />
+            <element signature="e#1440#1709#0" expanded="false" />
+            <element signature="e#3174#3601#0" expanded="false" />
+            <element signature="e#3646#4017#0" expanded="false" />
+            <element signature="e#4066#4533#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/templates/tabs/html/tabs.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding>
+            <element signature="n#style#0;n#i#0;n#ion-tabs#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

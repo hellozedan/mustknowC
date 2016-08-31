@@ -430,6 +430,8 @@ p.notification {
   background-color: #e3e3e3;
 }
 .tabs{
+  box-shadow: 0 3px 5px #888;
+  border-bottom: 1px solid #c5c0c0;
   height: 56px;
 }
 .tabs-top.tabs-striped .tab-item{
@@ -722,7 +724,20 @@ button:active{
 .profile-tabs .button{
   border-radius: 0px !important;
   height: 43px;
+  border: 1px solid rgb(199, 199, 199);
 }
 .profile-tabs a span{
   line-height: 4px !important;
+}
+
+@media only screen
+and (max-device-width : 360px) {
+  .profile-details img{
+    height: 80px;
+    width: 80px;
+  }
+  .profile-details h2{
+    font-size: 16px;
+  }
+
 }

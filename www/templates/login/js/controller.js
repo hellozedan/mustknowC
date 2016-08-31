@@ -4,18 +4,15 @@
       console.log("fblogin")
       if (window.cordova) {
         UserService.FBlogin().then(function success(s) {
-          alert("1");
           window.localStorage['fbData'] = angular.toJson(s.authResponse);
           var fbData = s.authResponse;
 
           var user = {
             fbToken: fbData['accessToken']
           }
-          alert("2");
           console.log(fbData['accessToken']);
           UserService.CreateUser(user)
             .then(function (user) {
-              alert("3");
               console.log("create")
               window.localStorage['user'] = angular.toJson(user);
               var ref = new Firebase("https://chatoi.firebaseio.com");
