@@ -1,7 +1,7 @@
 
 (function () {
 // Controller of expense dashboard page.
-appControllers.controller('myProfileCtrl', function ($rootScope, $ionicPopup, $firebaseArray, $ionicLoading, $scope,$state,$stateParams,EntityService,SubjectService,ConfigurationService) {
+appControllers.controller('myProfileCtrl', function ($rootScope, $ionicPopup, $firebaseArray, $ionicLoading, $scope,$state,$stateParams,EntityService,SubjectService,ConfigurationService, UserService) {
 
   $scope.userProfile = ConfigurationService.UserDetails();// angular.fromJson(window.localStorage['user']);
   $scope.categoriesUrl = ConfigurationService.CategoriesUrl();
@@ -14,6 +14,18 @@ appControllers.controller('myProfileCtrl', function ($rootScope, $ionicPopup, $f
       }, function (err) {
       });
   }
+
+  $scope.logOut = function(){
+    UserService.LogOut()
+      .then(function () {
+        window.localStorage.clear();
+        ConfigurationService.LogOut();
+        $state.go('login');
+      }, function (err) {
+        $state.go('login');
+      });
+  }
+
   $scope.tab = 'open';
   $scope.getSubjects = function(title){
     $scope.tab = title;
