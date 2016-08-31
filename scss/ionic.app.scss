@@ -296,7 +296,7 @@ p.notification {
 .login-top{
   top: 65px;
   position: relative;
-  left: 14%;
+  left: 20%;
 }
 .login-top .list .item img{
   max-width: 86px !important;
@@ -316,12 +316,10 @@ p.notification {
 }
 .login-loudly{
   color: white !important;
-  font-size: 60px !important;
+  font-size: 50px !important;
   font-family: 'loudly';
   position: relative;
-  top: 12px;
   font-weight: bold;
-
 }
 
 
@@ -613,8 +611,8 @@ textarea, input::-webkit-input-placeholder {
 .item-thumbnail-left .item-content .item-image, .item-thumbnail-left .item-content>img:first-child, .item-thumbnail-left .item-image, .item-thumbnail-left>img:first-child{
   left: 0px !important;
   top: 0px !important;
-  max-width: 70px !important;
-  max-height: 70px !important;
+  max-width: 86px !important;
+  max-height: 86px !important;
 }
 .container {
   height: 100%;
@@ -756,5 +754,7 @@ and (max-device-width : 360px) {
   .profile-details h2{
     font-size: 16px;
   }
-
+}
+.login-with-fb {
+  line-height: 23px !important;
 }
