@@ -1,12 +1,14 @@
 <ion-tabs ng-controller="tabsCtrl" class="tabs-striped tabs-color-positive tabs-top">
   <i ng-if="checkUndreadMessage()" class="icon ion-record circle-new-message" ></i>
 
-  <ion-tab icon-on="add-subject-blue" icon-off="add-subject-grey" href="#/tab/addSubject-s1">
-    <ion-nav-view name="tab-addSubject"></ion-nav-view>
-  </ion-tab>
+
 
   <ion-tab title="Subjects" icon-on="subjects-blue" icon-off="subjects-grey" href="#/tab/subjects">
     <ion-nav-view name="tab-subjects"></ion-nav-view>
+  </ion-tab>
+
+  <ion-tab icon-on="add-subject-blue" icon-off="add-subject-grey" href="#/tab/addSubject-s1">
+    <ion-nav-view name="tab-addSubject"></ion-nav-view>
   </ion-tab>
 
   <!-- Chats Tab -->

@@ -10159,9 +10159,10 @@ p.notification {
   width: 30px; }
 
 .tabs .tab-item .icon.subjects-blue {
+  margin-top: 4% !important;
   background-repeat: no-repeat;
   background-position: 50%;
-  height: 80%;
+  height: 70%;
   background-image: url("../img/logo.png");
   background-size: contain; }
 
@@ -10210,9 +10211,10 @@ p.notification {
   margin-top: 5px !important; }
 
 .tabs .tab-item .icon.subjects-grey {
+  margin-top: 4% !important;
   background-repeat: no-repeat;
   background-position: 50%;
-  height: 80%;
+  height: 70%;
   background-image: url("../img/logo_grey.png");
   background-size: contain; }
 
@@ -10301,6 +10303,7 @@ textarea, input::-webkit-input-placeholder {
 
 .messages .item {
   height: 100px;
+  top: -5px !important;
   padding-left: 92px !important; }
 
 .messages .item img {
@@ -10499,6 +10502,10 @@ button:active {
 
 .profile-tabs a span {
   line-height: 4px !important; }
+
+.circle-new-message {
+  top: -11px !important;
+  right: 34%; }
 
 @media only screen and (max-device-width: 360px) {
   .profile-details img {
