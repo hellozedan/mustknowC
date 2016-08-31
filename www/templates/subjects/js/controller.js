@@ -1,5 +1,5 @@
 (function () {
-  appControllers.controller('subjectsCtrl', function ($scope,$ionicScrollDelegate, $ionicModal, $ionicPlatform, $rootScope, $state, $interval, $stateParams, $timeout, SubjectService, EntityService, UserService, MessagesService, ConfigurationService) {
+  appControllers.controller('subjectsCtrl', function ($scope,$ionicScrollDelegate, $ionicModal, $ionicPlatform, $rootScope, $state, $interval, $stateParams, $timeout, SubjectService, EntityService, UserService, MessagesService, ConfigurationService, backcallFactory) {
     $scope.show = function(){
       var a = document.getElementById('dropdown-content');
       a.style.display = 'block';
@@ -16,6 +16,7 @@
           angular.forEach(subjects.subjects, function(subject){
            s.push(subject);
           })
+          $scope.subjectsCount = subjects.count;
           $scope.subjectsCount = subjects.count;
           callback(s);
 
@@ -56,6 +57,7 @@
       });
     $ionicPlatform.ready(function () {
       doRefresh();
+      backcallFactory.backCall();
       if (window.cordova && typeof window.plugins.OneSignal != 'undefined' && !ConfigurationService.Notification_token()) {
         $timeout(function () {
           window.plugins.OneSignal.getIds(function (ids) {
@@ -172,7 +174,7 @@
       console.log("removed");
     });
   })
-  appControllers.controller('addSubjectCtrl', function ($scope, $ionicLoading, $state, SubjectService, $stateParams, $filter, $ionicHistory, ConfigurationService) {
+  appControllers.controller('addSubjectCtrl', function ($scope, $ionicLoading, $state, SubjectService, $stateParams, $filter, $ionicHistory, ConfigurationService, $ionicHistory) {
     $scope.isExpanded = true;
     $scope.failed = false;
 
@@ -206,7 +208,9 @@
       SubjectService.CreateSubject($scope.subject)
         .then(function () {
           $ionicLoading.hide();
+          $ionicHistory.clearHistory();
           $state.go("tab.subjects");
+
         }, function (err) {
           $ionicLoading.hide();
         });

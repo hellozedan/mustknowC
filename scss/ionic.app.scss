@@ -232,8 +232,9 @@ p.notification {
 .circle-new-message {
   position: absolute;
   font-size: 16px;
-  top: -12px;
-  right: 9px;
+  top: -13px!important;
+  right: 33%;
+  height: 0px;
   color: #c73636; }
 
 .message-icon {
@@ -480,7 +481,7 @@ a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, bo
 }
 .add-subject textarea{
   width: 100%;
-  height: 150px;
+  height: 125px;
   font-size: 20px;
   font-family: 'loudly';
   padding: 10px;
@@ -735,12 +736,6 @@ button:active{
 .profile-tabs a span{
   line-height: 4px !important;
 }
-
-.circle-new-message{
-  top: -11px !important;
-  right: 34%;
-}
-
 
 @media only screen
 and (max-device-width : 360px) {
