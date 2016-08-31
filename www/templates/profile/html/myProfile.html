@@ -2,7 +2,8 @@
 <ion-view cache-view="false" title="My Profile">
   <div class="bar bar-header profile-header">
     <div class="profile-details">
-      <img ng-src="{{userProfile.fbPhotoUrl}}">
+      <img ng-click="logOut()" class="logout" src="img/logout.png">
+      <img class="profile" ng-src="{{userProfile.fbPhotoUrl}}">
       <h2>{{userProfile.first_name}} {{userProfile.last_name}}</h2>
       <button class="button button-positive" ng-click="updateProfile()">
         Update Profile
@@ -24,8 +25,6 @@
 
 
   <ion-content class="profile-page">
-
-
     <ion-list ng-show="tab=='closed' || tab=='open'">
       <ion-item class="item-thumbnail-left item-icon-right categories-list" ng-repeat="subject in subjects">
         <img ng-src="{{categoriesUrl}}{{subject.category._id}}.png">

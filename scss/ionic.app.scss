@@ -90,6 +90,7 @@ p.notification {
   color: white;
   background: #5fa1d2;
   border-radius: 25px;
+  height: 56px;
   float: right; }
 
 .from-them {
@@ -99,6 +100,7 @@ p.notification {
   background: #E5E5EA;
   border-radius: 25px;
   color: black;
+  height: 56px;
   float: left; }
 
 
@@ -230,8 +232,9 @@ p.notification {
 .circle-new-message {
   position: absolute;
   font-size: 16px;
-  top: -12px;
-  right: 9px;
+  top: -13px!important;
+  right: 33%;
+  height: 0px;
   color: #c73636; }
 
 .message-icon {
@@ -249,8 +252,8 @@ p.notification {
   color: red; }
 
 .chat-time-span {
-  position: relative;
-  top: 10px;
+  position: absolute;
+  top: 30px;
   font-size: 10px; }
 
 .chat-date-span {
@@ -371,9 +374,10 @@ p.notification {
 }
 
 .tabs .tab-item .icon.subjects-blue {
+  margin-top: 4% !important;
   background-repeat: no-repeat;
   background-position: 50%;
-  height: 80%;
+  height: 70%;
   background-image: url('../img/logo.png');
   background-size:contain;
 }
@@ -423,9 +427,10 @@ p.notification {
 }
 
 .tabs .tab-item .icon.subjects-grey {
+  margin-top: 4% !important;
   background-repeat: no-repeat;
   background-position: 50%;
-  height: 80%;
+  height: 70%;
   background-image: url('../img/logo_grey.png');
   background-size:contain;
 }
@@ -478,7 +483,7 @@ a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, bo
 }
 .add-subject textarea{
   width: 100%;
-  height: 150px;
+  height: 125px;
   font-size: 20px;
   font-family: 'loudly';
   padding: 10px;
@@ -523,6 +528,7 @@ textarea, input::-webkit-input-placeholder {
 }
 .messages .item{
   height: 100px;
+  top: -5px !important;
   padding-left: 92px !important;
 }
 .messages .item img{
@@ -549,7 +555,7 @@ textarea, input::-webkit-input-placeholder {
   background-repeat: repeat-x;
   background-position: 0px 6px;
 }
-.profile-details img{
+.profile-details .profile{
   height: 100px;
   width: 100px;;
   border-radius: 50px;
@@ -712,7 +718,7 @@ button:active{
   border: none;
 }
 .add-subject-s1-page{
-  top: 124px !important; 
+  top: 124px !important;
 }
 .popover{
   height: 172px !important;
@@ -733,15 +739,17 @@ button:active{
 .profile-tabs a span{
   line-height: 4px !important;
 }
-
-.circle-new-message{
-  top: -11px !important;
-  right: 34%;
+.profile-details .logout{
+  height: 36px;
+  width: 36px;
+  position: absolute;
+  left: 10px;
+  top: -6px;
 }
 
 @media only screen
 and (max-device-width : 360px) {
-  .profile-details img{
+  .profile-details .profile{
     height: 80px;
     width: 80px;
   }

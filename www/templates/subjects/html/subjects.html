@@ -23,7 +23,7 @@
       </ion-item>
     </ion-list>
 
-    <ion-infinite-scroll
+    <ion-infinite-scroll ng-if="subjects.length>=20"
       on-infinite="loadOlderSubjects()"
       distance="1%">
     </ion-infinite-scroll>

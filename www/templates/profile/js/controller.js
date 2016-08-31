@@ -14,6 +14,18 @@ appControllers.controller('myProfileCtrl', function ($rootScope, $ionicPopup,Use
       }, function (err) {
       });
   }
+
+  $scope.logOut = function(){
+    UserService.LogOut()
+      .then(function () {
+        window.localStorage.clear();
+        ConfigurationService.LogOut();
+        $state.go('login');
+      }, function (err) {
+        $state.go('login');
+      });
+  }
+
   $scope.tab = 'open';
   $scope.updateProfile=function () {
     var user = {
