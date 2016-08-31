@@ -56,7 +56,7 @@ appServices.factory('ChatService', function($q, $timeout,SubjectService, $rootSc
           isUserBlocked = false;
         }
       });
-      
+
 
       var isUserOnlineRef = new Firebase('https://chatoi.firebaseio.com/presence/' + createrId);
       isUserOnlineRef.on("value", function (userSnapshot) {
