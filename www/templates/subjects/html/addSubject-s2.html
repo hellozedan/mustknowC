@@ -7,14 +7,9 @@
       <span class="add-subject-step">2/2</span>
     </ion-item>
   </div>
-  <ion-content >
+  <ion-content class="add-subject-s1-page">
     <div class="content">
       <ion-list>
-        <ion-item class="add-subject-header">
-          <i ui-sref="tab.addSubject-s1" class="icon ion-arrow-left-c"></i>
-          <span class="add-subject-header-span">You are talking about...</span>
-          <span class="add-subject-step">2/2</span>
-        </ion-item>
       <div class="add-subject">
         <input required name="noteTitle" placeholder="Subject Title *" ng-model="subject.title">
         <textarea required rows="3" ng-model="subject.description" maxlength="250"
