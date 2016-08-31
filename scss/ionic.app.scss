@@ -371,9 +371,10 @@ p.notification {
 }
 
 .tabs .tab-item .icon.subjects-blue {
+  margin-top: 4% !important;
   background-repeat: no-repeat;
   background-position: 50%;
-  height: 80%;
+  height: 70%;
   background-image: url('../img/logo.png');
   background-size:contain;
 }
@@ -423,9 +424,10 @@ p.notification {
 }
 
 .tabs .tab-item .icon.subjects-grey {
+  margin-top: 4% !important;
   background-repeat: no-repeat;
   background-position: 50%;
-  height: 80%;
+  height: 70%;
   background-image: url('../img/logo_grey.png');
   background-size:contain;
 }
@@ -523,6 +525,7 @@ textarea, input::-webkit-input-placeholder {
 }
 .messages .item{
   height: 100px;
+  top: -5px !important;
   padding-left: 92px !important;
 }
 .messages .item img{
@@ -712,7 +715,7 @@ button:active{
   border: none;
 }
 .add-subject-s1-page{
-  top: 124px !important; 
+  top: 124px !important;
 }
 .popover{
   height: 172px !important;
