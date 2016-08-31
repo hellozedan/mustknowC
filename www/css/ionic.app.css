@@ -10122,6 +10122,7 @@ p.notification {
   position: absolute; }
 
 .filter-fotter {
+  height: 55px !important;
   width: 15% !important;
   bottom: 16px;
   left: 10px;
@@ -10130,6 +10131,10 @@ p.notification {
 .filter-fotter i {
   width: 100%;
   font-size: 40px; }
+
+.filter-fotter img {
+  max-width: 50px;
+  max-height: 50px; }
 
 .subject-list .list .item {
   height: 115px;
@@ -10491,6 +10496,10 @@ button:active {
 
 .profile-tabs a span {
   line-height: 4px !important; }
+
+.circle-new-message {
+  top: -11px !important;
+  right: 34%; }
 
 @media only screen and (max-device-width: 360px) {
   .profile-details img {

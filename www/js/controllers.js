@@ -9,11 +9,11 @@ appControllers.controller('NewMessagesCtrl', function ($scope, MessagesService) 
   }
 });
 
-appControllers.controller('tabsCtrl', function ($scope) {
+appControllers.controller('tabsCtrl', function ($scope, MessagesService) {
 
-  $scope.addSubject = function(){
+  $scope.checkUndreadMessage = function(){
 
-
+    return MessagesService.checkUndreadMessage();
   }
 });
 appControllers.controller('AppCtrl', function ($scope, $ionicHistory) {

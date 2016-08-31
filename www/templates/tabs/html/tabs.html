@@ -1,5 +1,5 @@
 <ion-tabs ng-controller="tabsCtrl" class="tabs-striped tabs-color-positive tabs-top">
-  <i style="position: absolute; top: 100px !important; width: 100px !important;"  class="icon ion-record circle-new-message" ></i>
+  <i ng-if="checkUndreadMessage()" class="icon ion-record circle-new-message" ></i>
 
   <ion-tab icon-on="add-subject-blue" icon-off="add-subject-grey" href="#/tab/addSubject-s1">
     <ion-nav-view name="tab-addSubject"></ion-nav-view>
