@@ -90,6 +90,7 @@ p.notification {
   color: white;
   background: #5fa1d2;
   border-radius: 25px;
+  height: 56px;
   float: right; }
 
 .from-them {
@@ -99,6 +100,7 @@ p.notification {
   background: #E5E5EA;
   border-radius: 25px;
   color: black;
+  height: 56px;
   float: left; }
 
 
@@ -249,8 +251,8 @@ p.notification {
   color: red; }
 
 .chat-time-span {
-  position: relative;
-  top: 10px;
+  position: absolute;
+  top: 30px;
   font-size: 10px; }
 
 .chat-date-span {
@@ -712,7 +714,7 @@ button:active{
   border: none;
 }
 .add-subject-s1-page{
-  top: 124px !important; 
+  top: 124px !important;
 }
 .popover{
   height: 172px !important;
@@ -738,6 +740,7 @@ button:active{
   top: -11px !important;
   right: 34%;
 }
+
 
 @media only screen
 and (max-device-width : 360px) {

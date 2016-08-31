@@ -16,10 +16,15 @@ appControllers.controller('tabsCtrl', function ($scope, MessagesService) {
     return MessagesService.checkUndreadMessage();
   }
 });
-appControllers.controller('AppCtrl', function ($scope, $ionicHistory) {
+appControllers.controller('AppCtrl', function ($scope, $state, $ionicHistory) {
 
   $scope.goBack = function(){
-    $ionicHistory.goBack();
+    if($state.current.name.indexOf('chat') >= 0){
+      $state.go('tab.messages');
+    }else{
+      $ionicHistory.goBack();
+    }
+
   }
 });
 
