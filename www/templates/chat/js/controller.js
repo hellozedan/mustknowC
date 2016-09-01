@@ -1,6 +1,6 @@
 
 (function () {
-  appControllers.controller('chatCtrl', function ($scope, $ionicPopover, $timeout,$ionicScrollDelegate, $rootScope, $state,$ionicPopup, ConfigurationService, ChatService, UserService, EntityService) {
+  appControllers.controller('chatCtrl', function ($scope, $ionicPopover, $timeout,$ionicScrollDelegate, $rootScope, $state,$ionicPopup, ConfigurationService, ChatService, UserService, EntityService,focus) {
   var date = new Date();
   $scope.dateString = date.toLocaleDateString();
   $scope.isExpanded = true;
@@ -148,6 +148,7 @@
     ChatService.sendMessage(msg, $scope.chatDetails);
 
     $scope.data.message = "";
+    focus('email');
   }
     $ionicPopover.fromTemplateUrl('templates/shared/drop-down-menu.html', {
       scope: $scope,
