@@ -10,11 +10,13 @@ appControllers.controller('messagesCtrl', function ($scope, $rootScope, $state, 
   });
   MessagesService.setMessages();
   $scope.goToChat = function (message) {
+    debugger
     var messageDetails = {
       conversationId: message.conversationId,
       fbPhotoUrl: message.fbPhotoUrl,
       userName: message.userName,
-      subjectName: message.subjectName
+      subjectName: message.subjectName,
+      desc:message.desc
     }
     EntityService.setMessageDetails(messageDetails);
     $state.go('chat', {conversationId: message.conversationId})

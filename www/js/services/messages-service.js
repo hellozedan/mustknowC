@@ -30,7 +30,8 @@
               subjectName: value.subjectName,
               fbPhotoUrl: value.fbPhotoUrl,
               userName: value.userName,
-              readMessage: readMessage
+              readMessage: readMessage,
+              desc:value.desc
 
             }
 
