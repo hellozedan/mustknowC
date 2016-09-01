@@ -336,19 +336,30 @@ p.notification {
 }
 
 .filter-fotter{
-  height: 55px !important;
-  width: 15% !important;
-  bottom: 16px;
-  left: 10px;
   background: transparent;
+  bottom: 40px;
+  left: -15px;
+  right: 0px;
+  background: 0 0;
+  direction: rtl;
+}
+.add-subject-fotter{
+  background: transparent;
+  bottom: 40px;
+  left: -9px;
+  right: 0px;
+  background: 0 0;
+  direction: rtl;
 }
 .filter-fotter i{
   width: 100%;
   font-size: 40px;
 }
 .filter-fotter img{
-  max-width: 50px;
-  max-height: 50px;
+  max-width: 60px;
+  max-height: 60px;
+  width: 60px !important;
+  height: 60px !important;
 }
 .subject-list .list .item{
   height: 115px;
@@ -505,6 +516,9 @@ textarea, input::-webkit-input-placeholder {
   right: 20px;
   top: 20px;
 }
+.filter-btn{
+  background-image: url('../img/filter.png');
+}
 .create-subject-btn-grey{
   background-image: url('../img/create-subject-grey.png');
 }
@@ -512,16 +526,11 @@ textarea, input::-webkit-input-placeholder {
   background-image: url('../img/create-subject-blue.png');
 }
 .create-subject-btn{
-
   padding: 15px;
-
   height: 60px;
   width: 60px;
   background-size: 100% 100%;
   background-repeat: repeat-x;
-  position: absolute;
-  right: 0px;
-  margin: 14px;
 }
 .messages .item{
   height: 100px;
@@ -619,7 +628,7 @@ textarea, input::-webkit-input-placeholder {
 
 .container ul li {
   width: 33%;
-  height: 100px;
+  height: 116px;
   float: left;
   padding: 10px;
 
@@ -644,8 +653,8 @@ textarea, input::-webkit-input-placeholder {
   opacity: 0.9;
 }
 .filter-list .list{
-  width: 80% !important;
-  left: 10%;
+  width: 92%!important;
+  left: 4%;
 }
 .filter-list .list .item{
   border-top: none ;
@@ -653,6 +662,7 @@ textarea, input::-webkit-input-placeholder {
   border-left: none;
 }
 .filter-list .gender-button{
+  border-radius: 5px !important;
   min-height: 38px;
   font-size: 13px!important;
   padding-left: 5px;
@@ -763,6 +773,12 @@ and (max-device-width : 360px) {
 }
 .filter-pop {
   border-radius: 8px !important;
+}
+.delete-btn {
+  width: 62.32px !important;
+}
+.message-pop {
+  height:18% !important;
 }
 .item-icon-right{
   padding-right: 15px;

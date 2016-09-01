@@ -32,7 +32,7 @@ appServices.factory('backcallFactory', ['$state','$rootScope','$ionicPlatform','
   obj.backCall=function(){
     var backbutton=0;
     $ionicPlatform.registerBackButtonAction(function () {
-      if ($state.current.name === 'tab.subjects' || $state.current.name === 'tab.addSubject-s1' || $state.current.name === 'tab.messages' || $state.current.name === 'tab.myProfile') {
+      if ($state.current.name === 'tab.subjects' || $state.current.name === 'tab.addSubject-s1' || $state.current.name === 'tab.messages' || $state.current.name === 'tab.myProfile' || $state.current.name === 'login') {
         if(backbutton==0){
           backbutton++;
           window.plugins.toast.showShortBottom('press back button again to exit.');
@@ -58,3 +58,31 @@ appServices.factory('backcallFactory', ['$state','$rootScope','$ionicPlatform','
   }//backcallfun
   return obj;
 }]);
+
+appServices.factory('focus', function($timeout, $window) {
+  return function(id) {
+    // timeout makes sure that it is invoked after any other event has been triggered.
+    // e.g. click events that need to run before the focus or
+    // inputs elements that are in a disabled state but are enabled when those events
+    // are triggered.
+    $timeout(function() {
+      var element = $window.document.getElementById(id);
+      if(element)
+        element.focus();
+    });
+  };
+});
+
+appServices.directive('eventFocus', function(focus) {
+  return function(scope, elem, attr) {
+    elem.on(attr.eventFocus, function() {
+      focus(attr.eventFocusId);
+    });
+
+    // Removes bound events in the element itself
+    // when the scope is destroyed
+    scope.$on('$destroy', function() {
+      elem.off(attr.eventFocus);
+    });
+  };
+});
