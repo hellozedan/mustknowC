@@ -15,6 +15,12 @@
 
   <ion-content ng-class="{expanded: isExpanded}" id="menu-dashboard-content" class="padding">
     <section class="chats">
+      <span>
+        <span>
+   <div class="chat-date-span">
+            <span>{{chatDetails.desc}}</span>
+          </div>
+        </span>
       <span ng-repeat="(key, message) in messages">
         <span>
           <div class="chat-date-span" ng-if="message.date_string != messages[$index - 1].date_string">
