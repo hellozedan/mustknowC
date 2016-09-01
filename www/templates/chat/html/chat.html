@@ -5,7 +5,7 @@
 
       <img ng-src="{{chatDetails.fbPhotoUrl}}">
       <h2>{{chatDetails.userName}}</h2>
-      <p>{{chatDetails.subjectName}}</p>
+      <p>{{chatDetails.desc}}</p>
       <i ng-controller="OnlineUserCtrl" class="icon ion-record online-offline" ng-class="{'online-circle': isUserOnline == true, 'offline-circle': isUserOnline == false}"></i>
 
     </a>

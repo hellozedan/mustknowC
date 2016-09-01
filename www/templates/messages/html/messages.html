@@ -4,7 +4,7 @@
 
       <ion-item ng-click="goToChat(message)" class="item-avatar item-icon-right" ng-repeat="message in messages">
         <img ng-src="{{message.fbPhotoUrl}}">
-        <p class="subject-description">{{message.desc}}</p>
+        <p class="subject-description">{{(message.desc.length>70)?message.desc.substring(0,70)+'...':message.desc.substring(0,70)}}</p>
         <p class="last-message">{{message.userName}}: {{message.lastMessage}}</p>
         <i ng-class="message.readMessage ? 'message-unread' : (!message.readMessage ? 'message-read' : 'message-unread')" ng-click="goToChat(message)" class="icon ion-chatbubble"></i>
 
