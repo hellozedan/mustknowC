@@ -336,10 +336,17 @@ p.notification {
 }
 
 .filter-fotter{
-
   background: transparent;
-  bottom: 44px;
-  left: -13px;
+  bottom: 40px;
+  left: -15px;
+  right: 0px;
+  background: 0 0;
+  direction: rtl;
+}
+.add-subject-fotter{
+  background: transparent;
+  bottom: 40px;
+  left: -9px;
   right: 0px;
   background: 0 0;
   direction: rtl;
@@ -349,8 +356,10 @@ p.notification {
   font-size: 40px;
 }
 .filter-fotter img{
-  max-width: 50px;
-  max-height: 50px;
+  max-width: 60px;
+  max-height: 60px;
+  width: 60px !important;
+  height: 60px !important;
 }
 .subject-list .list .item{
   height: 115px;
@@ -506,6 +515,9 @@ textarea, input::-webkit-input-placeholder {
   position: absolute;
   right: 20px;
   top: 20px;
+}
+.filter-btn{ 
+  background-image: url('../img/filter.png');
 }
 .create-subject-btn-grey{
   background-image: url('../img/create-subject-grey.png');
