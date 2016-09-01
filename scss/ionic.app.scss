@@ -650,6 +650,7 @@ textarea, input::-webkit-input-placeholder {
   border-left: none;
 }
 .filter-list .gender-button{
+  border-radius: 5px !important;
   min-height: 38px;
   font-size: 13px!important;
   padding-left: 5px;
@@ -760,4 +761,7 @@ and (max-device-width : 360px) {
 }
 .filter-pop {
   border-radius: 8px !important;
+}
+.delete-btn {
+  width: 62.32px !important;
 }

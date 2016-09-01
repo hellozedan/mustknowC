@@ -30,15 +30,15 @@
         <img ng-src="{{categoriesUrl}}{{subject.category._id}}.png">
         <h2>{{subject.title}}</h2><h2>{{category.name}}</h2>
         <ion-option-button ng-show="tab=='open'" ng-click="changeStatus(subject, $index, false)" class="button-positive">Close</ion-option-button>
-        <ion-option-button ng-show="tab=='closed'" ng-click="changeStatus(subject, $index, true)" class="button-positive">Open</ion-option-button>
-        <ion-option-button ng-click="deleteSubject($index, subject)" class="button-assertive">Delete</ion-option-button>
+        <ion-option-button ng-show="tab=='closed'" ng-click="changeStatus(subject, $index, true)" class="button-positive close-btn">Open</ion-option-button>
+        <ion-option-button ng-click="deleteSubject($index, subject)" class="button-assertive delete-btn">Delete</ion-option-button>
       </ion-item>
     </ion-list>
     <ion-list ng-show="tab=='blocked'">
       <ion-item class="item-thumbnail-left item-icon-right categories-list" ng-repeat="user in blockedUsers">
         <img ng-src="{{user.fbPhotoUrl}}"/>
         <h2>{{user.userName}}</h2>
-        <ion-option-button ng-click="showConfirm(user)" class="button-assertive">Delete</ion-option-button>
+        <ion-option-button ng-click="showConfirm(user)" class="button-assertive">Unblock</ion-option-button>
       </ion-item>
     </ion-list>
   </ion-content>
