@@ -10524,3 +10524,6 @@ button:active {
 
 .filter-pop {
   border-radius: 8px !important; }
+
+.delete-btn {
+  width: 62.32px !important; }
