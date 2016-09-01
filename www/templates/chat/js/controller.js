@@ -90,7 +90,7 @@
     $scope.data={is_toBlocked:true,reason:""};
     var confirmPopup = $ionicPopup.show({
       title: 'Report User',
-      template: '<textarea cols="4" ng-model="data.reason" placeholder="Giv us more details"></textarea>   <md-checkbox aria-label="Checkbox" ng-model="data.is_toBlocked">Also block this user ? </md-checkbox>',
+      template: '<textarea cols="4" ng-model="data.reason" placeholder="Giv us more details"></textarea>  <ion-checkbox ng-model="data.is_toBlocked" >Also block this user ? </ion-checkbox>',
       scope: $scope,
       buttons: [
         { text: 'Cancel' },
