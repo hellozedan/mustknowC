@@ -1,14 +1,11 @@
 (function () {
   appControllers.controller('subjectsCtrl', function ($scope,$ionicScrollDelegate, $ionicModal, $ionicPlatform, $rootScope, $state, $interval, $stateParams, $timeout, SubjectService, EntityService, UserService, MessagesService, ConfigurationService, backcallFactory) {
-    $scope.show = function(){
-      var a = document.getElementById('dropdown-content');
-      a.style.display = 'block';
 
-    }
     $scope.scrollOptions = {
       skip: 0,
       limit: 20
     }
+
     function loadSubjects(callback){
       SubjectService.GetSubjects(false, $scope.scrollOptions)
         .then(function (subjects) {
@@ -16,7 +13,6 @@
           angular.forEach(subjects.subjects, function(subject){
            s.push(subject);
           })
-          $scope.subjectsCount = subjects.count;
           $scope.subjectsCount = subjects.count;
           callback(s);
 
@@ -34,10 +30,16 @@
       loadSubjects(function(subjects){
         $scope.subjects = $scope.subjects.concat(subjects);
         $scope.$broadcast('scroll.infiniteScrollComplete');
-        $ionicScrollDelegate.scrollBottom();
+
       })
 
 
+    }
+    $scope.moreDataCanBeLoaded =function(){
+      if($scope.subjects.length >= $scope.subjectsCount){
+        return false;
+      }
+      return true;
     }
     $scope.loadNewrSubjects = function(){
       $scope.scrollOptions = {
@@ -91,10 +93,8 @@
     function doRefresh() {
       SubjectService.GetSubjects(false, $scope.scrollOptions)
         .then(function (subjects) {
-          $scope.subjects = [];
-          angular.forEach(subjects.subjects, function(subject){
-            $scope.subjects.push(subject);
-          })
+          $scope.subjects = subjects.subjects;
+
           $scope.subjectsCount = subjects.count;
         }, function (err) {
         });

@@ -336,11 +336,13 @@ p.notification {
 }
 
 .filter-fotter{
-  height: 55px !important;
-  width: 15% !important;
-  bottom: 16px;
-  left: 10px;
+
   background: transparent;
+  bottom: 44px;
+  left: -13px;
+  right: 0px;
+  background: 0 0;
+  direction: rtl;
 }
 .filter-fotter i{
   width: 100%;
@@ -512,16 +514,11 @@ textarea, input::-webkit-input-placeholder {
   background-image: url('../img/create-subject-blue.png');
 }
 .create-subject-btn{
-
   padding: 15px;
-
   height: 60px;
   width: 60px;
   background-size: 100% 100%;
   background-repeat: repeat-x;
-  position: absolute;
-  right: 0px;
-  margin: 14px;
 }
 .messages .item{
   height: 100px;
@@ -619,7 +616,7 @@ textarea, input::-webkit-input-placeholder {
 
 .container ul li {
   width: 33%;
-  height: 100px;
+  height: 116px;
   float: left;
   padding: 10px;
 
@@ -644,8 +641,8 @@ textarea, input::-webkit-input-placeholder {
   opacity: 0.9;
 }
 .filter-list .list{
-  width: 80% !important;
-  left: 10%;
+  width: 92%!important;
+  left: 4%;
 }
 .filter-list .list .item{
   border-top: none ;
