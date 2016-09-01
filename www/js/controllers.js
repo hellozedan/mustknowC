@@ -19,7 +19,11 @@ appControllers.controller('AppCtrl', function ($scope, $state, $ionicHistory) {
 
   $scope.goBack = function(){
     if($state.current.name.indexOf('chat') >= 0){
-      $state.go('tab.messages');
+      if($ionicHistory.backView()){
+        $ionicHistory.goBack();
+      }else{
+        $state.go('tab.messages');
+      }
     }else{
       $ionicHistory.goBack();
     }
@@ -59,30 +63,5 @@ appServices.factory('backcallFactory', ['$state','$rootScope','$ionicPlatform','
   return obj;
 }]);
 
-appServices.factory('focus', function($timeout, $window) {
-  return function(id) {
-    // timeout makes sure that it is invoked after any other event has been triggered.
-    // e.g. click events that need to run before the focus or
-    // inputs elements that are in a disabled state but are enabled when those events
-    // are triggered.
-    $timeout(function() {
-      var element = $window.document.getElementById(id);
-      if(element)
-        element.focus();
-    });
-  };
-});
 
-appServices.directive('eventFocus', function(focus) {
-  return function(scope, elem, attr) {
-    elem.on(attr.eventFocus, function() {
-      focus(attr.eventFocusId);
-    });
 
-    // Removes bound events in the element itself
-    // when the scope is destroyed
-    scope.$on('$destroy', function() {
-      elem.off(attr.eventFocus);
-    });
-  };
-});

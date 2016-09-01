@@ -1,11 +1,28 @@
 (function () {
-  appControllers.controller('subjectsCtrl', function ($scope,$ionicScrollDelegate, $ionicModal, $ionicPlatform, $rootScope, $state, $interval, $stateParams, $timeout, SubjectService, EntityService, UserService, MessagesService, ConfigurationService, backcallFactory) {
+  appControllers.controller('subjectsCtrl', function ($scope, MessagesService,$ionicScrollDelegate, $ionicModal, $ionicPlatform, $rootScope, $state, $interval, $stateParams, $timeout, SubjectService, EntityService, UserService, MessagesService, ConfigurationService, backcallFactory) {
 
+    $scope.$on('sendMessagesEvent', function(event, mass) {
+      var messages = MessagesService.getMessages();
+      removeChatSubjects(messages);
+    });
     $scope.scrollOptions = {
       skip: 0,
       limit: 20
     }
+    function removeChatSubjects(messages){
+      $scope.messagesMap = {};
+      angular.forEach(messages, function(message){
+        var subjectId = message.conversationId.split('-')[1];
+        $scope.messagesMap[subjectId] = true;
+      })
+      angular.forEach($scope.subjects, function(subject, key){
+        if($scope.messagesMap[subject._id]){
+          console.log("s");
+          $scope.subjects.splice(1,key);
+        }
 
+      })
+    }
     function loadSubjects(callback){
       SubjectService.GetSubjects(false, $scope.scrollOptions)
         .then(function (subjects) {
@@ -94,7 +111,7 @@
       SubjectService.GetSubjects(false, $scope.scrollOptions)
         .then(function (subjects) {
           $scope.subjects = subjects.subjects;
-
+          MessagesService.setMessages();
           $scope.subjectsCount = subjects.count;
         }, function (err) {
         });

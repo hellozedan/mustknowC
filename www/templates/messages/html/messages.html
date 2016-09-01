@@ -1,20 +1,17 @@
 <ion-view class="messages-page" ng-controller="NewMessagesCtrl" cache-view="false">
-  <ion-content class="messages-content">
-    <div class="content">
-      <ion-list class="messages">
-        <ion-item ng-click="goToChat(message)" class="item-avatar item-icon-right" ng-repeat="message in messages">
-          <img ng-src="{{message.fbPhotoUrl}}">
-          <div ng-click="goToChat(message)">
-            <h2>{{message.subjectName}}</h2>
-            <p>{{message.userName}}: {{message.lastMessage}}</p>
-            <i ng-class="message.readMessage ? 'message-unread' : (!message.readMessage ? 'message-read' : 'message-unread')" ng-click="goToChat(message)" class="icon ion-chatbubble"></i>
-          </div>
-          <i class="icon ion-record online-offline" ng-class="{'online-circle': message.online, 'offline-circle': !message.online}"></i>
+  <ion-content class="messages-content padding gray-bg">
+    <ion-list class="subject-list">
+
+      <ion-item ng-click="goToChat(message)" class="item-avatar item-icon-right" ng-repeat="message in messages">
+        <img ng-src="{{message.fbPhotoUrl}}">
+        <h2>{{message.subjectName}}</h2>
+        <p>{{message.userName}}: {{message.lastMessage}}</p>
+        <i ng-class="message.readMessage ? 'message-unread' : (!message.readMessage ? 'message-read' : 'message-unread')" ng-click="goToChat(message)" class="icon ion-chatbubble"></i>
+
+        <i class="icon ion-record online-offline" ng-class="{'online-circle': message.online, 'offline-circle': !message.online}"></i>
+
+    </ion-list>
 
 
-        </ion-item>
-
-      </ion-list>
-    </div>
   </ion-content>
 </ion-view>

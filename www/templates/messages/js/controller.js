@@ -1,7 +1,6 @@
 (function () {
 appControllers.controller('messagesCtrl', function ($scope, $rootScope, $state, $stateParams, $timeout, $firebaseArray, ConfigurationService, MessagesService, UserService, EntityService) {
 
-  $rootScope.isHeaderExpanded = true;
   $scope.$on('sendMessagesEvent', function(event, mass) {
     $scope.messages = MessagesService.getMessages();
     if(!$scope.$$phase) {
