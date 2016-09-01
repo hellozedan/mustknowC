@@ -11,9 +11,9 @@
     <div class="content">
       <ion-list>
       <div class="add-subject">
-        <input required name="noteTitle" placeholder="Subject Title *" ng-model="subject.title">
-        <textarea rows="3" maxlength="250" required rows="3" ng-model="subject.description" maxlength="250"
-                  placeholder="Describe your subject here ...."></textarea>
+        <!--<input required name="noteTitle" placeholder="Subject Title *" ng-model="subject.title">-->
+        <textarea rows="5" maxlength="250" required rows="3" ng-model="subject.description" maxlength="250"
+                  placeholder="Think It Loudly ...."></textarea>
 
       </div>
       </ion-list>
@@ -22,7 +22,7 @@
     </div>
   </ion-content>
   <div class="bar bar-footer add-subject-fotter">
-    <div ng-click="createSubject()" ng-class="{'create-subject-btn-blue': subject.description.length>0 && subject.title.length>0}" class="create-subject-btn create-subject-btn-grey">
+    <div ng-click="createSubject()" ng-class="{'create-subject-btn-blue': subject.description.length>0 }" class="create-subject-btn create-subject-btn-grey">
 
     </div>
 

@@ -516,7 +516,7 @@ textarea, input::-webkit-input-placeholder {
   right: 20px;
   top: 20px;
 }
-.filter-btn{ 
+.filter-btn{
   background-image: url('../img/filter.png');
 }
 .create-subject-btn-grey{
@@ -779,4 +779,17 @@ and (max-device-width : 360px) {
 }
 .message-pop {
   height:18% !important;
+}
+.item-icon-right{
+  padding-right: 15px;
+}
+.subject-username{
+
+}
+.subject-title{
+
+}
+.subject-description{
+  font-size: 12px !important;
+  white-space: initial !important;
 }

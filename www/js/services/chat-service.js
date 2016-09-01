@@ -138,14 +138,16 @@ appServices.factory('ChatService', function($q, $timeout,SubjectService, $rootSc
         var otherToSend = {
           userName: userName,
           subjectName: chatDetails.subjectName,
-          fbPhotoUrl: userDetails.fbPhotoUrl
+          fbPhotoUrl: userDetails.fbPhotoUrl,
+          desc:chatDetails.desc
         }
 
         myRef.set({
           userName: chatDetails.userName,
           subjectName: chatDetails.subjectName,
           fbPhotoUrl: chatDetails.fbPhotoUrl,
-          read: true
+          read: true,
+          desc:chatDetails.desc
         });
 
         if(isUserBlocked){
@@ -192,7 +194,8 @@ appServices.factory('ChatService', function($q, $timeout,SubjectService, $rootSc
               conversationId: myConversaionId,
               userName: userName,
               subjectName: chatDetails.subjectName,
-              fbPhotoUrl: userDetails.fbPhotoUrl
+              fbPhotoUrl: userDetails.fbPhotoUrl,
+              desc:chatDetails.desc
             }
             NotificationService.SendMessage(message)
               .then(function (message) {

@@ -109,7 +109,8 @@
         conversationId: subject.user._id + "-" + subject._id,
         userName: userName,
         subjectName: subject.title,
-        fbPhotoUrl: subject.user.fbPhotoUrl
+        fbPhotoUrl: subject.user.fbPhotoUrl,
+        desc:subject.description
       }
       EntityService.setMessageDetails(messageDetails);
       $state.go('chat')
@@ -199,7 +200,8 @@
       $state.go('tab.addSubject-s2', {categoryId: category._id})
     }
     $scope.createSubject = function () {
-      if ($scope.subject.title.length <= 0 || $scope.subject.description.length <= 0) {
+      // if ($scope.subject.title.length <= 0 ||
+       if($scope.subject.description.length <= 0) {
         $scope.failed = true;
         return;
       }
