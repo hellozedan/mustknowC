@@ -78,6 +78,8 @@
     confirmPopup.then(function(res) {
       if(res) {
         ChatService.blockUser($scope.chatDetails);
+        $state.go("tab.messages");
+        $scope.popover.remove();
         console.log('You are sure');
       } else {
         console.log('You are not sure');
@@ -90,7 +92,7 @@
     $scope.data={is_toBlocked:true,reason:""};
     var confirmPopup = $ionicPopup.show({
       title: 'Report User',
-      template: '<textarea cols="4" ng-model="data.reason" placeholder="Giv us more details"></textarea>  <ion-checkbox ng-model="data.is_toBlocked" >Also block this user ? </ion-checkbox>',
+      template: '<textarea cols="4" ng-model="data.reason" placeholder="Give us more details"></textarea>  <ion-checkbox ng-model="data.is_toBlocked" >Also block this user ? </ion-checkbox>',
       scope: $scope,
       buttons: [
         { text: 'Cancel' },
@@ -110,6 +112,8 @@
         {
           ChatService.blockUser($scope.chatDetails);
         }
+        $state.go("tab.messages");
+        $scope.popover.remove();
         console.log('You are sure');
       } else {
         console.log('You are not sure');
@@ -157,7 +161,8 @@
     });
 
 
-})
+
+});
 appControllers.controller('OnlineUserCtrl', function ($scope,$firebaseObject, ConfigurationService, EntityService) {
   var userDetails = ConfigurationService.UserDetails();
   var chatDetails = EntityService.getMessageDetails();
