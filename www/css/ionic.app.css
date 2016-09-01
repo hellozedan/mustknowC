@@ -9640,7 +9640,7 @@ a.button {
   margin-bottom: 20px; }
 
 @media (orientation: landscape) {
-  .platform-ios.git .platform-ipad {
+  .platform-ios.platform-browser.platform-ipad {
     position: fixed; } }
 
 .platform-c:not(.enable-transitions) * {
@@ -10542,3 +10542,10 @@ button:active {
 
 .message-pop {
   height: 18% !important; }
+
+.item-icon-right {
+  padding-right: 15px; }
+
+.subject-description {
+  font-size: 12px !important;
+  white-space: initial !important; }
