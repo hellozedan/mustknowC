@@ -705,15 +705,18 @@ textarea, input::-webkit-input-placeholder {
 }
 
 .categories-list img {
-  max-width: 70px !important;
-  max-height: 70px !important;
+  max-width: 80px !important;
+  max-height: 80px !important;
 }
 
 .categories-list {
-  height: 70px !important;
-  min-height: 70px !important;
+  height: 80px !important;
+  min-height: 80px !important;
 }
+.categories-list .item-content{
+  min-height: 80px !important;
 
+}
 .categories-list h2 {
   padding: 7px;
   font-size: 12px;
