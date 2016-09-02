@@ -11,7 +11,7 @@
     <div class="content">
       <ion-list>
 
-        <ion-item ng-click="createSubjectSetp(category)" class="item-thumbnail-left item-icon-right categories-list" ng-repeat="category in categories">
+        <ion-item ng-click="createSubjectSetp(category)" class="item-thumbnail-left item-icon-right add-categories-list" ng-repeat="category in categories">
           <img ng-src="{{categoriesUrl}}{{category._id}}.png">
           <h2>{{category.name}}</h2>
           <i ng-click="goToChat(message)" class="icon ion-chevron-right"></i>

@@ -704,14 +704,10 @@ textarea, input::-webkit-input-placeholder {
   top: 16% !important;
 }
 
-.categories-list img {
-  max-width: 70px !important;
-  max-height: 70px !important;
-}
 
 .categories-list {
-  height: 70px !important;
-  min-height: 70px !important;
+  height: 86px !important;
+  min-height: 86px !important;
 }
 
 .categories-list h2 {
@@ -719,7 +715,16 @@ textarea, input::-webkit-input-placeholder {
   font-size: 12px;
   padding-bottom: 5px;
 }
+.add-categories-list {
+  height: 80px !important;
+  min-height: 80px !important;
+}
 
+.add-categories-list h2 {
+  padding: 19px 7px 5px;
+  font-size: 16px;
+  padding-bottom: 5px;
+}
 .item-thumbnail-left .item-content .item-image, .item-thumbnail-left .item-content > img:first-child, .item-thumbnail-left .item-image, .item-thumbnail-left > img:first-child {
   left: 0px !important;
   top: 0px !important;
@@ -938,4 +943,28 @@ button:active {
   right: 5px;
   bottom: 5px;
   color: #666;
+}
+
+.category-name p {
+  font-size: 12px;
+  font-weight: bolder;
+  background-color: #2f2c2c;
+  opacity: 0.6;
+  color: white;
+}
+.category-name {
+  position: absolute;
+  bottom: 1px;
+  left: 0;
+  color: #fff;
+  text-align: center;
+  width: 86px;
+  font-size: 24px;
+}
+.item-thumbnail-left, .item-thumbnail-left .item-content{
+  min-height: 86px;
+}
+.blocked-user .item-content{
+  padding-top: 28px;
+  padding-left: 128px;
 }
