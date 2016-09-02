@@ -12,15 +12,15 @@
         <!--<h2 class="subject-title">{{subject.title}}</h2>-->
         <p class="subject-description">{{(subject.interested.length>0)? subject.description.substring(0,100)+' , interested '+subject.interested.length:subject.description.substring(0,100)}}</p>
         <span class="subject-time" am-time-ago="subject.create_date"></span>
-        <!--<div class="subject-container">-->
-          <!--<div>-->
-            <!--<img src="img/favorite.png">-->
-          <!--</div>-->
+        <div class="subject-container">
+          <div>
+            <img class="fav-star" src="img/favorite.png">
+          </div>
 
-          <!--<div ng-click="goToChat(subject)" >-->
-            <!--<img src="img/chat.png">-->
-          <!--</div>-->
-        <!--</div>-->
+<!--          <div ng-click="goToChat(subject)" >
+            <img src="img/chat.png">
+          </div>-->
+        </div>
 
       </ion-item>
     </ion-list>

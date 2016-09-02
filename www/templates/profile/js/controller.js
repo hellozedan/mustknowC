@@ -1,7 +1,30 @@
+
 (function () {
 // Controller of expense dashboard page.
-  appControllers.controller('myProfileCtrl', function ($rootScope, $ionicModal, $ionicPopup, UserService, $firebaseArray, $ionicLoading, $scope, $state, $stateParams, EntityService, SubjectService, ConfigurationService) {
+appControllers.controller('myProfileCtrl', function ($rootScope,$ionicModal, $ionicPopup,UserService, $firebaseArray, $ionicLoading, $scope,$state,$stateParams,$ionicHistory,EntityService,SubjectService,ConfigurationService) {
 
+  $scope.userProfile = ConfigurationService.UserDetails();// angular.fromJson(window.localStorage['user']);
+  $scope.categoriesUrl = ConfigurationService.CategoriesUrl();
+  $scope.subjects = [];
+  $scope.deleteSubject = function (index, subject) {
+    SubjectService.DeleteSubjects(subject)
+      .then(function () {
+        $scope.subjects.splice(index, 1);
+      }, function (err) {
+      });
+  }
+
+  $scope.logOut = function(){
+    UserService.LogOut()
+      .then(function () {
+        window.localStorage.clear();
+        ConfigurationService.LogOut();
+        $ionicHistory.clearHistory();
+        $state.go('login');
+      }, function (err) {
+        $state.go('login');
+      });
+  }
     $scope.userProfile = ConfigurationService.UserDetails();// angular.fromJson(window.localStorage['user']);
     $scope.categoriesUrl = ConfigurationService.CategoriesUrl();
     $scope.subjects = [];
@@ -154,13 +177,13 @@
           disableBack: true
         });
 
-        //Next view animate will display in back direction
-        $ionicViewSwitcher.nextDirection('back');
+      //Next view animate will display in back direction
+      $ionicViewSwitcher.nextDirection('back');
 
-        $state.go(stateName, {
-          isAnimated: objectData,
-        });
-      }
-    }; // End of navigateTo.
-  }); // End of controller expense dashboard setting.
+      $state.go(stateName, {
+        isAnimated: objectData,
+      });
+    }
+  }; // End of navigateTo.
+}); // End of controller expense dashboard setting.
 })();
