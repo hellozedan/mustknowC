@@ -927,6 +927,10 @@ button:active {
 .last-message {
   font-weight: bold;
 }
+
+
+
+
 .detail-message {
   width: 100% !important;
   background-color: #8bc79d !important;
@@ -938,4 +942,10 @@ button:active {
   right: 5px;
   bottom: 5px;
   color: #666;
+}
+.edit-subject{
+  width: 100%;
+}
+.update-subject-btn-blue{
+  float: right;
 }

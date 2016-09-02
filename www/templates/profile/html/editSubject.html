@@ -1,0 +1,48 @@
+<ion-modal-view class="custome-modal filter-pop">
+  <ion-header-bar>
+    <span class="title filter-title">Filter</span>
+  </ion-header-bar>
+  <ion-content>
+    <textarea rows="6" maxlength="250"  ng-model="currentSubject.description" maxlength="250" class="edit-subject"
+             ></textarea>
+    <div ng-click="updateSubject()"  ng-class="{'create-subject-btn-blue ': currentSubject.description.length>0 }" class="create-subject-btn create-subject-btn-grey update-subject-btn-blue">
+    <!--<ion-list class="filter-list">-->
+      <!--<ion-item class="item-toggle">-->
+        <!--Near Me-->
+        <!--<label class="toggle toggle-assertive">-->
+          <!--<input type="checkbox" ng-model="myFilter.nearMe">-->
+          <!--<div class="track">-->
+            <!--<div class="handle"></div>-->
+          <!--</div>-->
+        <!--</label>-->
+      <!--</ion-item>-->
+      <!--<ion-item>-->
+        <!--<div class="button-bar">-->
+          <!--<button class="button gender-button" ng-click="setGender('female')" ng-class="{'filter-clicked-button': myFilter.gender=='female', 'filter-unclicked-button': myFilter.gender!='female'}">-->
+            <!--Female-->
+          <!--</button>-->
+          <!--<button class="button gender-button center" ng-click="setGender('both')" ng-class="{'filter-clicked-button': myFilter.gender=='both', 'filter-unclicked-button': myFilter.gender!='both'}">-->
+            <!--Both-->
+          <!--</button>-->
+          <!--<button class="button gender-button" ng-click="setGender('male')" ng-class="{'filter-clicked-button': myFilter.gender=='male', 'filter-unclicked-button': myFilter.gender!='male'}">-->
+            <!--Male-->
+          <!--</button>-->
+        <!--</div>-->
+      <!--</ion-item>-->
+
+      <!--<div class="container">-->
+        <!--<ul>-->
+          <!--<li ng-if="category.name != 'Other'" ng-click="selectCategory($index)" ng-repeat="category in categories">-->
+            <!--<img ng-src="{{categoriesUrl}}{{category._id}}.png">-->
+           <!--<div class="category-details">-->
+             <!--<i ng-class="{'category-not-selected': !category.is_selected, 'category-selected': category.is_selected}"  class="icon ion-checkmark-round"></i>-->
+             <!--<p>{{category.name}}</p>-->
+           <!--</div>-->
+          <!--</li>-->
+
+        <!--</ul>-->
+      <!--</div>-->
+    <!--</ion-list>-->
+
+  </ion-content>
+</ion-modal-view>

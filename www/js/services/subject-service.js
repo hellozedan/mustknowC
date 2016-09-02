@@ -180,6 +180,20 @@
           //   $log.error(msg, code);
         });
         return deferred.promise;
+      },
+      UpdateSubject: function (subject) {
+        var deferred = $q.defer();
+        $http.post(ConfigurationService.ServerUrl() + '/api/subjects',subject, {
+          headers: {
+            "access-token": ConfigurationService.UserDetails().token
+          }
+        }).success(function (data) {
+          deferred.resolve(data);
+        }).error(function (msg, code) {
+          deferred.reject(msg);
+          //   $log.error(msg, code);
+        });
+        return deferred.promise;
       }
     }
   })
