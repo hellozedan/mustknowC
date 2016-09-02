@@ -31,8 +31,33 @@ appControllers.controller('AppCtrl', function ($scope, $state, $ionicHistory) {
   }
 });
 
+appServices.factory('favoriteService', ['$state','$rootScope','$ionicPlatform','$ionicHistory',function($state,$ionicPlatform,$ionicHistory,$timeout){
+  var favorites = [];
+  return {
+    getFavorites : function () {
+      if (favorites.length > 0){
+        return favorites;
+      }
+      else {
+        favorites =  angular.fromJson(window.localStorage['favorites']) || [];
+        return favorites;
+      }
+    },
+    addToFavorites : function (fav) {
+      favorites.push(fav);
+      window.localStorage['favorites'] = angular.toJson(favorites);
+    }
+  };
+/*  $scope.addToFavorites = function () {
+    var fav = {
+      subject: $scope.subject.id
+    };
+    window.localStorage['favorites'] = angular.toJson(fav);
+  };*/
+}]);
+
 appServices.factory('backcallFactory', ['$state','$rootScope','$ionicPlatform','$ionicHistory','$timeout',function($state,$rootScope,$ionicPlatform,$ionicHistory,$timeout){
-  var obj={}
+  var obj={};
   obj.backCall=function(){
     var backbutton=0;
     $ionicPlatform.registerBackButtonAction(function () {
