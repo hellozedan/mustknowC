@@ -306,7 +306,7 @@ p.notification {
   font-size: 10px;
 }
 
-.chat-date-span {
+.chat-date-span { 
   margin: auto;
   margin-bottom: 10px;
   position: relative;
@@ -920,6 +920,7 @@ button:active {
 }
 
 .subject-description {
+  width: 90%;
   font-size: 12px !important;
   white-space: initial !important;
 }
@@ -938,4 +939,12 @@ button:active {
   right: 5px;
   bottom: 5px;
   color: #666;
+}
+.fav-star {
+  width: 20px !important;
+  margin-left: -16% !important;
+  margin-top: -50% !important;
+}
+.cat-add-sub {
+  margin-top: 6% !important;
 }

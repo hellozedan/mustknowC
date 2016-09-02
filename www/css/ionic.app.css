@@ -10390,8 +10390,9 @@ textarea, input::-webkit-input-placeholder {
   min-height: 70px !important; }
 
 .categories-list h2 {
-  font-weight: bold;
-  padding: 15px; }
+  padding: 7px;
+  font-size: 12px;
+  padding-bottom: 5px; }
 
 .item-thumbnail-left .item-content .item-image, .item-thumbnail-left .item-content > img:first-child, .item-thumbnail-left .item-image, .item-thumbnail-left > img:first-child {
   left: 0px !important;
@@ -10546,7 +10547,11 @@ button:active {
 .item-icon-right {
   padding-right: 15px; }
 
+.subject-username {
+  display: inline !important; }
+
 .subject-description {
+  width: 90%;
   font-size: 12px !important;
   white-space: initial !important; }
 
@@ -10556,3 +10561,18 @@ button:active {
 .detail-message {
   width: 100% !important;
   background-color: #8bc79d !important; }
+
+.subject-time {
+  font-size: 12px !important;
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+  color: #666; }
+
+.fav-star {
+  width: 20px !important;
+  margin-left: -16% !important;
+  margin-top: -50% !important; }
+
+.cat-add-sub {
+  margin-top: 6% !important; }
