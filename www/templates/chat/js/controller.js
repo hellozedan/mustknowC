@@ -10,7 +10,10 @@
   $scope.messages = [];
   var createrId =  $scope.conversationId.split("-")[0];
 
+$scope.bb=function () {
 
+  console.log(666);
+}
   $scope.userDetails = ConfigurationService.UserDetails();
   ChatService.setMessages($scope.conversationId);
   $scope.messages = ChatService.getMessages();

@@ -3,13 +3,13 @@
     return {
       ServerUrl: function () {
          return "https://chatad.herokuapp.com";
-        //return "http://localhost:3000";
+        // return "http://localhost:3000";
          //return "http://192.168.1.14:3000";
       },
 
       CategoriesUrl: function (){
-        return "http://localhost:3000/categories/";
-        //return "https://chatad.herokuapp.com/categories/";
+        // return "http://localhost:3000/categories/";
+        return "https://chatad.herokuapp.com/categories/";
       },
       UserDetails: function () {
         if (!this.userDetails) {
