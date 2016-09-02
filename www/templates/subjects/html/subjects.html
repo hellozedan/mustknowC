@@ -8,9 +8,10 @@
 
       <ion-item ng-click="goToChat(subject)" class="item-avatar item-icon-right" ng-repeat="subject in subjects">
         <img ng-click="goToUserProfile(subject)" ng-src="{{subject.user.fbPhotoUrl}}">
-        <h2 class="subject-username">{{subject.user.first_name}}, </h2>
+        <h2 class="subject-username">{{subject.user.first_name}},  </h2>
         <!--<h2 class="subject-title">{{subject.title}}</h2>-->
         <p class="subject-description">{{(subject.interested.length>0)? subject.description.substring(0,100)+' , interested '+subject.interested.length:subject.description.substring(0,100)}}</p>
+        <span class="subject-time" am-time-ago="subject.create_date"></span>
         <!--<div class="subject-container">-->
           <!--<div>-->
             <!--<img src="img/favorite.png">-->

@@ -1,10 +1,10 @@
 (function () {
   appControllers.controller('subjectsCtrl', function ($scope, MessagesService,$ionicScrollDelegate, $ionicModal, $ionicPlatform, $rootScope, $state, $interval, $stateParams, $timeout, SubjectService, EntityService, UserService, MessagesService, ConfigurationService, backcallFactory) {
 
-    $scope.$on('sendMessagesEvent', function(event, mass) {
-      var messages = MessagesService.getMessages();
-      removeChatSubjects(messages);
-    });
+    // $scope.$on('sendMessagesEvent', function(event, mass) {
+    //   var messages = MessagesService.getMessages();
+    //   removeChatSubjects(messages);
+    // });
     $scope.scrollOptions = {
       skip: 0,
       limit: 20
@@ -75,7 +75,7 @@
       }, function (err) {
       });
     $ionicPlatform.ready(function () {
-      doRefresh();
+      //doRefresh();
       backcallFactory.backCall();
       if (window.cordova && typeof window.plugins.OneSignal != 'undefined' && !ConfigurationService.Notification_token()) {
         $timeout(function () {
@@ -111,7 +111,7 @@
       SubjectService.GetSubjects(false, $scope.scrollOptions)
         .then(function (subjects) {
           $scope.subjects = subjects.subjects;
-          MessagesService.setMessages();
+          //MessagesService.setMessages();
           $scope.subjectsCount = subjects.count;
         }, function (err) {
         });
