@@ -1,7 +1,7 @@
 
 (function () {
 // Controller of expense dashboard page.
-appControllers.controller('myProfileCtrl', function ($rootScope, $ionicPopup,UserService, $firebaseArray, $ionicLoading, $scope,$state,$stateParams,EntityService,SubjectService,ConfigurationService) {
+appControllers.controller('myProfileCtrl', function ($rootScope, $ionicPopup,UserService, $firebaseArray, $ionicLoading, $scope,$state,$stateParams,$ionicHistory,EntityService,SubjectService,ConfigurationService) {
 
   $scope.userProfile = ConfigurationService.UserDetails();// angular.fromJson(window.localStorage['user']);
   $scope.categoriesUrl = ConfigurationService.CategoriesUrl();
@@ -20,6 +20,7 @@ appControllers.controller('myProfileCtrl', function ($rootScope, $ionicPopup,Use
       .then(function () {
         window.localStorage.clear();
         ConfigurationService.LogOut();
+        $ionicHistory.clearHistory();
         $state.go('login');
       }, function (err) {
         $state.go('login');
