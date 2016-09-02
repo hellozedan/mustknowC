@@ -29,7 +29,7 @@
 
       <div class="container">
         <ul>
-          <li ng-click="selectCategory($index)" ng-repeat="category in categories">
+          <li ng-if="category.name != 'Other'" ng-click="selectCategory($index)" ng-repeat="category in categories">
             <img ng-src="{{categoriesUrl}}{{category._id}}.png">
            <div class="category-details">
              <i ng-class="{'category-not-selected': !category.is_selected, 'category-selected': category.is_selected}"  class="icon ion-checkmark-round"></i>
