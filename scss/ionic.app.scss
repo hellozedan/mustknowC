@@ -204,7 +204,6 @@ p.notification {
   top: 12px;
   color: #7f7f7f !important;
 }
-
 .chat-profile-info {
   padding-left: 80px !important;
   left: 20px !important;
@@ -458,7 +457,6 @@ p.notification {
   background-image: url('../img/logo.png');
   background-size: contain;
 }
-
 .tabs .tab-item .icon.setting_blue {
   background-repeat: no-repeat;
   background-position: 50%;
@@ -466,7 +464,6 @@ p.notification {
   background-image: url('../img/setting_blue.png');
   background-size: contain;
 }
-
 .tabs .tab-item .icon.setting_grey {
   background-repeat: no-repeat;
   background-position: 50%;
@@ -474,7 +471,6 @@ p.notification {
   background-image: url('../img/setting_grey.png');
   background-size: contain;
 }
-
 .tabs .tab-item .icon.msg_blue {
   background-repeat: no-repeat;
   background-position: 50%;
@@ -482,7 +478,6 @@ p.notification {
   background-image: url('../img/msg_blue.png');
   background-size: contain;
 }
-
 .tabs .tab-item .icon.msg_grey {
   background-repeat: no-repeat;
   background-position: 50%;
@@ -490,7 +485,6 @@ p.notification {
   background-image: url('../img/msg_grey.png');
   background-size: contain;
 }
-
 .tabs .tab-item .icon.add-subject-blue {
   background-repeat: no-repeat;
   background-position: 50%;
@@ -499,7 +493,6 @@ p.notification {
   background-size: contain;
   margin-top: 5px !important;
 }
-
 .tabs .tab-item .icon.add-subject-grey {
   background-repeat: no-repeat;
   background-position: 50%;
@@ -733,7 +726,6 @@ textarea, input::-webkit-input-placeholder {
   max-width: 86px !important;
   max-height: 86px !important;
 }
-
 .container {
   height: 100%;
 }
@@ -744,8 +736,8 @@ textarea, input::-webkit-input-placeholder {
   float: left;
   padding: 10px;
 
-}
 
+}
 .container ul li img {
   width: 100%;
   height: 100%;
@@ -897,7 +889,6 @@ button:active {
     font-size: 16px;
   }
 }
-
 .login-with-fb {
   line-height: 23px !important;
 }
@@ -905,15 +896,12 @@ button:active {
 .tab-title {
   display: none;
 }
-
 .filter-pop {
   border-radius: 8px !important;
 }
-
 .delete-btn {
   width: 62.32px !important;
 }
-
 .message-pop {
   height: 18% !important;
 }
@@ -938,6 +926,10 @@ button:active {
 
 .last-message {
   font-weight: bold;
+}
+.detail-message {
+  width: 100% !important;
+  background-color: #8bc79d !important;
 }
 
 .subject-time {
