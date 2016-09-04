@@ -694,14 +694,18 @@ textarea, input::-webkit-input-placeholder {
 }
 
 .modal-open .modal, .modal-open .modal-backdrop {
-  height: 89% !important;
-
+  height: 45% !important;
 }
 
-.custome-modal {
+.custom-modal {
   width: 94% !important;
   left: 3% !important;
   top: 16% !important;
+}
+.custom-edit-modal{
+  width: 94% !important;
+  left: 3% !important;
+  top: 27% !important;
 }
 
 .categories-list img {
@@ -986,4 +990,12 @@ button:active {
 }
 .cat-add-sub {
   margin-top: 6% !important;
+}
+.edit-subject{
+  margin: 10% !important;
+}
+.edit-pop{
+  margin-top: 20% !important;
+  border-radius: 8px !important;
+  height: 45% !important;
 }

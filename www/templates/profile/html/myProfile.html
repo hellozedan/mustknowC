@@ -26,7 +26,7 @@
 
   <ion-content class="profile-page">
     <ion-list ng-show="tab=='closed' || tab=='open'">
-      <ion-item class="item-thumbnail-left item-icon-right categories-list" ng-repeat="subject in subjects">
+      <ion-item class="item-thumbnail-left item-icon-right categories-list" ng-click="editSubject(subject,$index)" ng-repeat="subject in subjects">
         <img ng-src="{{categoriesUrl}}{{subject.category._id}}.png">
         <div class="category-name">
           <p>{{subject.category.name}}</p>
