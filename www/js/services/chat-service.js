@@ -34,10 +34,10 @@ appServices.factory('ChatService', function($q, $timeout,SubjectService, $rootSc
       createrId = conversaionId.split("-")[0];
       subjectId = conversaionId.split("-")[1];
       myConversaionId = userDetails._id + '-' + subjectId;
-      otherUrl = "https://chatoi.firebaseio.com/chats/" + createrId + "/" + myConversaionId;
-      myUrl = "https://chatoi.firebaseio.com/chats/" + userDetails._id  + "/" + conversaionId;
-      conversationUserRef = new Firebase('https://chatoi.firebaseio.com/conversationOnline/' + userDetails._id);
-      conversationOterUserRef = new Firebase('https://chatoi.firebaseio.com/conversationOnline/' + createrId);
+      otherUrl = "https://mustknow.firebaseIO.com/chats/" + createrId + "/" + myConversaionId;
+      myUrl = "https://mustknow.firebaseIO.com/chats/" + userDetails._id  + "/" + conversaionId;
+      conversationUserRef = new Firebase('https://mustknow.firebaseIO.com/conversationOnline/' + userDetails._id);
+      conversationOterUserRef = new Firebase('https://mustknow.firebaseIO.com/conversationOnline/' + createrId);
 
       hanleOtherMessageRead = new Firebase(otherUrl + "/read");
       hanleMyMessageRead = new Firebase(myUrl + "/read");
@@ -46,7 +46,7 @@ appServices.factory('ChatService', function($q, $timeout,SubjectService, $rootSc
         conversationId: conversaion,
 
       });
-      var blockedUrl = "https://chatoi.firebaseio.com/chats/" + createrId + "/blocked/" + userDetails._id;
+      var blockedUrl = "https://mustknow.firebaseIO.com/chats/" + createrId + "/blocked/" + userDetails._id;
       var blockedRef = new Firebase(blockedUrl);
 
       blockedRef.on("value", function (userSnapshot) {
@@ -58,7 +58,7 @@ appServices.factory('ChatService', function($q, $timeout,SubjectService, $rootSc
       });
 
 
-      var isUserOnlineRef = new Firebase('https://chatoi.firebaseio.com/presence/' + createrId);
+      var isUserOnlineRef = new Firebase('https://mustknow.firebaseIO.com/presence/' + createrId);
       isUserOnlineRef.on("value", function (userSnapshot) {
         if (userSnapshot.val() && userSnapshot.val() == 'online') {
           $rootScope.$broadcast('sendUserOnlineEvent', true);
@@ -68,8 +68,8 @@ appServices.factory('ChatService', function($q, $timeout,SubjectService, $rootSc
         }
       });
 
-      var firebaseRef = new Firebase('https://chatoi.firebaseio.com/chats/' + userDetails._id + '/' + conversaionId);
-      var firebaseRef2 = new Firebase('https://chatoi.firebaseio.com/chats/' + userDetails._id + '/' + conversaionId +"/messages");
+      var firebaseRef = new Firebase('https://mustknow.firebaseIO.com/chats/' + userDetails._id + '/' + conversaionId);
+      var firebaseRef2 = new Firebase('https://mustknow.firebaseIO.com/chats/' + userDetails._id + '/' + conversaionId +"/messages");
       var a = $firebaseArray(firebaseRef2);
       a.$loaded(function(h){
         allmessages = h;
@@ -108,7 +108,7 @@ appServices.factory('ChatService', function($q, $timeout,SubjectService, $rootSc
     },
     blockUser:function (chatDetails) {
       createrId = conversaionId.split("-")[0];
-      var blockedUserRef=new Firebase("https://chatoi.firebaseio.com/chats/" + userDetails._id+"/blocked/"+createrId);
+      var blockedUserRef=new Firebase("https://mustknow.firebaseIO.com/chats/" + userDetails._id+"/blocked/"+createrId);
       var blockedUser = blockedUserRef.set({
         userName: chatDetails.userName,
         fbPhotoUrl: chatDetails.fbPhotoUrl,
@@ -184,7 +184,7 @@ appServices.factory('ChatService', function($q, $timeout,SubjectService, $rootSc
             hanleOtherMessageRead.set(true);
           }
         })
-        var userRef = new Firebase('https://chatoi.firebaseio.com/presence/' + createrId);
+        var userRef = new Firebase('https://mustknow.firebaseIO.com/presence/' + createrId);
         var isOtherUserOnline = $firebaseObject(userRef);
         isOtherUserOnline.$loaded(function(value){
           if(value && value.$value == 'offline'){

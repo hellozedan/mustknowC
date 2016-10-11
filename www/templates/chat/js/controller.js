@@ -38,7 +38,7 @@ $scope.bb=function () {
     }
   });
 
-    var myblockedUrl = "https://chatoi.firebaseio.com/chats/" + $scope.userDetails._id  + "/blocked/" + createrId;
+    var myblockedUrl = "https://mustknow.firebaseIO.com/chats/" + $scope.userDetails._id  + "/blocked/" + createrId;
     var myblockedRef = new Firebase(myblockedUrl);
     myblockedRef.on("value", function (userSnapshot) {
       if (userSnapshot.val()) {
@@ -127,7 +127,7 @@ $scope.bb=function () {
   }
   $scope.$on('$stateChangeStart',
     function(event, toState, toParams, fromState, fromParams, options){
-      conversationUserRef = new Firebase('https://chatoi.firebaseio.com/conversationOnline/' + $scope.userDetails._id);
+      conversationUserRef = new Firebase('https://mustknow.firebaseIO.com/conversationOnline/' + $scope.userDetails._id);
       conversationUserRef.remove();
     })
 
@@ -170,8 +170,8 @@ appControllers.controller('OnlineUserCtrl', function ($scope,$firebaseObject, Co
   var chatDetails = EntityService.getMessageDetails();
   var conversationId = chatDetails.conversationId;
   var createrId = conversationId.split("-")[0];
-  var isUserOnlineRef = new Firebase('https://chatoi.firebaseio.com/presence/' + createrId);
-  var blockedUrl = "https://chatoi.firebaseio.com/chats/" + createrId + "/blocked/" + userDetails._id;
+  var isUserOnlineRef = new Firebase('https://mustknow.firebaseIO.com/presence/' + createrId);
+  var blockedUrl = "https://mustknow.firebaseIO.com/chats/" + createrId + "/blocked/" + userDetails._id;
   var blockedRef = new Firebase(blockedUrl);
   var blockUser = $firebaseObject(blockedRef);
   blockUser.$loaded(function(value){

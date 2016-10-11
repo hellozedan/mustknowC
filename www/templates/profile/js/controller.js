@@ -8,7 +8,7 @@ appControllers.controller('myProfileCtrl', function ($rootScope,$ionicModal, $io
   $scope.activeButton = function() {
     $scope.isActive = !$scope.isActive;
   }
-  
+
   $scope.userProfile = ConfigurationService.UserDetails();// angular.fromJson(window.localStorage['user']);
   $scope.categoriesUrl = ConfigurationService.CategoriesUrl();
   $scope.subjects = [];
@@ -114,7 +114,7 @@ appControllers.controller('myProfileCtrl', function ($rootScope,$ionicModal, $io
             $ionicLoading.hide();
           });
       } else if (title == 'blocked') {
-        var blockedUsersRef = new Firebase("https://chatoi.firebaseio.com/chats/" + $scope.userDetails._id + "/blocked/");
+        var blockedUsersRef = new Firebase("https://mustknow.firebaseIO.com/chats/" + $scope.userDetails._id + "/blocked/");
         $scope.blockedUsers = $firebaseArray(blockedUsersRef);
         $ionicLoading.hide();
       }
@@ -136,7 +136,7 @@ appControllers.controller('myProfileCtrl', function ($rootScope,$ionicModal, $io
       });
       confirmPopup.then(function (res) {
         if (res) {
-          var blockedUserRef = new Firebase("https://chatoi.firebaseio.com/chats/" + $scope.userDetails._id + "/blocked/" + blockedUser.userId);
+          var blockedUserRef = new Firebase("https://mustknow.firebaseIO.com/chats/" + $scope.userDetails._id + "/blocked/" + blockedUser.userId);
           blockedUserRef.remove();
           console.log('You are sure');
         } else {

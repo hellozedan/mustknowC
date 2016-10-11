@@ -15,7 +15,7 @@
             .then(function (user) {
               console.log("create")
               window.localStorage['user'] = angular.toJson(user);
-              var ref = new Firebase("https://chatoi.firebaseio.com");
+              var ref = new Firebase("https://mustknow.firebaseIO.com");
 
               ref.authWithCustomToken(user.fireToken, function (error, authData) {
 
@@ -48,7 +48,7 @@
         UserService.CreateUser(user)
           .then(function (user) {
             window.localStorage['user'] = angular.toJson(user);
-            var ref = new Firebase("https://chatoi.firebaseio.com");
+            var ref = new Firebase("https://mustknow.firebaseIO.com");
 
             ref.authWithCustomToken(user.fireToken, function (error, authData) {
 

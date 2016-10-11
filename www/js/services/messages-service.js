@@ -4,7 +4,7 @@
     var userDetails = ConfigurationService.UserDetails();
 
     var fillMessages = function () {
-      var ref = new Firebase("https://chatoi.firebaseio.com/chats/" + userDetails._id);
+      var ref = new Firebase("https://mustknow.firebaseIO.com/chats/" + userDetails._id);
       ref.orderByValue().on("value", function (snapshot) {
         messages = [];
         angular.forEach(snapshot.val(), function (value, key) {
@@ -42,14 +42,14 @@
               messages[indexx] = msg;
 
             }
-            var userRef = new Firebase('https://chatoi.firebaseio.com/presence/' + createrId);
+            var userRef = new Firebase('https://mustknow.firebaseIO.com/presence/' + createrId);
             userRef.on("value", function (userSnapshot) {
               var online = true;
               if (userSnapshot.val() == 'offline') {
                 online = false;
 
               }
-              var blockedUrl = "https://chatoi.firebaseio.com/chats/" + createrId + "/blocked/" + userDetails._id;
+              var blockedUrl = "https://mustknow.firebaseIO.com/chats/" + createrId + "/blocked/" + userDetails._id;
               var blockedRef = new Firebase(blockedUrl);
               var blockUser = $firebaseObject(blockedRef);
               blockUser.$loaded(function (value) {

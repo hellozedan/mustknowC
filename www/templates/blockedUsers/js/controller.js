@@ -9,7 +9,7 @@
       });
       confirmPopup.then(function(res) {
         if(res) {
-          var blockedUserRef=new Firebase("https://chatoi.firebaseio.com/chats/" + $scope.userDetails._id+"/blocked/"+blockedUser.userId);
+          var blockedUserRef=new Firebase("https://mustknow.firebaseIO.com/chats/" + $scope.userDetails._id+"/blocked/"+blockedUser.userId);
           blockedUserRef.remove();
           console.log('You are sure');
         } else {
@@ -21,7 +21,7 @@
     // initialForm is the first activity in the controller.
     // It will initial all variable data and let the function works when page load.
     $scope.initialForm = function () {
-      var blockedUsersRef=new Firebase("https://chatoi.firebaseio.com/chats/" + $scope.userDetails._id+"/blocked/");
+      var blockedUsersRef=new Firebase("https://mustknow.firebaseIO.com/chats/" + $scope.userDetails._id+"/blocked/");
       $scope.blockedUsers=$firebaseArray(blockedUsersRef);
     };// End initialForm.
     $scope.initialForm();

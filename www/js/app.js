@@ -50,7 +50,7 @@
             .then(function (user) {
               if(user.isNeedLogin === false){
 
-                var ref = new Firebase("https://chatoi.firebaseio.com");
+                var ref = new Firebase("https://mustknow.firebaseIO.com");
 
                 ref.authWithCustomToken(user.fireToken, function (error, authData) {
 
