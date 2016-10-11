@@ -69,7 +69,7 @@
               $state.go("login");
             });
         }else{
-          $state.go("login");
+          $state.go("tab.subjects");
         }
 
       });
@@ -139,29 +139,21 @@
           url: '/subjects',
           views: {
             'tab-subjects': {
-              templateUrl: 'templates/subjects/html/subjects.html',
+              templateUrl: 'templates/match/html/subjects.html',
               controller: 'subjectsCtrl'
             }
           }
         })
-        .state('tab.addSubject-s1', {
-          url: "/addSubject-s1",
+        .state('tab.match', {
+          url: "/match",
           views: {
-            'tab-addSubject': {
-              templateUrl: "templates/subjects/html/addSubject-s1.html",
+            'tab-match': {
+              templateUrl: "templates/match/html/match.html",
               controller: 'addSubjectCtrl'
             }
           }
         })
-        .state('tab.addSubject-s2', {
-          url: "/addSubject-s2/:categoryId",
-          views: {
-            'tab-addSubject': {
-              templateUrl: "templates/subjects/html/addSubject-s2.html",
-              controller: 'addSubjectCtrl'
-            }
-          }
-        })
+
         .state('tab.messages', {
           url: '/messages',
           views: {

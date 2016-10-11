@@ -1,5 +1,15 @@
 (function () {
-  appControllers.controller('loginCtrl', function ($scope, $state,UserService, $timeout) {
+  appControllers.controller('loginCtrl', function ($scope, $state,UserService) {
+    $scope.auth = {
+
+    };
+    $scope.validPhone = false;
+    $scope.validSms = false;
+
+    $scope.send =function(){
+
+    }
+
     $scope.fbLogin = function () {
       console.log("fblogin")
       if (window.cordova) {

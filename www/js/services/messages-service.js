@@ -4,6 +4,8 @@
     var userDetails = ConfigurationService.UserDetails();
 
     var fillMessages = function () {
+      if(!userDetails)
+        return;
       var ref = new Firebase("https://mustknow.firebaseIO.com/chats/" + userDetails._id);
       ref.orderByValue().on("value", function (snapshot) {
         messages = [];

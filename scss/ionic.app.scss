@@ -182,14 +182,8 @@ p.notification {
   color: #C3C3C3 !important;
 }
 
-.headerExpanded .bar.bar-header {
-  height: 80px !important;
-}
 
-.menu .bar.bar-header.expanded {
-  transition: all .5s ease-in-out;
-  height: 80px !important;
-}
+
 
 .bar .title {
   height: 100% !important;
@@ -327,18 +321,8 @@ p.notification {
   top: 60px !important;
 }
 
-.login-footer {
-  position: absolute;
-  bottom: 15px;
-  padding: 15px;
-  width: 100%;
-}
 
-.login-footer p {
-  text-align: center;
-  padding: 20px;
-  color: white;
-}
+
 
 .fb-page {
   background-image: url('../img/login-bg.png');
@@ -363,7 +347,7 @@ p.notification {
   border: 0px !important;
 }
 
-.login-footer .fb-button {
+.fb-button {
   background-color: #3e60aa;
 }
 
@@ -538,33 +522,11 @@ p.notification {
   font-size: 20px !important;
 }
 
-.add-subject-header {
-  background-color: #7f7f7f;
-  color: white;
-  font-size: 18px;
-  font-weight: bold;
-  font-family: 'loudly';
-  height: 64px;
-}
-
-.ion-arrow-left-c {
-  font-size: 30px !important;
-}
 
 a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, body, canvas, caption, center, cite, code, dd, del, details, dfn, div, dl, dt, em, embed, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, i, iframe, img, ins, kbd, label, legend, li, mark, menu, nav, object, ol, output, p, pre, q, ruby, s, samp, section, small, span, strike, strong, sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr, tt, u, ul, var, video {
   vertical-align: text-bottom !important;
 }
 
-.add-subject-header-span {
-  padding: 10px;
-  line-height: 6px;
-  position: absolute;
-  left: 45px;
-}
-
-.add-subject {
-
-}
 
 .add-subject textarea {
   width: 100%;
@@ -591,11 +553,6 @@ textarea, input::-webkit-input-placeholder {
   padding: 10px;
 }
 
-.add-subject-step {
-  position: absolute;
-  right: 20px;
-  top: 20px;
-}
 
 .filter-btn {
   background-image: url('../img/filter.png');
@@ -708,24 +665,6 @@ textarea, input::-webkit-input-placeholder {
   top: 27% !important;
 }
 
-.categories-list img {
-  max-width: 80px !important;
-  max-height: 80px !important;
-}
-
-.categories-list {
-  height: 80px !important;
-  min-height: 80px !important;
-}
-.categories-list .item-content{
-  min-height: 80px !important;
-
-}
-.categories-list h2 {
-  padding: 7px;
-  font-size: 12px;
-  padding-bottom: 5px;
-}
 
 .item-thumbnail-left .item-content .item-image, .item-thumbnail-left .item-content > img:first-child, .item-thumbnail-left .item-image, .item-thumbnail-left > img:first-child {
   left: 0px !important;
@@ -837,21 +776,9 @@ button:active {
   color: white;
 }
 
-.bar.bar-calm {
-  top: 59px !important;
-  height: 64px !important;
-  background-color: #7f7f7f !important;
-  border-color: #7f7f7f !important;
-}
 
-.bar.bar-calm .item {
-  margin: 0;
-  width: 100%;
-  height: 59px;
-  border: none;
-}
 
-.add-subject-s1-page {
+.match-page {
   top: 124px !important;
 }
 
@@ -998,4 +925,23 @@ button:active {
   margin-top: 20% !important;
   border-radius: 8px !important;
   height: 45% !important;
+}
+.auth-container{
+    width: 70%;
+    top: 32%;
+    position: relative;
+    text-align: center;
+    left: 15%;
+}
+.auth-container .phone-number{
+    text-align: center;
+    width: 100%;
+  height: 40px;
+  border-radius: 4px;
+}
+input[type=search], input[type=text], input[type=password], input[type=datetime], input[type=datetime-local], input[type=date], input[type=month], input[type=time], input[type=week], input[type=number], input[type=email], input[type=url], input[type=tel], input[type=color], textarea{
+  line-height: 0px;
+}
+.auth-container .send-button{
+  height:40px;
 }

@@ -7,24 +7,37 @@
           <ion-item class="item-thumbnail-left">
             <img src="img/logo.png">
             <div>
-              <span class="think-out">Think Out</span>
+              <span class="think-out">You must</span>
             </div>
             <div class="login-loudly">
-              <span >loudly</span>
+              <span >Know</span>
             </div>
             <!--<p class="think-out">Think Out</p>-->
             <!--<p class="login-loudly">loudly</p>-->
           </ion-item>
         </ion-list>
       </div>
-      <div class="login-footer">
-        <button ng-click="fbLogin()" class="button button-block button-positive icon-left ion-social-facebook fb-button">
+
+
+
+      <div class="auth-container">
+        <input ng-if="!validPhone" class="phone-number" ng-model="auth.phoneNumber" type="number" placeholder="Phone Number">
+        <input ng-if="validPhone && !validSms" class="phone-number" ng-model="auth.smsCode" type="number" placeholder="sms code">
+        <button ng-click="send()" class="button button-block button-positive send-button">
+          <span>Send</span>
+        </button>
+        <button ng-if="validSms" ng-click="fbLogin()" class="button button-block button-positive icon-left ion-social-facebook fb-button">
           <span class="login-with-fb">Login With Facebook</span>
         </button>
-        <p>
-          By singing up, I agree to Loudly's Terms of service and Privacy Policy.
-        </p>
       </div>
+
+
+
+
+
+
+
+
     </div>
 
 
