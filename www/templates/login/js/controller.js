@@ -60,10 +60,10 @@
                 } else {
                   console.log("subjects")
 
-                  $state.go("tab.subjects");
+                  $state.go("tab.match");
                 }
               });
-              $state.go("tab.subjects");
+              $state.go("tab.match");
             }, function (err) {
               alert("error")
             });

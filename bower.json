@@ -8,6 +8,7 @@
     "angular-moment": "^0.10.3",
     "ngCordova": "^0.1.27-alpha",
     "firebase": "2.4.2",
-    "angularfire": "1.2.0"
+    "angularfire": "1.2.0",
+    "ion-alpha-scroll": "^0.1.3"
   }
 }

@@ -1,5 +1,5 @@
 (function () {
-  appControllers.controller('subjectsCtrl', function ($scope, MessagesService,$ionicScrollDelegate, $ionicModal, $ionicPlatform, $rootScope, $state, $interval, $stateParams, $timeout, SubjectService, EntityService, UserService, MessagesService, ConfigurationService, backcallFactory) {
+  appControllers.controller('subjectsCtrl', function ($scope, $cordovaContacts, MessagesService,$ionicScrollDelegate, $ionicModal, $ionicPlatform, $rootScope, $state, $interval, $stateParams, $timeout, SubjectService, EntityService, UserService, MessagesService, ConfigurationService, backcallFactory) {
 
     // $scope.$on('sendMessagesEvent', function(event, mass) {
     //   var messages = MessagesService.getMessages();
@@ -145,7 +145,10 @@
       $state.go('userProfile', {userId: subject.user._id, first_name: subject.user.first_name})
     }
     $scope.goToFilter = function () {
-      $scope.modal.show();
+      $cordovaContacts.pickContact().then(function (contactPicked) {
+        $scope.contact = contactPicked;
+        console.log($scope.contact)
+      });
     }
     $scope.goToMessages = function () {
       $state.go('tab.messages');
@@ -154,7 +157,7 @@
       $state.go('addSubject');
     }
 
-    $ionicModal.fromTemplateUrl('templates/subjects/html/filter.html', {
+    $ionicModal.fromTemplateUrl('templates/match/html/select-contact.html', {
       scope: $scope,
       animation: 'slide-in-up'
     }).then(function(modal) {
@@ -252,26 +255,8 @@
         $scope.categories[categoryIndex].is_selected = true;
     }
     $scope.initialForm = function () {
-      SubjectService.GetCategories()
-        .then(function (categories) {
-          $scope.categories = categories;
-          for (var i = 0; i < $scope.categories.length; i++) {
-            if ($rootScope.myFilter.categories.indexOf($scope.categories[i]._id) !== -1) {
-              $scope.categories[i].is_selected = true;
-            }
-          }
-        }, function (err) {
-        });
 
-      $rootScope.myFilter = ConfigurationService.MyFilter();
-      if (!$rootScope.myFilter.gender) {
-        $rootScope.myFilter = {
-          nearMe: false,
-          gender: 'both',
-          categories: []
-        }
-        ConfigurationService.SetMyFilter($rootScope.myFilter);
-      }
+
 
     };// End initialForm.
     $scope.initialForm();

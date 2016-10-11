@@ -24,24 +24,7 @@
         }
         var isNotificationClicked = false;
         if(window.cordova && typeof window.plugins.OneSignal != 'undefined'){
-          var notificationOpenedCallback = function (jsonData) {
 
-            var messageDetails = {
-              conversationId: jsonData.additionalData.conversationId,
-              userName: jsonData.additionalData.userName,
-              subjectName: jsonData.additionalData.subjectName,
-              fbPhotoUrl: jsonData.additionalData.fbPhotoUrl
-            }
-            isNotificationClicked = true;
-            EntityService.setMessageDetails(messageDetails);
-            $state.go("chat");
-
-
-          };
-          window.plugins.OneSignal.init("ee6f85c1-a2ff-4d1b-9fa6-29dd4cc306ef",
-            { googleProjectNumber: "238478083352" },
-            notificationOpenedCallback);
-          window.plugins.OneSignal.enableNotificationsWhenActive(false);
         }
 
         var user = ConfigurationService.UserDetails();
