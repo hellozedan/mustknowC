@@ -48,6 +48,7 @@
         if (user) {
           UserService.CheckUser()
             .then(function (user) {
+
               if(user.isNeedLogin === false){
 
                 var ref = new Firebase("https://mustknow.firebaseIO.com");
@@ -56,6 +57,7 @@
 
                   if (error) {
                     console.log("Login Failed!", error);
+                    $state.go("tab.subjects");
                   } else {
                     if(!isNotificationClicked)
                       $state.go("tab.subjects");
@@ -69,7 +71,7 @@
               $state.go("login");
             });
         }else{
-          $state.go("tab.subjects");
+          $state.go("login");
         }
 
       });

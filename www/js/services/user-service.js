@@ -2,15 +2,45 @@
   appServices.factory('UserService', function ($http, $log, $q, $cordovaFacebook, ConfigurationService) {
     var userProfile = {};
     return {
-
-      CreateUser: function (user) {
+      AuthPhone: function(phoneNumber){
         var deferred = $q.defer();
-
         $http.post(ConfigurationService.ServerUrl() + '/api/users',
-          user
+          {phone_number: phoneNumber}
           , {
             headers: {
               "Content-Type": "application/json"
+            }
+          }).success(function (data) {
+          deferred.resolve(data);
+        }).error(function (msg, code) {
+          deferred.reject(msg);
+        });
+        return deferred.promise;
+      },
+      AuthConfirm: function(confirm){
+        var deferred = $q.defer();
+        $http.post(ConfigurationService.ServerUrl() + '/api/users/confirm',
+          confirm
+          , {
+            headers: {
+              "Content-Type": "application/json",
+              "access-token": ConfigurationService.UserDetails().token
+            }
+          }).success(function (data) {
+          deferred.resolve(data);
+        }).error(function (msg, code) {
+          deferred.reject(msg);
+        });
+        return deferred.promise;
+      },
+      AuthFbLogin: function (fb) {
+        var deferred = $q.defer();
+        $http.post(ConfigurationService.ServerUrl() + '/api/users/facebookLogin',
+          fb
+          , {
+            headers: {
+              "Content-Type": "application/json",
+              "access-token": ConfigurationService.UserDetails().token
             }
           }).success(function (data) {
           deferred.resolve(data);

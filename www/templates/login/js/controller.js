@@ -1,5 +1,5 @@
 (function () {
-  appControllers.controller('loginCtrl', function ($scope, $state,UserService) {
+  appControllers.controller('loginCtrl', function ($scope, $state,UserService, ConfigurationService) {
     $scope.auth = {
 
     };
@@ -7,7 +7,31 @@
     $scope.validSms = false;
 
     $scope.send =function(){
+      if($scope.validPhone == false && $scope.auth.phoneNumber && $scope.auth.phoneNumber.length == 10 && $scope.auth.phoneNumber.indexOf('05')>=0){
+        UserService.AuthPhone($scope.auth.phoneNumber)
+          .then(function (user) {
 
+            window.localStorage['user'] = angular.toJson(user);
+
+            $scope.validPhone = true;
+          }, function (err) {
+          });
+      }else if($scope.validPhone == true && $scope.validSms == false && $scope.auth.smsCode && $scope.auth.smsCode.length > 0){
+        ConfigurationService.userDetails = null;
+        var user = ConfigurationService.UserDetails();
+        var confirm = {
+          _id: user._id,
+          activation_code: $scope.auth.smsCode
+        }
+        UserService.AuthConfirm(confirm)
+          .then(function (user) {
+            ConfigurationService.userDetails = null;
+            window.localStorage['user'] = angular.toJson(user);
+            debugger
+            $scope.validSms = true;
+          }, function (err) {
+          });
+      }
     }
 
     $scope.fbLogin = function () {
@@ -17,11 +41,13 @@
           window.localStorage['fbData'] = angular.toJson(s.authResponse);
           var fbData = s.authResponse;
 
-          var user = {
+
+          var user = ConfigurationService.UserDetails();
+          var fb = {
+            _id: user._id,
             fbToken: fbData['accessToken']
           }
-          console.log(fbData['accessToken']);
-          UserService.CreateUser(user)
+          UserService.AuthFbLogin(fb)
             .then(function (user) {
               console.log("create")
               window.localStorage['user'] = angular.toJson(user);
@@ -39,24 +65,22 @@
               });
               $state.go("tab.subjects");
             }, function (err) {
-              console.log("Error ", err);
               alert("error")
             });
-          //alert($scope.FbName)
 
 
         }, function error(msg) {
           console.log("Error while performing Facebook login", msg);
         })
       } else {
-        var user = {
-          fbToken: 'EAAZAMbMtmoBIBAHHzKvk8AewEB55ZAVYLLIr0ofhi6Eyhrnd6aHdOB1gQO3Im86QmqooFAZAHyj0uXAtwWOTXCnFRU6IvvhS4z7JZCZB12h8fTMsxr9JAZAHH40f2aqIodDXlbdIEMHHd6ZA3YHzrLm97jQh6VTha199Qst6u4ukO2mYvO4II5X8ZBTrVmT1yeIZD',
-          notification_token: 'b95a00b4-96e0-41c6-9331-fa787a54291b'
-
+        var user = ConfigurationService.UserDetails();
+        var fb = {
+          _id: user._id,
+          fbToken: 'EAAZAMbMtmoBIBACYVr0nJpC30WXRjESgN6dcEhO3vt3RVTpNGZCKZAMdLDg0wOhZBSyyHNGNSZCof2bDQoWHaS8HGvZAKqVoo4VKrEeEZBwVZBCHjGN1cxGzFuGbZCGOszsCL9iWm6WdprMlQoZAP8Ky4bmscznQZAvrNZCSYoK1s2fUEXACsIJZAiBMGRtpAA1gBZCd927kfKeiQDIlGnXLeI7mcz'
         }
-
-        UserService.CreateUser(user)
+        UserService.AuthFbLogin(fb)
           .then(function (user) {
+            console.log("create")
             window.localStorage['user'] = angular.toJson(user);
             var ref = new Firebase("https://mustknow.firebaseIO.com");
 
@@ -65,12 +89,16 @@
               if (error) {
                 console.log("Login Failed!", error);
               } else {
+                console.log("subjects")
+
                 $state.go("tab.subjects");
               }
             });
             $state.go("tab.subjects");
           }, function (err) {
+            alert("error")
           });
+
       }
 
     };
