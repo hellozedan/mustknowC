@@ -134,7 +134,7 @@
           views: {
             'tab-match': {
               templateUrl: "templates/match/html/match.html",
-              controller: 'addSubjectCtrl'
+              controller: 'matchCtrl'
             }
           }
         })

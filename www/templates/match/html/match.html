@@ -51,31 +51,31 @@
 
 
 </style>
-<ion-view cache-view="false">
-  <ion-content class="padding gray-bg">
+<ion-view cache-view="false" scroll="false">
+  <ion-content class="padding gray-bg match-content">
     <div class="pContainer">
       <div class="person ion-person mainPerson">
 
       </div>
-      <div class="person ion-person firstPerson">
+      <div ng-click="selectPerson('firstPerson')" class="person ion-person firstPerson">
 
       </div>
-      <div class="person ion-person fifthPerson">
+      <div ng-click="selectPerson('fifthPerson')" class="person ion-person fifthPerson">
 
       </div>
-      <div class="person ion-person secondPerson">
+      <div ng-click="selectPerson('secondPerson')" class="person ion-person secondPerson">
 
       </div>
-      <div class="person ion-person fourthPerson">
+      <div ng-click="selectPerson('fourthPerson')" class="person ion-person fourthPerson">
 
       </div>
-      <div class="person ion-person thirdPerson">
+      <div ng-click="selectPerson('thirdPerson')" class="person ion-person thirdPerson">
 
       </div>
       <!--<div class="person ion-plus-round addPerson">-->
 
       <!--</div>-->
-      <div class="person ion-merge matchPerson">
+      <div ng-click="selectPerson('matchPerson')" class="person ion-merge matchPerson">
 
       </div>
     </div>

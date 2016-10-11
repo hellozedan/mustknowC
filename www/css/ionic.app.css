@@ -10334,7 +10334,7 @@ textarea, input::-webkit-input-placeholder {
   height: 16px; }
 
 .modal-open .modal, .modal-open .modal-backdrop {
-  height: 45% !important; }
+  height: 84% !important; }
 
 .custom-modal {
   width: 94% !important;
@@ -10573,3 +10573,6 @@ input[type=search], input[type=text], input[type=password], input[type=datetime]
 
 .auth-container .send-button {
   height: 40px; }
+
+.match-content .scroll {
+  height: 100%; }

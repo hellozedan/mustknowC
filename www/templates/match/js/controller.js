@@ -1,4 +1,16 @@
 (function () {
+  appControllers.controller('matchCtrl', function($scope, $cordovaContacts){
+    $scope.selectedPersons = {};
+    $scope.selectPerson = function(person){
+      $cordovaContacts.pickContact().then(function (contactPicked) {
+        $scope.contact = contactPicked;
+        $scope.selectedPersons[person] = contactPicked;
+        alert(JSON.stringify($scope.contact));
+      });
+
+    }
+
+  });
   appControllers.controller('subjectsCtrl', function ($scope, $cordovaContacts, MessagesService,$ionicScrollDelegate, $ionicModal, $ionicPlatform, $rootScope, $state, $interval, $stateParams, $timeout, SubjectService, EntityService, UserService, MessagesService, ConfigurationService, backcallFactory) {
 
     // $scope.$on('sendMessagesEvent', function(event, mass) {
@@ -145,10 +157,7 @@
       $state.go('userProfile', {userId: subject.user._id, first_name: subject.user.first_name})
     }
     $scope.goToFilter = function () {
-      $cordovaContacts.pickContact().then(function (contactPicked) {
-        $scope.contact = contactPicked;
-        console.log($scope.contact)
-      });
+
     }
     $scope.goToMessages = function () {
       $state.go('tab.messages');
