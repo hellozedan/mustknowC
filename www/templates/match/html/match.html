@@ -1,15 +1,92 @@
-<ion-view>
+<style>
+  .person
+  {    height: 100px;
+    width: 100px;
+    font-size: 90px;
+    display: inline;
+    position: absolute;
+    text-align: center;
+    border-radius: 100px;
+    border: 1px solid black;}
+  .pContainer{
+    height: 100%;
+    width: 100%;
+  }
+  .mainPerson{
+    top: 42%;
+  }
+  .firstPerson{
+    right: 0px;
+  }
+  .fifthPerson{
+    right: 0px;
+    bottom: 0px;
+  }
+  .secondPerson{
+    right: 0px;
+    top: 19%;
+  }
+  .fourthPerson{
+    right: 0px;
+    bottom:19%;
+  }
+  .thirdPerson{
+    right: 0px;
+    top: 42%;
+  }
+  .addPerson{
 
-  <ion-content class="match-page">
-    <div class="content">
-      <ion-list>
-        <ion-item ng-click="createSubjectSetp(category)" class="item-thumbnail-left item-icon-right  " ng-repeat="category in categories">
-          <img ng-src="{{categoriesUrl}}{{category._id}}.png">
-          <h3 class="cat-add-sub">{{category.name}}</h3>
-          <i ng-click="goToChat(message)" class="icon ion-chevron-right"></i>
-        </ion-item>
-      </ion-list>
 
+    right: 37%;
+    top: 25%;
+  }
+  .matchPerson{
+    right: 37%;
+    top: 42%;
+  }
+  .matchPerson:before{
+    padding-top: 5px;
+    padding-left: 10px;
+  }
+
+
+</style>
+<ion-view cache-view="false">
+  <ion-content class="padding gray-bg">
+    <div class="pContainer">
+      <div class="person ion-person mainPerson">
+
+      </div>
+      <div class="person ion-person firstPerson">
+
+      </div>
+      <div class="person ion-person fifthPerson">
+
+      </div>
+      <div class="person ion-person secondPerson">
+
+      </div>
+      <div class="person ion-person fourthPerson">
+
+      </div>
+      <div class="person ion-person thirdPerson">
+
+      </div>
+      <!--<div class="person ion-plus-round addPerson">-->
+
+      <!--</div>-->
+      <div class="person ion-merge matchPerson">
+
+      </div>
     </div>
+
+
   </ion-content>
+  <!--<div class="bar bar-footer add-subject-fotter">-->
+    <!--<div ng-click="goToFilter()" class="create-subject-btn filter-btn">-->
+
+    <!--</div>-->
+
+  <!--</div>-->
+
 </ion-view>

@@ -57,10 +57,10 @@
 
                   if (error) {
                     console.log("Login Failed!", error);
-                    $state.go("tab.subjects");
+                    $state.go("tab.match");
                   } else {
                     if(!isNotificationClicked)
-                      $state.go("tab.subjects");
+                      $state.go("tab.match");
                   }
                 });
               }
