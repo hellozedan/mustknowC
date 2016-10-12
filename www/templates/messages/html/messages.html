@@ -3,8 +3,9 @@
     <ion-list class="subject-list">
 
       <ion-item ng-click="goToChat(message)" class="item-avatar item-icon-right" ng-repeat="message in messages">
-        <img ng-src="{{message.fbPhotoUrl}}">
-        <p class="last-message">{{message.userName}}: {{message.lastMessage}}</p>
+        <identicon ng-if="!message.fbPhotoUrl" username='message.conversationId' size='32'></identicon>
+        <img ng-if="message.fbPhotoUrl" ng-src="{{message.fbPhotoUrl}}">
+        <p class="last-message"><span ng-if="!message.userName">X </span><span>{{message.userName}}</span>: {{message.lastMessage}}</p>
         <p class="subject-description">{{(message.desc.length>70)?message.desc.substring(0,70)+'...':message.desc.substring(0,70)}}</p>
         <i ng-class="message.readMessage ? 'message-unread' : (!message.readMessage ? 'message-read' : 'message-unread')" ng-click="goToChat(message)" class="icon ion-chevron-right"></i>
         <i class="icon ion-record online-offline" ng-class="{'online-circle': message.online, 'offline-circle': !message.online}"></i>
