@@ -76,7 +76,7 @@
         var user = ConfigurationService.UserDetails();
         var fb = {
           _id: user._id,
-          fbToken: 'EAAZAMbMtmoBIBACYVr0nJpC30WXRjESgN6dcEhO3vt3RVTpNGZCKZAMdLDg0wOhZBSyyHNGNSZCof2bDQoWHaS8HGvZAKqVoo4VKrEeEZBwVZBCHjGN1cxGzFuGbZCGOszsCL9iWm6WdprMlQoZAP8Ky4bmscznQZAvrNZCSYoK1s2fUEXACsIJZAiBMGRtpAA1gBZCd927kfKeiQDIlGnXLeI7mcz'
+          fbToken: 'EAAZAMbMtmoBIBADZC9D2PExZC9BErm1rAialUc1hZAiZAXK8MNDyocR4dw6nHueHnQ9MCulaJiRl1uJP9ZBHpR6awynlab2Y2hiZBkmFNNiRzzZCG54SlOdH9L0LOoA5tp6j5OOAYYY3ty5aB5ZBy6mNVXZBANY4jhTP97rqOWXu0mZCCMOOX37yRdJUT20LfYOb31eeo1EKT9MByYJ4o9YcF60'
         }
         UserService.AuthFbLogin(fb)
           .then(function (user) {

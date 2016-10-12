@@ -20,13 +20,12 @@
         return deferred.promise;
       },
       SendMessageToMatcher: function (matchDetails){
-
-         debugger
         angular.forEach(matchDetails.otherPersons, function(value, key){
+
           var conversaionId = value._id + "-" + matchDetails.match_id;
           var firebaseMainRef = new Firebase(ConfigurationService.FireBaseUrl() + '/chats/' + matchDetails.mainPerson._id + '/' + conversaionId + "/messages");
           var date = new Date();
-          var msg = "";
+          var msg = "hello";
           var msgTosend = {
             body: msg,
             sender: value._id,

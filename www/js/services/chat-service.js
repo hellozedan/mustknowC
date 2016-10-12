@@ -1,6 +1,6 @@
 (function () {
 
-appServices.factory('ChatService', function($q, $timeout,SubjectService, $rootScope, $ionicScrollDelegate, $firebaseObject, $firebaseArray, ConfigurationService, NotificationService,$http){
+appServices.factory('ChatService', function($q, $timeout,SubjectService, $rootScope, $ionicScrollDelegate, $firebaseObject, $firebaseArray, ConfigurationService, NotificationService,$http, UserService){
   var allmessages = [];
   var userDetails = ConfigurationService.UserDetails();
   var userName = userDetails.first_name + " " + userDetails.last_name;
@@ -78,12 +78,16 @@ appServices.factory('ChatService', function($q, $timeout,SubjectService, $rootSc
       })
 
       firebaseRef.on('value', function(dataSnapshot) {
+
         privecy = false;
         var messages = [];
         messages =  dataSnapshot.val().messages;
 
+
         var counter = 0;
         var myMessages = 0;
+        var otherMessages = 0;
+
         angular.forEach(messages, function(value, key) {
           if(counter == 3 && counter == myMessages){
             privecy = true;
@@ -93,8 +97,29 @@ appServices.factory('ChatService', function($q, $timeout,SubjectService, $rootSc
           }
           if(messages[key].sender == userDetails._id){
             myMessages ++;
+          }else{
+            otherMessages++
           }
           counter++;
+
+          if(otherMessages >= 2 && myMessages >= 2){
+            if(!dataSnapshot.val().userName) {
+              debugger
+              var senderUser = dataSnapshot.key().split('-')[0];
+              UserService.GetUser(senderUser).then(function(user){
+
+                firebaseRef.child("userName").set(
+                  user.first_name + " " + user.last_name
+                );
+                firebaseRef.child("fbPhotoUrl").set(
+                  user.fbPhotoUrl
+                );
+              },function(err){
+
+              })
+            }
+          }
+
 
         });
 
@@ -129,6 +154,7 @@ appServices.factory('ChatService', function($q, $timeout,SubjectService, $rootSc
       if(!allmessages || allmessages.length == 0){
         isFirstMessage = true;
       }
+
       if(isFirstMessage){
         SubjectService.Interested(subjectId).then(function (result) {
         }, function (err) {

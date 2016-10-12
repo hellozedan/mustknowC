@@ -14,11 +14,12 @@
             var fl = firstname + lastname;
             contact.fl = fl;
           }
+          contact.phoneNumbers[0].value = contact.phoneNumbers[0].value.replace(/[\-]+/g, '');
           contact.index = index;
           if(person == 'mainPerson'){
-
+            //alert(JSON.stringify(contact))
             $scope.mainPerson = {
-              phone_number : contact.phoneNumber[0].value,
+              phone_number : contact.phoneNumbers[0].value,
               contactName: contact.displayName
             }
           }
@@ -33,10 +34,10 @@
               familyName: "abo elhija",
               givenName: "obaida"
             },
-            phoneNumber: [
+            phoneNumbers: [
               {
                 id: "1234",
-                value: "0528869555"
+                value: "052-886-9555"
               }
             ]
           }
@@ -47,14 +48,15 @@
               familyName: "abo zedany",
               givenName: "ahmed"
             },
-            phoneNumber: [
+            phoneNumbers: [
               {
                 id: "1234",
-                value: "0521111111"
+                value: "052-111-1111"
               }
             ]
           }
         }
+        contact.phoneNumbers[0].value = contact.phoneNumbers[0].value.replace(/[\-]+/g, '');
 
         var flSplit =  contact.displayName.split(' ');
 
@@ -68,7 +70,7 @@
         if(person == 'mainPerson'){
 
           $scope.mainPerson = {
-            phone_number : contact.phoneNumber[0].value,
+            phone_number : contact.phoneNumbers[0].value,
             contactName: contact.displayName
           }
 
@@ -84,7 +86,7 @@
       angular.forEach($scope.selectedPersons, function(value, key){
         if(value.index != 0){
           var otherP = {
-            phone_number : value.phoneNumber[0].value,
+            phone_number : value.phoneNumbers[0].value,
             contactName: value.displayName,
             index: value.index
           }

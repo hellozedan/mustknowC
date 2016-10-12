@@ -7,12 +7,13 @@
 
       if(!userDetails)
         return;
-      var ref = new Firebase("https://mustknow.firebaseIO.com/chats/" + userDetails._id);
+      var ref = new Firebase(ConfigurationService.FireBaseUrl() + "/chats/" + userDetails._id);
       ref.orderByValue().on("value", function (snapshot) {
         messages = [];
         angular.forEach(snapshot.val(), function (value, key) {
 
           var conversationId = key;
+
           if (value.messages) {
             var messagesArray = Object.getOwnPropertyNames(value.messages);
             var lastMessageKey = messagesArray[messagesArray.length - 1];
@@ -45,14 +46,14 @@
               messages[indexx] = msg;
 
             }
-            var userRef = new Firebase('https://mustknow.firebaseIO.com/presence/' + createrId);
+            var userRef = new Firebase(ConfigurationService.FireBaseUrl() + '/presence/' + createrId);
             userRef.on("value", function (userSnapshot) {
               var online = true;
               if (userSnapshot.val() == 'offline') {
                 online = false;
 
               }
-              var blockedUrl = "https://mustknow.firebaseIO.com/chats/" + createrId + "/blocked/" + userDetails._id;
+              var blockedUrl = ConfigurationService.FireBaseUrl() + "/chats/" + createrId + "/blocked/" + userDetails._id;
               var blockedRef = new Firebase(blockedUrl);
               var blockUser = $firebaseObject(blockedRef);
               blockUser.$loaded(function (value) {
