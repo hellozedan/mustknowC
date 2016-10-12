@@ -24,11 +24,7 @@
          debugger
         angular.forEach(matchDetails.otherPersons, function(value, key){
           var conversaionId = value._id + "-" + matchDetails.match_id;
-          var firebaseMainRef = new Firebase(ConfigurationService.FireBaseUrl() + '/chats/' + matchDetails.mainPerson._id + '/' + conversaionId);
-
-
-          conversaionId = value._id + "-" + matchDetails.match_id;
-          firebaseMainRef = new Firebase(ConfigurationService.FireBaseUrl() + '/chats/' + matchDetails.mainPerson._id + '/' + conversaionId + "/messages");
+          var firebaseMainRef = new Firebase(ConfigurationService.FireBaseUrl() + '/chats/' + matchDetails.mainPerson._id + '/' + conversaionId + "/messages");
           var date = new Date();
           var msg = "";
           var msgTosend = {
