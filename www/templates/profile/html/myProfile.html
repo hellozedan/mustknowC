@@ -5,6 +5,7 @@
       <img ng-click="logOut()" class="logout" src="img/logout.png">
       <img class="profile" ng-src="{{userProfile.fbPhotoUrl}}">
       <h2>{{userProfile.first_name}} {{userProfile.last_name}}</h2>
+      <identicon username='userProfile._id' size='32' />
       <button class="button button-positive" ng-click="updateProfile()">
         Update Profile
       </button>
