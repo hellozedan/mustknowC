@@ -3,7 +3,6 @@
 // Controller of expense dashboard page.
 appControllers.controller('myProfileCtrl', function ($rootScope,$ionicModal, $ionicPopup,UserService, $firebaseArray, $ionicLoading, $scope,$state,$stateParams,$ionicHistory,EntityService,SubjectService,ConfigurationService) {
 
-
   $scope.isActive = false;
   $scope.activeButton = function() {
     $scope.isActive = !$scope.isActive;

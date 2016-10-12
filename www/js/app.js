@@ -1,5 +1,5 @@
 (function(){
-  angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'angularMoment', 'ngCordova', 'firebase'])
+  angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'angularMoment', 'ngCordova', 'firebase','ui.identicon'])
 
     .run(function($ionicPlatform, $state, ConfigurationService, UserService, EntityService) {
       $ionicPlatform.on('pause', function() {
