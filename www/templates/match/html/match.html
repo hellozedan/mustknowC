@@ -54,28 +54,28 @@
 <ion-view cache-view="false" scroll="false">
   <ion-content class="padding gray-bg match-content">
     <div class="pContainer">
-      <div class="person ion-person mainPerson">
-
+      <div ng-class="{'ion-person': !selectedPersons['mainPerson']}" ng-click="selectPerson('mainPerson', 0)" class="person ion-person mainPerson">
+        <span ng-if="selectedPersons['mainPerson']" class="name-letter">{{selectedPersons['mainPerson'].fl}}</span>
       </div>
-      <div ng-click="selectPerson('firstPerson')" class="person ion-person firstPerson">
-
+      <div ng-class="{'ion-person': !selectedPersons['firstPerson']}" ng-click="selectPerson('firstPerson', 1)" class="person firstPerson">
+        <span ng-if="selectedPersons['firstPerson']" class="name-letter">{{selectedPersons['firstPerson'].fl}}</span>
       </div>
-      <div ng-click="selectPerson('fifthPerson')" class="person ion-person fifthPerson">
-
+      <div ng-class="{'ion-person': !selectedPersons['fifthPerson']}" ng-click="selectPerson('fifthPerson', 2)" class="person fifthPerson">
+        <span ng-if="selectedPersons['fifthPerson']" class="name-letter">{{selectedPersons['fifthPerson'].fl}}</span>
       </div>
-      <div ng-click="selectPerson('secondPerson')" class="person ion-person secondPerson">
-
+      <div ng-class="{'ion-person': !selectedPersons['secondPerson']}" ng-click="selectPerson('secondPerson', 3)" class="person secondPerson">
+        <span ng-if="selectedPersons['secondPerson']" class="name-letter">{{selectedPersons['secondPerson'].fl}}</span>
       </div>
-      <div ng-click="selectPerson('fourthPerson')" class="person ion-person fourthPerson">
-
+      <div ng-class="{'ion-person': !selectedPersons['fourthPerson']}" ng-click="selectPerson('fourthPerson', 4)" class="person fourthPerson">
+        <span ng-if="selectedPersons['fourthPerson']" class="name-letter">{{selectedPersons['fourthPerson'].fl}}</span>
       </div>
-      <div ng-click="selectPerson('thirdPerson')" class="person ion-person thirdPerson">
-
+      <div ng-class="{'ion-person': !selectedPersons['thirdPerson']}" ng-click="selectPerson('thirdPerson', 5)" class="person thirdPerson">
+        <span ng-if="selectedPersons['thirdPerson']" class="name-letter">{{selectedPersons['thirdPerson'].fl}}</span>
       </div>
       <!--<div class="person ion-plus-round addPerson">-->
 
       <!--</div>-->
-      <div ng-click="selectPerson('matchPerson')" class="person ion-merge matchPerson">
+      <div ng-click="match()"  class="person ion-merge matchPerson">
 
       </div>
     </div>

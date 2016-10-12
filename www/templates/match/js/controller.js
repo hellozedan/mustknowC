@@ -1,22 +1,100 @@
 (function () {
-  appControllers.controller('matchCtrl', function($scope, $cordovaContacts){
+  appControllers.controller('matchCtrl', function($scope, $cordovaContacts, MatchService){
     $scope.selectedPersons = {};
-    $scope.selectPerson = function(person){
-      $cordovaContacts.pickContact().then(function (contactPicked) {
-        $scope.contact = contactPicked;
-        $scope.selectedPersons[person] = contactPicked;
-        alert(JSON.stringify($scope.contact));
-      });
+    $scope.mainPerson = {};
+    $scope.otherPersons = []
+    $scope.selectPerson = function(person, index){
+      if(window.cordova){
+        $cordovaContacts.pickContact().then(function (contact) {
+          var flSplit =  contact.displayName.split(' ');
 
+          if(flSplit .length > 0){
+            var firstname = flSplit[0][0];
+            var lastname = (flSplit.length >= 2) ? flSplit[1][0]: ""
+            var fl = firstname + lastname;
+            contact.fl = fl;
+          }
+          contact.index = index;
+          if(person == 'mainPerson'){
+
+            $scope.mainPerson = {
+              phone_number : contact.phoneNumber[0].value,
+              contactName: contact.displayName
+            }
+          }
+          $scope.selectedPersons[person] = contact;
+
+        });
+      }else{
+        var contact = {
+          displayName: "obaida abo elhija",
+          name: {
+            familyName: "abo elhija",
+            givenName: "obaida"
+          },
+          phoneNumber: [
+            {
+              id: "1234",
+              value: "0528869555"
+            }
+          ]
+        }
+        var flSplit =  contact.displayName.split(' ');
+
+        if(flSplit .length > 0){
+          var firstname = flSplit[0][0];
+          var lastname = (flSplit.length >= 2) ? flSplit[1][0]: ""
+          var fl = firstname + lastname;
+          contact.fl = fl;
+        }
+        contact.index = index;
+        if(person == 'mainPerson'){
+
+          $scope.mainPerson = {
+            phone_number : contact.phoneNumber[0].value,
+            contactName: contact.displayName
+          }
+
+        }
+        $scope.selectedPersons[person] =contact;
+        //if (!$scope.$$phase) $scope.$apply()
+      }
+
+
+    }
+    $scope.match = function(){
+      $scope.otherPersons = [];
+      angular.forEach($scope.selectedPersons, function(value, key){
+        if(value.index != 0){
+          var otherP = {
+            phone_number : value.phoneNumber[0].value,
+            contactName: value.displayName,
+            index: value.index
+          }
+          $scope.otherPersons.push(otherP);
+        }
+
+      });
+      $scope.otherPersons.sort(function(a,b){
+        return a.index - b.index;
+      });
+      var match = {
+        mainPerson: $scope.mainPerson,
+        otherPersons: $scope.otherPersons
+      }
+      MatchService.Match(match).then(function(match){
+        console.log(match);
+      },
+        function(err){
+
+        }
+      )
     }
 
   });
   appControllers.controller('subjectsCtrl', function ($scope, $cordovaContacts, MessagesService,$ionicScrollDelegate, $ionicModal, $ionicPlatform, $rootScope, $state, $interval, $stateParams, $timeout, SubjectService, EntityService, UserService, MessagesService, ConfigurationService, backcallFactory) {
 
-    // $scope.$on('sendMessagesEvent', function(event, mass) {
-    //   var messages = MessagesService.getMessages();
-    //   removeChatSubjects(messages);
-    // });
+
     $scope.scrollOptions = {
       skip: 0,
       limit: 20
