@@ -13,129 +13,42 @@
           deferred.resolve(data);
         }).error(function (msg, code) {
           deferred.reject(msg);
-          //   $log.error(msg, code);
+
         });
 
 
         return deferred.promise;
       },
-      GetMySubjects: function (userId, status) {
-        var deferred = $q.defer();
-        if (userId == undefined) {
-          userId = null;
-        }
-        tryPost();
-        function tryPost() {
-          $http.post(ConfigurationService.ServerUrl() + '/api/subjects/filter?userSubjects=true&status='+status + '&userId=' + userId, {}, {
-            headers: {
-              "access-token": ConfigurationService.UserDetails().token
-            }
-          }).success(function (data) {
-            deferred.resolve(data);
-          }).error(function (msg, code) {
-            deferred.reject(msg);
-            //   $log.error(msg, code);
-          });
-        }
+      SendMessageToMatcher: function (matchDetails){
 
-        return deferred.promise;
-      },
-      Interested: function (subjectId) {
-        var deferred = $q.defer();
-        $http.post(ConfigurationService.ServerUrl() + '/api/subjects/interested', {subjectId:subjectId}, {
-          headers: {
-            "access-token": ConfigurationService.UserDetails().token
+         debugger
+        angular.forEach(matchDetails.otherPersons, function(value, key){
+          var conversaionId = value._id + "-" + matchDetails.match_id;
+          var firebaseMainRef = new Firebase(ConfigurationService.FireBaseUrl() + '/chats/' + matchDetails.mainPerson._id + '/' + conversaionId);
+
+
+          conversaionId = value._id + "-" + matchDetails.match_id;
+          firebaseMainRef = new Firebase(ConfigurationService.FireBaseUrl() + '/chats/' + matchDetails.mainPerson._id + '/' + conversaionId + "/messages");
+          var date = new Date();
+          var msg = "";
+          var msgTosend = {
+            body: msg,
+            sender: value._id,
+            create_date: date.toJSON(),
+            date_string: date.toLocaleDateString()
           }
-        }).success(function (data) {
-          deferred.resolve(data);
-        }).error(function (msg, code) {
-          deferred.reject(msg);
-          //   $log.error(msg, code);
+          var refToPush = firebaseMainRef.push();
+          refToPush.set(msgTosend);
+
+          conversaionId = matchDetails.mainPerson._id + "-"  + matchDetails.match_id;
+          firebaseMainRef = new Firebase(ConfigurationService.FireBaseUrl() + '/chats/' + value._id + '/' + conversaionId + "/messages");
+          msgTosend.sender = matchDetails.mainPerson._id;
+          refToPush = firebaseMainRef.push();
+          refToPush.set(msgTosend);
+          console.log(value);
         });
-
-
-        return deferred.promise;
-      },
-      ChangeStatus: function (subject,status) {
-        var deferred = $q.defer();
-        $http.post(ConfigurationService.ServerUrl() + '/api/subjects/status', {
-          _id: subject._id,
-          status: status
-        }, {
-          headers: {
-            "access-token": ConfigurationService.UserDetails().token
-          }
-        }).success(function (data) {
-          deferred.resolve(data);
-        }).error(function (msg, code) {
-          deferred.reject(msg);
-          //   $log.error(msg, code);
-        });
-
-
-        return deferred.promise;
-      },
-      CreateSubject: function (subject) {
-        var deferred = $q.defer();
-        var posOptions = {timeout: 10000, enableHighAccuracy: false};
-        $cordovaGeolocation
-          .getCurrentPosition(posOptions)
-          .then(function (position) {
-            var lat = position.coords.latitude;
-            var long = position.coords.longitude;
-            subject.locationCoords = [lat, long];
-            tryPost();
-          }, function (err) {
-            subject.locationCoords = [];
-            tryPost();
-            // error
-          });
-        function tryPost() {
-
-          $http.post(ConfigurationService.ServerUrl() + '/api/subjects',
-            subject
-            , {
-              headers: {
-                "access-token": ConfigurationService.UserDetails().token
-              }
-            }).success(function (data) {
-            deferred.resolve(data);
-          }).error(function (msg, code) {
-            deferred.reject(msg);
-            //   $log.error(msg, code);
-          });
-        }
-
-        return deferred.promise;
-      },
-      DeleteSubjects: function (subject) {
-        var deferred = $q.defer();
-        $http.delete(ConfigurationService.ServerUrl() + '/api/subjects?_id=' + subject._id, {
-          headers: {
-            "access-token": ConfigurationService.UserDetails().token
-          }
-        }).success(function (data) {
-          deferred.resolve(data);
-        }).error(function (msg, code) {
-          deferred.reject(msg);
-          //   $log.error(msg, code);
-        });
-        return deferred.promise;
-      },
-      UpdateSubject: function (subject) {
-        var deferred = $q.defer();
-        $http.post(ConfigurationService.ServerUrl() + '/api/subjects',subject, {
-          headers: {
-            "access-token": ConfigurationService.UserDetails().token
-          }
-        }).success(function (data) {
-          deferred.resolve(data);
-        }).error(function (msg, code) {
-          deferred.reject(msg);
-          //   $log.error(msg, code);
-        });
-        return deferred.promise;
       }
+
     }
   })
 })();

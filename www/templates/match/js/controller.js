@@ -26,19 +26,36 @@
 
         });
       }else{
-        var contact = {
-          displayName: "obaida abo elhija",
-          name: {
-            familyName: "abo elhija",
-            givenName: "obaida"
-          },
-          phoneNumber: [
-            {
-              id: "1234",
-              value: "0528869555"
-            }
-          ]
+        if(person == 'mainPerson'){
+          var contact = {
+            displayName: "obaida abo elhija",
+            name: {
+              familyName: "abo elhija",
+              givenName: "obaida"
+            },
+            phoneNumber: [
+              {
+                id: "1234",
+                value: "0528869555"
+              }
+            ]
+          }
+        }else{
+          var contact = {
+            displayName: "ahmed zedany",
+            name: {
+              familyName: "abo zedany",
+              givenName: "ahmed"
+            },
+            phoneNumber: [
+              {
+                id: "1234",
+                value: "0521111111"
+              }
+            ]
+          }
         }
+
         var flSplit =  contact.displayName.split(' ');
 
         if(flSplit .length > 0){
@@ -83,7 +100,8 @@
         otherPersons: $scope.otherPersons
       }
       MatchService.Match(match).then(function(match){
-        console.log(match);
+          console.log(match);
+          MatchService.SendMessageToMatcher(match);
       },
         function(err){
 
@@ -328,25 +346,5 @@
 
     $scope.initialForm();
   });
-  appControllers.controller('filterCtrl', function ($scope, $rootScope, $state, $stateParams, $ionicHistory, SubjectService, ConfigurationService) {
-    $scope.categoriesUrl = ConfigurationService.CategoriesUrl();
-
-    $scope.setGender =function(gender){
-      $rootScope.myFilter.gender = gender;
-    }
-
-    $scope.selectCategory = function (categoryIndex) {
-      if($scope.categories[categoryIndex].is_selected)
-        $scope.categories[categoryIndex].is_selected = false;
-      else
-        $scope.categories[categoryIndex].is_selected = true;
-    }
-    $scope.initialForm = function () {
-
-
-
-    };// End initialForm.
-    $scope.initialForm();
-  });// End of Notes Detail Page  Controller.
 
 })();

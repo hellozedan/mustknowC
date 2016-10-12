@@ -40,7 +40,6 @@
 
                   if (error) {
                     console.log("Login Failed!", error);
-                    $state.go("tab.match");
                   } else {
                     if(!isNotificationClicked)
                       $state.go("tab.match");

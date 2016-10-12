@@ -6,6 +6,9 @@
         //return "http://localhost:3000";
          //return "http://192.168.1.14:3000";
       },
+      FireBaseUrl: function(){
+        return "https://mustknow.firebaseIO.com";
+      },
       UserDetails: function () {
         if (!this.userDetails) {
           if (window.localStorage['user']) {
