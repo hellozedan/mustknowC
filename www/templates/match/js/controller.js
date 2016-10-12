@@ -306,7 +306,7 @@
 
     $scope.subject = {};
     $scope.categories = [];
-    $scope.categoriesUrl = ConfigurationService.CategoriesUrl();
+    // $scope.categoriesUrl = ConfigurationService.CategoriesUrl();
     $scope.initialForm = function () {
 
       $scope.subject = {
